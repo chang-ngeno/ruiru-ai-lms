@@ -1,0 +1,285 @@
+[
+ {
+  "slug": "beginner",
+  "level": "Beginner",
+  "title": "AI Foundations & Everyday Productivity",
+  "tagline": "From curiosity to confidence: learn to use AI tools safely and productively in 4 weeks, no experience needed.",
+  "blurb": "AI basics, tools, and everyday productivity.",
+  "color": "#1B8A3A",
+  "icon": "bulb",
+  "sort_order": 0,
+  "audience": "Students, job seekers, professionals, business owners, entrepreneurs, parents and seniors. Learners need only a smartphone or laptop, an email address and basic ability to type and browse. Day 1 includes a setup clinic for anyone who needs help creating accounts. Reading level: simple English with Swahili support; trainers should switch freely.",
+  "outcomes": [
+   "Explain in plain language what AI is, what it can and cannot do, and why it sometimes gets things wrong",
+   "Write clear prompts using the R-T-C-F framework (Role, Task, Context, Format) and improve weak answers by iterating",
+   "Use AI for writing, research, translation (English/Swahili), planning, studying and spreadsheets",
+   "Create posters, social posts, CVs and simple business materials with AI and Canva",
+   "Spot scams, deepfakes and misinformation, and protect personal and customer data",
+   "Build a personal custom AI assistant and present a finished mini project"
+  ],
+  "tools": [
+   [
+    "ChatGPT / Gemini / Claude",
+    "Main AI assistants for chat, writing and research (use the free tier of at least two to compare)"
+   ],
+   [
+    "Google Docs, Sheets, Forms",
+    "Everyday documents and AI-assisted spreadsheets"
+   ],
+   [
+    "Canva (Magic Studio)",
+    "Posters, social media graphics, CVs, presentations"
+   ],
+   [
+    "Google Translate / AI translation",
+    "Swahili-English translation and checking"
+   ],
+   [
+    "NotebookLM or similar",
+    "Summarizing and questioning documents and notes"
+   ],
+   [
+    "WhatsApp Business",
+    "Catalog, quick replies and AI-written messages for small business"
+   ]
+  ],
+  "glance": [
+   [
+    "Duration",
+    "4 weeks, 5 days a week, 3 hours per day (60 contact hours) plus unlimited workspace time for practice"
+   ],
+   [
+    "Level",
+    "Beginner. No coding, no prior AI experience"
+   ],
+   [
+    "Class size",
+    "Ideal 15-25 learners, 1 lead trainer + 1 mentor"
+   ],
+   [
+    "Format",
+    "About 25% demo, 65% hands-on labs, 10% discussion and sharing"
+   ],
+   [
+    "Final result",
+    "A personal AI toolkit, 8 finished portfolio pieces, a custom AI assistant and a demo day presentation"
+   ]
+  ],
+  "weeks": [
+   {
+    "title": "Meet AI: Foundations and First Prompts",
+    "goal": "Remove fear, understand how AI works at a high level, set up tools, and write good prompts.",
+    "deliver": "Personal AI toolkit page and prompt notebook"
+   },
+   {
+    "title": "AI for Everyday Productivity",
+    "goal": "Use AI to research, summarize, plan, learn and work faster in real life.",
+    "deliver": "Study/work plan, research summary and productivity workflow"
+   },
+   {
+    "title": "Create and Earn: Content, Design and Small Business",
+    "goal": "Make professional content and business materials and discover simple ways to earn.",
+    "deliver": "Portfolio of 5 designed pieces (poster, social set, CV, product listing, short video script)"
+   },
+   {
+    "title": "Apply: Build Your Own AI Assistant and Demo Day",
+    "goal": "Customize an AI assistant, complete a real project and present with confidence.",
+    "deliver": "Custom AI assistant, mini project, portfolio and demo day presentation"
+   }
+  ]
+ },
+ {
+  "slug": "intermediate",
+  "level": "Intermediate",
+  "title": "AI Projects, Content & Automation",
+  "tagline": "Turn AI skills into real projects, automated workflows and income: for creators, professionals and business owners.",
+  "blurb": "Practical projects, content creation, automation and business use.",
+  "color": "#2F6FDE",
+  "icon": "gear",
+  "sort_order": 1,
+  "audience": "Beginner path graduates, or anyone who already uses AI tools weekly and can write structured prompts. Basic spreadsheet skills required. Learners without the Beginner path take a 90-minute placement test on Day 1 (prompting, safe use, Google Sheets basics). No coding required; logical thinking is enough.",
+  "outcomes": [
+   "Use advanced prompting: prompt chains, few-shot examples, personas, structured output and self-critique",
+   "Run a repeatable content engine for a brand: research, calendar, copy, graphics, short video scripts",
+   "Build no-code automations connecting Google Sheets, Forms, Gmail and messaging with AI steps",
+   "Analyze business data with AI and present insights as dashboards and short reports",
+   "Create AI customer support and sales assistants that use a business's own information",
+   "Package, price and pitch AI services for local clients and online freelancing platforms"
+  ],
+  "tools": [
+   [
+    "ChatGPT / Gemini / Claude",
+    "Advanced prompting, projects, custom assistants, data analysis"
+   ],
+   [
+    "Make.com or n8n (cloud free tier) / Zapier",
+    "No-code automation with AI steps"
+   ],
+   [
+    "Google Sheets, Forms, Gmail, Calendar",
+    "Data store, intake forms, notifications"
+   ],
+   [
+    "Canva and AI image tools",
+    "Brand graphics and carousels"
+   ],
+   [
+    "CapCut or similar",
+    "Short video editing with AI captions"
+   ],
+   [
+    "Notion or Trello",
+    "Project management for client work"
+   ],
+   [
+    "Looker Studio",
+    "Simple dashboards from Google Sheets"
+   ]
+  ],
+  "glance": [
+   [
+    "Duration",
+    "4 weeks, 5 days a week, 3 hours per day (60 contact hours) plus unlimited workspace time"
+   ],
+   [
+    "Level",
+    "Intermediate. Comfortable with ChatGPT-style tools and basic prompting"
+   ],
+   [
+    "Class size",
+    "12-20 learners, 1 lead trainer + 1 mentor"
+   ],
+   [
+    "Format",
+    "20% demo, 70% build time, 10% critique and sharing. Every day ends with something that works."
+   ],
+   [
+    "Final result",
+    "3 working automations, a content engine, a client-ready AI service offer and a capstone for a real or simulated client"
+   ]
+  ],
+  "weeks": [
+   {
+    "title": "Advanced Prompting and the Content Engine",
+    "goal": "Get consistent, professional quality from AI and run a repeatable content workflow.",
+    "deliver": "Prompt playbook (15 prompts), brand voice guide, 2-week content pack"
+   },
+   {
+    "title": "Automation and Productivity Systems",
+    "goal": "Connect tools so repetitive work runs by itself, with AI inside the workflow.",
+    "deliver": "3 working automations with documentation"
+   },
+   {
+    "title": "AI for Business and Freelancing",
+    "goal": "Analyze data, build customer-facing assistants and package services you can sell.",
+    "deliver": "Data insight report, customer assistant, service offer and pitch"
+   },
+   {
+    "title": "Capstone: Client Project Sprint",
+    "goal": "Deliver a complete, professional AI solution for a real or simulated client.",
+    "deliver": "Capstone solution, documentation, demo and portfolio"
+   }
+  ]
+ },
+ {
+  "slug": "advanced",
+  "level": "Advanced",
+  "title": "Building Custom AI Solutions",
+  "tagline": "Code, APIs, RAG, agents and deployment: build and ship real AI applications for Kenyan and global users.",
+  "blurb": "Custom AI solutions, automation, APIs, and real-world applications.",
+  "color": "#7B3FC4",
+  "icon": "code",
+  "sort_order": 2,
+  "audience": "Intermediate path graduates with coding exposure, developers, IT students and technical professionals. Prerequisites: variables, functions, lists/dictionaries, loops and reading error messages in Python or similar. A Day 1 diagnostic coding quiz places learners; a 6-hour optional 'Python Bootcamp' is offered the weekend before. Learners need a laptop (4 GB RAM minimum) and Google account for Colab.",
+  "outcomes": [
+   "Call large language model APIs from Python, control output and handle errors, cost and rate limits",
+   "Build retrieval-augmented generation (RAG) apps that answer from private documents with citations",
+   "Design agents that use tools and external APIs (payments sandbox, messaging, databases) safely",
+   "Evaluate AI systems with test sets, metrics and guardrails; reduce hallucination and abuse risk",
+   "Create user interfaces with Streamlit or Gradio and back-ends with FastAPI",
+   "Deploy, monitor and secure an application and explain trade-offs to a client or employer"
+  ],
+  "tools": [
+   [
+    "Python 3.10+, VS Code, Git/GitHub",
+    "Core development environment and version control"
+   ],
+   [
+    "Google Colab",
+    "Free notebook environment for experiments"
+   ],
+   [
+    "LLM provider APIs (free credits or low-cost keys)",
+    "Text generation, embeddings, tool use; budget approx. USD 5 per learner for the month"
+   ],
+   [
+    "Hugging Face",
+    "Open models, datasets, embeddings and Spaces hosting"
+   ],
+   [
+    "Chroma or FAISS",
+    "Local vector search"
+   ],
+   [
+    "Streamlit / Gradio",
+    "Fast user interfaces"
+   ],
+   [
+    "FastAPI + Uvicorn",
+    "Back-end API"
+   ],
+   [
+    "Docker (intro), Render / Railway / HF Spaces",
+    "Deployment on free tiers"
+   ],
+   [
+    "Safaricom Daraja sandbox, WhatsApp Cloud API sandbox",
+    "Local integrations for realistic projects"
+   ]
+  ],
+  "glance": [
+   [
+    "Duration",
+    "4 weeks, 5 days a week, 3 hours per day (60 contact hours) plus unlimited workspace time"
+   ],
+   [
+    "Level",
+    "Advanced. Basic programming experience required (Python preferred)"
+   ],
+   [
+    "Class size",
+    "10-16 learners, 1 lead engineer + 1 mentor"
+   ],
+   [
+    "Format",
+    "15% concepts, 75% coding labs and pair programming, 10% code review and demos"
+   ],
+   [
+    "Final result",
+    "A deployed AI application with API backend, document question-answering (RAG), an agent with tools, tests and a demo"
+   ]
+  ],
+  "weeks": [
+   {
+    "title": "Python, APIs and LLM Foundations",
+    "goal": "Be fluent in calling models programmatically and controlling their output.",
+    "deliver": "API toolkit repo with 5 scripts, structured extraction project"
+   },
+   {
+    "title": "RAG and AI Applications",
+    "goal": "Build applications that answer from real documents and look professional.",
+    "deliver": "Deployed-ready RAG app with UI and evaluation report"
+   },
+   {
+    "title": "Agents, Tools and Integrations",
+    "goal": "Create AI systems that take actions through tools, safely and reliably.",
+    "deliver": "Working agent with 3 tools, safety checks and logs"
+   },
+   {
+    "title": "Deployment and Capstone",
+    "goal": "Ship a secure, monitored AI application and present it professionally.",
+    "deliver": "Deployed capstone, repo, technical report and demo"
+   }
+  ]
+ }
+]

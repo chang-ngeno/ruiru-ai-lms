@@ -1,0 +1,2543 @@
+[
+ {
+  "number": 1,
+  "week": 1,
+  "week_title": "Meet AI: Foundations and First Prompts",
+  "week_goal": "Remove fear, understand how AI works at a high level, set up tools, and write good prompts.",
+  "title": "What is AI? Setup clinic",
+  "content": {
+   "objectives": [
+    "Explain in your own words what AI is and what generative AI does",
+    "Name three things AI does well and three things it does badly",
+    "Create and secure accounts for at least two AI assistants",
+    "Ask the same question to two assistants and compare the answers"
+   ],
+   "intro": "Welcome to the course. Today you will meet AI as a tool you can use, not a mystery to fear. By the end of the day you will have working accounts, you will have asked your first questions, and you will understand why AI is powerful but not always right. Nobody here is expected to know anything already. If you can type a message on WhatsApp, you can use AI.",
+   "concepts": [
+    {
+     "heading": "AI is already in your life",
+     "text": "You have used AI many times without noticing. When your phone suggests the next word while you type, when Google Maps predicts traffic on Thika Road, when a mobile money service flags a suspicious transaction, or when YouTube recommends a video, a form of AI is working in the background. These are mostly 'predictive' systems that look at patterns in past data to guess what is likely to happen next. What is new in the last few years is generative AI: tools that can produce new text, pictures, audio and code when you ask them in plain language.",
+     "points": [
+      "Predictive AI: recommends, detects, forecasts",
+      "Generative AI: writes, draws, speaks, translates, codes",
+      "Both learn patterns from large amounts of data"
+     ]
+    },
+    {
+     "heading": "How generative AI works, in simple words",
+     "text": "A text assistant such as ChatGPT, Gemini or Claude was trained on a huge amount of writing. During training it learned which words and ideas tend to follow each other. When you type a question, it builds an answer one small piece at a time, always choosing something that fits the pattern of your request. It does not 'look up' a fact in a neat database and it does not think like a person. This explains both its brilliance and its mistakes: it can write a smooth paragraph on almost any topic, but smooth is not the same as true.",
+     "points": [
+      "It predicts likely words from learned patterns",
+      "It has a training cut-off date and may not know recent events",
+      "Some tools can also search the web; check whether that is switched on"
+     ]
+    },
+    {
+     "heading": "What AI is good at and what it is bad at",
+     "text": "AI is excellent at drafting, rewriting, summarizing, brainstorming, explaining, translating and organizing information. It is fast and never gets tired. It is weaker at exact facts such as dates, statistics, laws and names, at very recent news, at arithmetic done in its head, and at knowing your personal situation unless you tell it. It can also 'hallucinate', which means confidently inventing something that sounds real, such as a fake book title or a law that does not exist. A good user treats AI as a quick assistant whose work must be checked.",
+     "points": [
+      "Good: first drafts, ideas, explanations, summaries",
+      "Weak: exact facts, recent news, hidden context",
+      "Always: you are responsible for the final result"
+     ]
+    },
+    {
+     "heading": "Setting up safely",
+     "text": "Every account is a door into your digital life. Use a strong password that you do not use anywhere else, switch on two-step verification, and keep your email account secure because many accounts depend on it. Free versions are enough for this course. Look at the privacy or data settings of each tool and learn how to delete a chat. Never type your M-Pesa PIN, bank details, ID number or other people's private information into any AI tool.",
+     "points": [
+      "Strong unique password plus two-step verification",
+      "Use free tiers while learning",
+      "Never share PINs, passwords or ID numbers"
+     ]
+    }
+   ],
+   "steps": [
+    "Open two AI assistants in your browser or app and create free accounts (a trainer will help with any problems)",
+    "Turn on two-step verification for your email and for one AI account",
+    "Type: 'Explain what a mobile money agent does in 5 sentences for a 12-year-old.' Copy the answer from Assistant A into your notebook",
+    "Ask Assistant B exactly the same question and copy its answer",
+    "Compare the answers: which is clearer, which is longer, which has anything wrong or missing?",
+    "Play 'AI or Not?': look at 10 examples of text and pictures and vote whether AI made them. Discuss the clues you used"
+   ],
+   "lab": "Create accounts, run the same question on 2 assistants, compare. 'AI or Not?' game with 10 mixed examples.",
+   "examples": [
+    {
+     "label": "Beginner question",
+     "text": "What is the difference between a bank and a SACCO? Answer in simple English with an example from Kenya."
+    },
+    {
+     "label": "Follow-up",
+     "text": "Now give me the same answer in 3 bullet points I can put on a poster."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Thinking AI always tells the truth",
+    "Using the same weak password for every account",
+    "Pasting private details because the chat 'feels' private",
+    "Stopping after one answer instead of asking a follow-up"
+   ],
+   "quiz": [
+    {
+     "q": "What does 'generative' AI do?",
+     "a": "It creates new content such as text, images, audio or code from your instructions."
+    },
+    {
+     "q": "Why can an AI answer sound right but be wrong?",
+     "a": "It predicts likely words from patterns, so smooth wording does not guarantee truth."
+    },
+    {
+     "q": "Name one thing you must never type into an AI tool.",
+     "a": "Passwords, PINs, ID numbers, or other people's private details."
+    },
+    {
+     "q": "What is a hallucination?",
+     "a": "When AI confidently produces something false or invented."
+    },
+    {
+     "q": "Why compare two assistants?",
+     "a": "To see differences in quality and spot mistakes by checking one against the other."
+    }
+   ],
+   "takeaways": [
+    "AI is a pattern-based assistant, not a person or a perfect database",
+    "You must check important facts",
+    "Protect your accounts and private information",
+    "Follow-up questions improve answers"
+   ],
+   "glossary": [
+    {
+     "term": "Generative AI",
+     "meaning": "AI that creates new text, images, audio or code."
+    },
+    {
+     "term": "Prompt",
+     "meaning": "The instruction or question you give an AI."
+    },
+    {
+     "term": "Hallucination",
+     "meaning": "A confident but false or invented AI answer."
+    },
+    {
+     "term": "Training data",
+     "meaning": "The text and other data an AI learned from."
+    }
+   ],
+   "homework": "Ask AI 3 questions about your own life or work; write what was useful and what was wrong."
+  }
+ },
+ {
+  "number": 2,
+  "week": 1,
+  "week_title": "Meet AI: Foundations and First Prompts",
+  "week_goal": "Remove fear, understand how AI works at a high level, set up tools, and write good prompts.",
+  "title": "The R-T-C-F prompt framework",
+  "content": {
+   "objectives": [
+    "Write prompts using Role, Task, Context and Format",
+    "Turn a vague prompt into a specific one",
+    "Improve an answer using follow-up instructions",
+    "Build a small personal library of reusable prompts"
+   ],
+   "intro": "A prompt is simply what you tell the AI. Most people get poor answers because their prompts are too short. Today you will learn a simple four-part recipe called R-T-C-F that works with any assistant, and the habit of improving answers through conversation rather than accepting the first one.",
+   "concepts": [
+    {
+     "heading": "The R-T-C-F recipe",
+     "text": "R is Role: who the AI should act as, for example a teacher, a career coach or a shop marketing helper. T is Task: exactly what you want done. C is Context: the facts the AI cannot guess, such as who the audience is, where you live, your budget, or what you already tried. F is Format: how the answer should look, such as a table, five bullet points, a short email or a step-by-step plan. You do not always need all four, but adding even two makes a large difference.",
+     "points": [
+      "Role: who should the AI be?",
+      "Task: what exactly must it do?",
+      "Context: what must it know?",
+      "Format: how should the answer look?"
+     ]
+    },
+    {
+     "heading": "Specific beats vague",
+     "text": "Compare 'Write about business' with 'Act as a small business coach. Give me five low-cost ways to attract customers to my mama mboga stall in Ruiru. Use simple English and a numbered list.' The second prompt tells the AI the audience, the place, the limit on cost and the shape of the answer. The more precise your request, the less the AI has to guess. Mention the length, the tone, and who will read it.",
+     "points": [
+      "Add audience, place, tone and length",
+      "Say what to avoid",
+      "Give an example of what you like"
+     ]
+    },
+    {
+     "heading": "Iterating: the conversation is the tool",
+     "text": "The first answer is a draft. Treat the chat like working with a junior colleague. You can say 'make it shorter', 'use simpler words', 'give me three different options', 'explain step 2 in more detail', or 'what did you assume that I did not tell you?'. You can also paste your own writing and ask the AI to improve it. Good users usually do two to four rounds before they are satisfied.",
+     "points": [
+      "Refine: shorter, simpler, friendlier, more formal",
+      "Ask for options, then pick and combine",
+      "Ask 'what assumptions did you make?'"
+     ]
+    },
+    {
+     "heading": "Saving prompts you can reuse",
+     "text": "When a prompt works well, save it. Keep a notebook, a notes app or a document of your best prompts with blanks in square brackets such as [topic] or [audience]. Next time you only change the brackets. This is how professionals work faster with AI: not by being clever each time, but by having a good toolbox.",
+     "points": [
+      "Use [brackets] for the parts that change",
+      "Give each prompt a short name",
+      "Review and improve your prompts weekly"
+     ]
+    }
+   ],
+   "steps": [
+    "Write a weak prompt about a real need (for example: 'help me with my business')",
+    "Rewrite it using R, T, C and F; label each part with a colour or underline",
+    "Run both versions and paste the answers side by side",
+    "Ask three follow-ups to improve the better answer (shorter, simpler, add an example)",
+    "Join the relay: your team receives a weak prompt, improves it, and the class votes on the best result",
+    "Save your five best prompts in your notebook with [brackets] for the changing parts"
+   ],
+   "lab": "Prompt Makeover relay: teams improve 6 weak prompts and vote on the best output.",
+   "examples": [
+    {
+     "label": "Weak",
+     "text": "Tell me about farming."
+    },
+    {
+     "label": "Strong",
+     "text": "Act as an agricultural extension officer. I have a quarter acre in Kiambu and Ksh 10,000. Suggest three crops I can grow for local markets, with costs and time to harvest. Show it as a table."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Writing one-line prompts and giving up",
+    "Forgetting to say who the audience is",
+    "Not telling the AI the place, budget or limits",
+    "Never saving prompts that worked"
+   ],
+   "quiz": [
+    {
+     "q": "What do the letters R-T-C-F stand for?",
+     "a": "Role, Task, Context, Format."
+    },
+    {
+     "q": "Why is context important?",
+     "a": "The AI cannot guess your situation; context gives it the facts it needs."
+    },
+    {
+     "q": "Give two follow-up instructions that improve an answer.",
+     "a": "For example: make it shorter; use simpler words; give three options."
+    },
+    {
+     "q": "What is the benefit of square brackets in saved prompts?",
+     "a": "They mark the parts to change so the prompt can be reused quickly."
+    },
+    {
+     "q": "What question reveals hidden guesses?",
+     "a": "'What assumptions did you make?'"
+    }
+   ],
+   "takeaways": [
+    "Four parts: Role, Task, Context, Format",
+    "Specific prompts give better answers",
+    "Always iterate at least twice",
+    "Build and keep a prompt library"
+   ],
+   "glossary": [
+    {
+     "term": "R-T-C-F",
+     "meaning": "A prompt recipe: Role, Task, Context, Format."
+    },
+    {
+     "term": "Iteration",
+     "meaning": "Improving a result through repeated rounds of feedback."
+    },
+    {
+     "term": "Context",
+     "meaning": "Background facts that help the AI answer for your situation."
+    },
+    {
+     "term": "Template",
+     "meaning": "A reusable prompt with blanks to fill in."
+    }
+   ],
+   "homework": "Build 5 reusable prompts for your own work in the prompt notebook."
+  }
+ },
+ {
+  "number": 3,
+  "week": 1,
+  "week_title": "Meet AI: Foundations and First Prompts",
+  "week_goal": "Remove fear, understand how AI works at a high level, set up tools, and write good prompts.",
+  "title": "Safe and responsible AI",
+  "content": {
+   "objectives": [
+    "Identify information you must never share with AI",
+    "Fact-check an AI answer in three steps",
+    "Recognise common scams, fake job offers and deepfakes",
+    "Write your personal Safe AI Rules"
+   ],
+   "intro": "AI can save time, but it can also be used against you, and it can make honest mistakes. Today is about staying safe, protecting your money and your information, and keeping your honesty. This lesson uses real Kenyan situations: fake job adverts, voice notes that sound like a relative asking for money, and rumours that spread on WhatsApp.",
+   "concepts": [
+    {
+     "heading": "Privacy: what never goes into an AI tool",
+     "text": "Treat an AI chat like a conversation in a public place until you know the tool's privacy settings. Do not type passwords, M-Pesa or bank PINs, card numbers, ID or passport numbers, private health information, or secrets belonging to your employer or clients. When you need help with a document that contains private details, replace the real names and numbers with placeholders such as [Name] and [Amount] first. Check whether your account uses your chats to train the AI and learn how to switch that off if you wish.",
+     "points": [
+      "Replace real names and numbers with placeholders",
+      "Check privacy and data settings",
+      "Delete sensitive chats you no longer need"
+     ]
+    },
+    {
+     "heading": "Hallucinations and the three-step fact-check",
+     "text": "Because AI predicts words, it sometimes invents facts, quotes, laws, statistics and websites. To check an answer, follow three steps. First, mark every claim that is a name, date, number, law or quote. Second, ask the AI for its sources and then open those sources yourself, because it can invent them too. Third, confirm with a trusted source such as a government website, a recognised news organisation, a textbook, or a real professional. Anything important to health, money or law must always be verified.",
+     "points": [
+      "Mark names, dates, numbers, laws, quotes",
+      "Open the sources yourself",
+      "Confirm with a trusted human or official site"
+     ]
+    },
+    {
+     "heading": "Scams, voice cloning and deepfakes",
+     "text": "Criminals now use AI to write convincing messages, copy voices from short recordings and create fake videos. Typical examples are a message pretending to be a child asking for urgent money, a fake recruiter asking for a fee for a job, a fake investment giving huge returns, or a video of a public figure promising free money. Slow down. Real organisations do not ask for PINs or one-time codes. Call the person back on a number you already know, ask a question only the real person would know, and never send money under pressure.",
+     "points": [
+      "Urgency and secrecy are warning signs",
+      "Call back on a known number",
+      "Agree a family 'safe word' for emergencies"
+     ]
+    },
+    {
+     "heading": "Bias, fairness and honesty",
+     "text": "AI learns from human writing, so it can repeat unfair stereotypes about gender, tribe, religion, disability or place. If an answer sounds unfair, challenge it and ask for a more balanced version. Be honest when you use AI: in school or work, follow the rules, and say when AI helped with important work. The goal is to use AI to think better and work faster, not to pretend to skills you do not have.",
+     "points": [
+      "Question stereotypes in answers",
+      "Follow school and workplace rules",
+      "Be open about how AI helped"
+     ]
+    }
+   ],
+   "steps": [
+    "In pairs, review a document containing fake private details and replace each with a safe placeholder",
+    "Take a short AI answer prepared by the trainer; mark every claim that needs checking",
+    "Verify five claims using official websites or other trusted sources and write down what was wrong",
+    "Study 6 example messages (job offer, family emergency, investment, prize, bank alert, voice note) and decide: real or scam?",
+    "Discuss deepfake clues: odd blinking, mismatched lip movement, strange hands, background glitches, urgent requests",
+    "Write your own list of seven Safe AI Rules and sign it"
+   ],
+   "lab": "Fact-check lab: find and fix 5 mistakes planted in AI answers. Deepfake spotting exercise.",
+   "examples": [
+    {
+     "label": "Safe rewrite",
+     "text": "Help me write a complaint to my landlord [Name] about the broken water pump at [Address]. The rent is [Amount]."
+    },
+    {
+     "label": "Verification prompt",
+     "text": "List each claim in your last answer that I should verify and where I can check it."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Believing a convincing voice note without a call back",
+    "Trusting AI-generated links or references without opening them",
+    "Sharing private documents with real names intact",
+    "Using AI to cheat and then being unable to explain the work"
+   ],
+   "quiz": [
+    {
+     "q": "Give two things you must never type into an AI tool.",
+     "a": "Passwords, PINs, ID numbers, card numbers, others' private data."
+    },
+    {
+     "q": "What are the three steps to fact-check?",
+     "a": "Mark claims, check sources yourself, confirm with a trusted source."
+    },
+    {
+     "q": "What should you do if a relative asks for urgent money by voice note?",
+     "a": "Call back on a known number and ask a question only they could answer."
+    },
+    {
+     "q": "Why can AI show bias?",
+     "a": "It learns from human writing which contains stereotypes."
+    },
+    {
+     "q": "Who is responsible for work you submit using AI?",
+     "a": "You are."
+    }
+   ],
+   "takeaways": [
+    "Protect private data with placeholders",
+    "Verify names, numbers, laws and quotes",
+    "Slow down when a message creates urgency",
+    "You remain responsible for the result"
+   ],
+   "glossary": [
+    {
+     "term": "Deepfake",
+     "meaning": "A fake video, image or audio made with AI to look real."
+    },
+    {
+     "term": "Phishing",
+     "meaning": "A trick message designed to steal your details or money."
+    },
+    {
+     "term": "Bias",
+     "meaning": "Unfair patterns copied from data into answers."
+    },
+    {
+     "term": "Verification",
+     "meaning": "Checking information against reliable sources."
+    }
+   ],
+   "homework": "Write your own 'Safe AI Rules' list (7 rules) and share with a family member."
+  }
+ },
+ {
+  "number": 4,
+  "week": 1,
+  "week_title": "Meet AI: Foundations and First Prompts",
+  "week_goal": "Remove fear, understand how AI works at a high level, set up tools, and write good prompts.",
+  "title": "AI as your writing partner",
+  "content": {
+   "objectives": [
+    "Use AI to draft emails, letters and messages in the right tone",
+    "Edit and improve your own writing without losing your voice",
+    "Rewrite one message for different audiences",
+    "Check and correct AI-written text before sending"
+   ],
+   "intro": "Writing is the most common thing people do with AI, and it is a great place to build confidence. Today you will write real messages, formal and friendly, and learn how to keep control: the AI drafts, you decide. We will also practise matching the tone to the person who will read the message.",
+   "concepts": [
+    {
+     "heading": "The writing workflow: brief, draft, edit, check",
+     "text": "A reliable routine has four steps. First brief the AI with the purpose, the reader, the key facts and the tone. Second, read the draft and mark what is wrong or missing. Third, give editing instructions such as 'shorter', 'more polite' or 'add the deadline'. Fourth, check names, dates, amounts and promises before you send. The AI is the writer's assistant, you are the author, and the last read-through is always yours.",
+     "points": [
+      "Brief: purpose, reader, facts, tone",
+      "Edit with clear instructions",
+      "Check every fact and promise"
+     ]
+    },
+    {
+     "heading": "Tone and audience",
+     "text": "The same message sounds different to a bank manager, a landlord, a customer, a friend and a church committee. Tell the AI who will read it and how you want them to feel: respectful, firm, warm, apologetic, urgent. Ask for two or three versions and choose. You can also ask it to explain the difference between versions so that you learn what makes a tone formal or friendly.",
+     "points": [
+      "Name the reader and the relationship",
+      "Try 3 tones and compare",
+      "Ask why a version sounds more formal"
+     ]
+    },
+    {
+     "heading": "Keeping your own voice",
+     "text": "AI text can sound generic. To keep your voice, paste two or three samples of your own writing and say 'write in this style'. Remove words you would never use. Add a personal detail only you know. Read the message aloud: if it does not sound like you, edit it. Short sentences and simple words are almost always better than long fancy ones.",
+     "points": [
+      "Give samples of your style",
+      "Delete words you would not say",
+      "Read it aloud before sending"
+     ]
+    },
+    {
+     "heading": "Editing and proofreading",
+     "text": "Besides drafting, AI is a patient proofreader. Paste your text and ask it to correct spelling and grammar, explain the changes, and keep your meaning. For important documents, ask it to highlight anything unclear, anything that sounds rude, and anything missing such as a date, contact or amount. Then make the final decisions yourself. For English or Swahili, ask for corrections and a short list of the mistakes you often make so you can improve.",
+     "points": [
+      "Ask for changes to be listed",
+      "Ask for unclear or rude parts to be flagged",
+      "Learn from your repeated mistakes"
+     ]
+    }
+   ],
+   "steps": [
+    "Write a one-paragraph brief for a formal request (for example to a landlord or school office)",
+    "Generate the draft, then give three editing instructions and compare versions",
+    "Create a friendly follow-up message to the same person and a firm complaint letter about a different issue",
+    "Rewrite each message in three tones: formal, friendly, urgent. Mark your favourite",
+    "Paste a sample of your own writing and ask the AI to rewrite a message in your style",
+    "Pair review: read each other's final message aloud and check facts, spelling and tone"
+   ],
+   "lab": "Write a formal request, a friendly follow-up and a complaint letter; rewrite in 3 tones each.",
+   "examples": [
+    {
+     "label": "Formal request",
+     "text": "Write a polite email to the principal of [School] asking to reschedule the fees deadline to the end of the month. My child is [Name]. Keep it under 120 words and respectful."
+    },
+    {
+     "label": "Tone change",
+     "text": "Rewrite this message so it is firmer but still polite: [paste]"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Sending AI text without reading it",
+    "Leaving placeholders such as [Name] in the final message",
+    "Using a tone that does not match the reader",
+    "Making promises or giving facts you did not check"
+   ],
+   "quiz": [
+    {
+     "q": "What four steps make a good writing workflow?",
+     "a": "Brief, draft, edit, check."
+    },
+    {
+     "q": "How can you keep your own voice?",
+     "a": "Give samples of your writing, delete unnatural words, read aloud."
+    },
+    {
+     "q": "What should you check before sending?",
+     "a": "Names, dates, amounts, promises and tone."
+    },
+    {
+     "q": "Why ask for several tones?",
+     "a": "To compare and choose the best fit for the reader."
+    },
+    {
+     "q": "What can AI proofreading explain?",
+     "a": "The corrections it made and why."
+    }
+   ],
+   "takeaways": [
+    "You are the author; AI is the assistant",
+    "Match tone to the reader",
+    "Always proofread facts and names",
+    "Use samples to keep your voice"
+   ],
+   "glossary": [
+    {
+     "term": "Tone",
+     "meaning": "The attitude of a message: formal, friendly, firm and so on."
+    },
+    {
+     "term": "Draft",
+     "meaning": "A first version meant to be improved."
+    },
+    {
+     "term": "Proofread",
+     "meaning": "Check for mistakes before finishing."
+    },
+    {
+     "term": "Style sample",
+     "meaning": "Your own writing used to guide the AI."
+    }
+   ],
+   "homework": "Draft a real message you need to send this week and send it."
+  }
+ },
+ {
+  "number": 5,
+  "week": 1,
+  "week_title": "Meet AI: Foundations and First Prompts",
+  "week_goal": "Remove fear, understand how AI works at a high level, set up tools, and write good prompts.",
+  "title": "Lab day: Personal AI Toolkit",
+  "content": {
+   "objectives": [
+    "Choose the right AI tool for the right job",
+    "Organise your prompts and chats so you can find them",
+    "Complete a one-page personal AI toolkit",
+    "Present what you have learned to a partner"
+   ],
+   "intro": "Today is a lab day. There is little new theory: you will consolidate everything from the first four days into a personal toolkit that you will use for the rest of the course and beyond. Expect to work independently, ask the mentors for help, and review a partner's work.",
+   "concepts": [
+    {
+     "heading": "Choosing the right tool",
+     "text": "Different tools have different strengths. One assistant may write more naturally, another may be better with long documents, another may search the web and give links. Design tools such as Canva suit posters, spreadsheets suit numbers, and a translator suits quick language checks. Decide by the job: what do I need, how accurate must it be, and is it safe to put this information in? When in doubt, test the same task on two tools and compare.",
+     "points": [
+      "Match tool to task",
+      "Compare two tools on important work",
+      "Consider privacy before choosing"
+     ]
+    },
+    {
+     "heading": "Organising chats and prompts",
+     "text": "A pile of unnamed chats becomes useless. Give chats clear titles, start a new chat for each new topic, and keep a master document of your best prompts grouped by purpose: writing, learning, business, planning. Copy final outputs into your own documents. Back up important work, because accounts can be lost and tools can change.",
+     "points": [
+      "One topic per chat, clear titles",
+      "Master prompt document",
+      "Copy final work into your own files"
+     ]
+    },
+    {
+     "heading": "Building your personal toolkit",
+     "text": "Your toolkit is a one-page plan: your top three tools and what each is for, your ten most useful prompts, your Safe AI Rules, and three tasks you want to do faster in the next month. It is short enough to read in two minutes and practical enough to use every day. Keep it on your phone and print a copy for your wall.",
+     "points": [
+      "Top 3 tools and their jobs",
+      "10 saved prompts",
+      "Safe AI Rules and 3 target tasks"
+     ]
+    },
+    {
+     "heading": "Giving and receiving feedback",
+     "text": "Learning is faster when you explain your work to someone else. When you review a partner's toolkit, say one thing that works well, one thing that is unclear and one improvement idea. When receiving feedback, listen first and then decide what to change. Kindness and honesty belong together.",
+     "points": [
+      "One strength, one question, one idea",
+      "Listen before replying",
+      "Change only what helps"
+     ]
+    }
+   ],
+   "steps": [
+    "List five real tasks you do in a normal week and mark which could involve AI",
+    "Test two tasks on two tools; record which tool you prefer and why",
+    "Organise your prompt notebook into categories and give each prompt a short name",
+    "Create your one-page Personal AI Toolkit (tools, ten prompts, safe rules, three target tasks)",
+    "Swap with a partner and give feedback using strength, question, idea",
+    "Prepare a 60-second talk: 'What AI did for me this week' using real examples"
+   ],
+   "lab": "Build a one-page toolkit: your top 3 tools, 10 saved prompts, your safe-use rules. Peer review in pairs.",
+   "examples": [
+    {
+     "label": "Toolkit prompt",
+     "text": "Help me design a one-page personal AI toolkit. I am a [role] in [place]. My main tasks are [tasks]. Suggest which types of AI tools I should use for each and give me 10 prompts."
+    },
+    {
+     "label": "Feedback prompt",
+     "text": "Review my toolkit below and tell me what is missing or unclear: [paste]"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Using one tool for everything",
+    "Leaving chats untitled and unsaved",
+    "Making the toolkit too long to use",
+    "Skipping the peer review"
+   ],
+   "quiz": [
+    {
+     "q": "How do you choose a tool?",
+     "a": "By the job, the accuracy needed and the privacy of the information."
+    },
+    {
+     "q": "Why keep a prompt master document?",
+     "a": "So you can reuse proven prompts quickly."
+    },
+    {
+     "q": "What goes in your toolkit?",
+     "a": "Top tools, ten prompts, safe rules and target tasks."
+    },
+    {
+     "q": "What are the three parts of good peer feedback?",
+     "a": "One strength, one question, one idea."
+    },
+    {
+     "q": "Why back up your work?",
+     "a": "Accounts and tools can change or be lost."
+    }
+   ],
+   "takeaways": [
+    "Match the tool to the task",
+    "Organise so you can find your work",
+    "Keep your toolkit short and practical",
+    "Explaining your work helps you learn"
+   ],
+   "glossary": [
+    {
+     "term": "Toolkit",
+     "meaning": "Your chosen tools, prompts and rules in one place."
+    },
+    {
+     "term": "Workflow",
+     "meaning": "The steps you follow to complete a task."
+    },
+    {
+     "term": "Peer review",
+     "meaning": "Feedback from a classmate."
+    },
+    {
+     "term": "Backup",
+     "meaning": "A saved copy of your work."
+    }
+   ],
+   "homework": "Prepare 60-second 'What AI did for me this week' talk."
+  }
+ },
+ {
+  "number": 6,
+  "week": 2,
+  "week_title": "AI for Everyday Productivity",
+  "week_goal": "Use AI to research, summarize, plan, learn and work faster in real life.",
+  "title": "Research and summarizing",
+  "content": {
+   "objectives": [
+    "Ask research questions that get useful answers",
+    "Summarize long documents into a clear one-page brief",
+    "Check sources before relying on information",
+    "Compare options and write a pros-and-cons brief"
+   ],
+   "intro": "Research used to mean hours in a library or scrolling through many websites. AI can speed up the first steps: understanding a topic, finding what to read, and summarizing. But research is only as good as its sources, so today you will learn to use AI as a guide while you stay in charge of the facts.",
+   "concepts": [
+    {
+     "heading": "Asking better research questions",
+     "text": "Start broad and then narrow. Begin with 'Explain [topic] simply and list the main questions people ask', then follow with specific questions about cost, rules, risks or steps. Tell the AI your purpose: are you deciding, learning or writing? Ask it to show different viewpoints and to say where experts disagree. If a topic is local, such as a Kenyan law, a county service or a school process, say so, and expect to verify details on the official website.",
+     "points": [
+      "Broad overview first, then specific follow-ups",
+      "State your purpose and local setting",
+      "Ask for different viewpoints"
+     ]
+    },
+    {
+     "heading": "Summarizing documents and articles",
+     "text": "Summaries save time when you control the output. Paste the text, or upload the file if your tool allows it, and request a format: five bullet points, a one-page brief, key dates and deadlines, or action items. Ask for a plain-language version of complicated text such as terms and conditions, loan agreements or government notices. Then ask 'what is missing from this summary?' and compare with the original for anything important.",
+     "points": [
+      "Specify the length and format of the summary",
+      "Ask for plain-language explanations",
+      "Skim the original for missing points"
+     ]
+    },
+    {
+     "heading": "Checking sources",
+     "text": "A good researcher always asks: who says so, and how do they know? Prefer official sources such as government websites, universities and established news organisations. Ask the AI for sources, then open each link yourself and confirm it exists and says what the AI claims. If two sources disagree, note both. For health, legal or money decisions, treat AI as a starting point and speak to a qualified professional.",
+     "points": [
+      "Open every source yourself",
+      "Prefer official and established sources",
+      "Verify high-stakes decisions with professionals"
+     ]
+    },
+    {
+     "heading": "Comparing options and deciding",
+     "text": "AI can help you structure a decision. Describe the options, your priorities and your limits, and ask for a table of pros, cons, costs and risks. Ask it to question you first so the advice fits your real situation. Remember that AI does not know your family, your savings or your local reality unless you say so, and the final choice is yours.",
+     "points": [
+      "List options, priorities and limits",
+      "Ask the AI to question you first",
+      "Use a table to compare"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose a real question (a course, loan, device, business idea, health service) and ask a broad overview prompt",
+    "Write five follow-up questions that narrow the topic and run them",
+    "Summarize three documents (a news article, a policy page and a product manual) into a 5-bullet summary each",
+    "Ask for sources and open each link; mark them verified, wrong or unreachable",
+    "Request a pros-and-cons table with costs and risks for two options",
+    "Combine everything into a one-page brief with sources listed and share it with a partner"
+   ],
+   "lab": "Summarize 3 documents (news article, policy page, product manual) into a 1-page brief with sources checked.",
+   "examples": [
+    {
+     "label": "Overview prompt",
+     "text": "Explain how [topic] works for a beginner in Kenya. List the five questions people most often ask and where I can verify the answers."
+    },
+    {
+     "label": "Summary prompt",
+     "text": "Summarize the text below into 5 bullets, list any deadlines or costs, and tell me what you are unsure about. [paste]"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Copying AI sources without opening them",
+    "Accepting a summary without scanning the original",
+    "Using AI alone for medical, legal or financial decisions",
+    "Asking only one broad question and stopping"
+   ],
+   "quiz": [
+    {
+     "q": "Why start broad and then narrow?",
+     "a": "Overview gives structure, follow-ups get specific, useful detail."
+    },
+    {
+     "q": "What should you do with a source the AI gives?",
+     "a": "Open it and confirm it exists and supports the claim."
+    },
+    {
+     "q": "Name two formats for a summary.",
+     "a": "For example five bullets, one-page brief, action list, plain-language version."
+    },
+    {
+     "q": "Which decisions need a professional?",
+     "a": "Health, legal and major money decisions."
+    },
+    {
+     "q": "Why tell the AI your purpose?",
+     "a": "So the answer fits what you need to do with it."
+    }
+   ],
+   "takeaways": [
+    "Broad to narrow questions",
+    "Summaries need a quick check against the original",
+    "Verify sources yourself",
+    "Final decision is yours"
+   ],
+   "glossary": [
+    {
+     "term": "Source",
+     "meaning": "Where information comes from."
+    },
+    {
+     "term": "Summary",
+     "meaning": "A shorter version of a longer text."
+    },
+    {
+     "term": "Verify",
+     "meaning": "Confirm using a reliable source."
+    },
+    {
+     "term": "Brief",
+     "meaning": "A short, structured report for a decision."
+    }
+   ],
+   "homework": "Research a decision you face (course, loan, device) and write a pros and cons brief."
+  }
+ },
+ {
+  "number": 7,
+  "week": 2,
+  "week_title": "AI for Everyday Productivity",
+  "week_goal": "Use AI to research, summarize, plan, learn and work faster in real life.",
+  "title": "Translation and language",
+  "content": {
+   "objectives": [
+    "Translate between English and Swahili and check the quality",
+    "Spot common AI translation mistakes",
+    "Create a bilingual customer message pack",
+    "Use AI as a conversation partner to practise a language"
+   ],
+   "intro": "Kenya is a multilingual country. People move between English, Swahili, Sheng and mother-tongue languages many times a day. AI can translate quickly and help you practise, but it makes mistakes, especially with local expressions, tone and less widely used languages. Today you will learn to use translation tools wisely.",
+   "concepts": [
+    {
+     "heading": "What AI does well and badly in language",
+     "text": "AI is usually strong in English and good in standard Swahili for everyday text. It is weaker with Sheng, slang, proverbs, humour and many Kenyan mother-tongue languages because there is less written data for it to learn from. Names, places and religious or cultural terms can also be mistranslated. For important text such as contracts, medical notices or legal papers, always have a fluent human check the translation.",
+     "points": [
+      "Strong: standard English and Swahili",
+      "Weak: Sheng, idioms, small languages, names",
+      "Humans must check important documents"
+     ]
+    },
+    {
+     "heading": "Translate, then back-translate",
+     "text": "A simple way to test a translation is to ask the AI to translate your text and then translate the result back into the original language without looking. If the meaning changed, something went wrong. Ask the AI to give two versions, a formal one and a casual one, and to explain any word it was unsure about. You can also ask for alternative words and the situations in which each is appropriate.",
+     "points": [
+      "Translate, then back-translate",
+      "Ask for formal and casual versions",
+      "Ask which words were uncertain"
+     ]
+    },
+    {
+     "heading": "Translating for work and business",
+     "text": "Many small businesses serve customers in both English and Swahili. AI can help write price lists, notices, WhatsApp replies and social media posts in both languages. State the audience, the tone and the context, for example a polite message to a new customer in Nairobi. Keep the sentences short, because short sentences translate more reliably. Save the approved messages so that your business sounds consistent.",
+     "points": [
+      "Short sentences translate better",
+      "Specify audience and tone",
+      "Save approved bilingual messages"
+     ]
+    },
+    {
+     "heading": "Practising a language with AI",
+     "text": "An assistant can act as a patient conversation partner. Tell it your level and the language you want to practise, ask it to speak slowly with simple words, correct your mistakes gently and explain them. Voice mode, if your tool has it, helps with pronunciation. Practise for ten minutes daily: small regular sessions work better than one long session. Remember to also practise with real people.",
+     "points": [
+      "Tell the AI your level",
+      "Ask for gentle corrections and explanations",
+      "Short daily sessions are best"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose five short texts (a notice, a price list, an apology, an instruction, a greeting) and translate each into Swahili or English",
+    "Back-translate each and mark where the meaning changed",
+    "Ask a classmate who speaks the language to check one translation and note the errors",
+    "Create a bilingual customer pack: welcome message, price list, opening hours, apology, thank-you",
+    "Have a 10-minute practice conversation in a language you are learning and record three corrections",
+    "Share your most useful bilingual message with the class"
+   ],
+   "lab": "Translate and back-translate 5 texts; mark errors; build a bilingual customer message pack.",
+   "examples": [
+    {
+     "label": "Translate and explain",
+     "text": "Translate this message to polite Swahili for a new customer. Then give me an English back-translation and note any words you were unsure about. [message]"
+    },
+    {
+     "label": "Practice",
+     "text": "Be my Swahili conversation partner. My level is beginner. Speak in short sentences, correct my mistakes after each reply and explain them briefly."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Trusting translation of legal or medical documents without checking",
+    "Using long, complicated sentences",
+    "Ignoring tone and politeness levels",
+    "Never practising with real speakers"
+   ],
+   "quiz": [
+    {
+     "q": "Which language types does AI usually translate less well?",
+     "a": "Slang, Sheng, idioms and smaller mother-tongue languages."
+    },
+    {
+     "q": "What is back-translation?",
+     "a": "Translating the result back to check if the meaning stayed the same."
+    },
+    {
+     "q": "Why keep sentences short?",
+     "a": "Short sentences are translated more accurately."
+    },
+    {
+     "q": "Who should check an important translated document?",
+     "a": "A fluent human speaker or professional."
+    },
+    {
+     "q": "How often should you practise?",
+     "a": "A little each day, around ten minutes."
+    }
+   ],
+   "takeaways": [
+    "Check translations, especially important ones",
+    "Back-translate to test meaning",
+    "Short sentences work best",
+    "Practise daily and with people"
+   ],
+   "glossary": [
+    {
+     "term": "Translation",
+     "meaning": "Changing text from one language to another."
+    },
+    {
+     "term": "Back-translation",
+     "meaning": "Translating a translation back to test it."
+    },
+    {
+     "term": "Idiom",
+     "meaning": "An expression whose meaning is not literal."
+    },
+    {
+     "term": "Register",
+     "meaning": "The level of formality in language."
+    }
+   ],
+   "homework": "Have a 10-minute practice conversation in a language you are learning."
+  }
+ },
+ {
+  "number": 8,
+  "week": 2,
+  "week_title": "AI for Everyday Productivity",
+  "week_goal": "Use AI to research, summarize, plan, learn and work faster in real life.",
+  "title": "AI for learning and study",
+  "content": {
+   "objectives": [
+    "Use AI as a personal tutor that explains and tests you",
+    "Create a study plan, flashcards and a quiz",
+    "Study honestly and avoid copying",
+    "Track your learning progress for three days"
+   ],
+   "intro": "Having a patient tutor available at any hour used to be a luxury. AI can explain a topic five different ways, quiz you and plan your revision. It will not learn for you. The students and workers who benefit most are those who make AI ask them questions rather than only give answers.",
+   "concepts": [
+    {
+     "heading": "AI as a tutor",
+     "text": "Tell the AI your level and the topic and ask it to explain with simple language, a local example and a short analogy. If you do not understand, say so and ask again in a different way. Then reverse the roles: explain the idea back in your own words and ask the AI to correct you. This is the most powerful trick because explaining forces you to understand. Ask for step-by-step working in maths and science so that you can learn the method, not just copy the answer.",
+     "points": [
+      "Explain in simple words with local examples",
+      "You explain back, AI corrects",
+      "Ask for steps, not only answers"
+     ]
+    },
+    {
+     "heading": "Study plans and active recall",
+     "text": "A good study plan has a deadline, a daily time limit and small tasks. Give the AI the subject, the exam date, your weak topics and the hours you have, and ask for a day-by-day plan. Studies show that testing yourself works better than re-reading. Ask the AI for quiz questions, flashcards and past-paper style questions, answer them without looking, and then check your answers.",
+     "points": [
+      "Plan with dates, hours and weak topics",
+      "Test yourself instead of re-reading",
+      "Review mistakes the next day"
+     ]
+    },
+    {
+     "heading": "Learning skills and careers",
+     "text": "Learning is not only for school. You can use the same approach to learn a trade skill, a certificate course, driving rules, computer skills or a business topic. Ask for a learning path from beginner to confident, with free resources and small projects. Choose one project, such as making a budget or a simple website, so you learn by doing.",
+     "points": [
+      "Ask for a learning path with projects",
+      "Practise by doing a real project",
+      "Use free and local resources too"
+     ]
+    },
+    {
+     "heading": "Using AI honestly in school and work",
+     "text": "Rules differ between schools, colleges and employers. Find out what is allowed. Using AI to understand, plan and check is usually acceptable; submitting AI-written work as your own where it is forbidden is cheating and also stops you from learning. Be ready to explain anything you hand in. If AI helped, say so when required. Your skill, not the AI's, is what you will be hired for.",
+     "points": [
+      "Know the rules of your school or employer",
+      "Use AI to learn, not to avoid learning",
+      "Be able to explain your work"
+     ]
+    }
+   ],
+   "steps": [
+    "Pick any topic you really need (a KCSE subject, a trade, a certificate, a language)",
+    "Ask the AI to explain it simply, then explain it back and get corrections",
+    "Generate a 7-day study plan with daily tasks that fit your real schedule",
+    "Create 10 flashcards and a 10-question quiz; take the quiz without help",
+    "Mark your quiz and ask the AI to explain every mistake in a new way",
+    "Start a three-day tracker: time studied, topics covered, quiz score each day"
+   ],
+   "lab": "Pick any topic (KCSE subject, a trade, a certification). Generate plan, flashcards and a 10-question quiz; take it.",
+   "examples": [
+    {
+     "label": "Tutor prompt",
+     "text": "Act as a patient tutor. I am in Form 3 learning [topic]. Explain it in simple words with a Kenyan example, then ask me 3 questions one at a time and correct me."
+    },
+    {
+     "label": "Plan prompt",
+     "text": "Make a 7-day plan to prepare for [exam/skill]. I have [hours] each day and I am weak in [topics]. Include a quiz on day 7."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Asking for answers and copying them",
+    "Skipping the self-test",
+    "Making unrealistic plans",
+    "Breaking school rules on AI use"
+   ],
+   "quiz": [
+    {
+     "q": "Why explain a topic back to the AI?",
+     "a": "Explaining reveals gaps and strengthens understanding."
+    },
+    {
+     "q": "What is active recall?",
+     "a": "Testing yourself from memory instead of re-reading."
+    },
+    {
+     "q": "What should a study plan include?",
+     "a": "Deadline, daily time, small tasks and weak topics."
+    },
+    {
+     "q": "Is submitting AI work as your own always allowed?",
+     "a": "No; follow the rules of your school or employer."
+    },
+    {
+     "q": "Why ask for steps in maths?",
+     "a": "To learn the method, not only get the answer."
+    }
+   ],
+   "takeaways": [
+    "Make AI ask you questions",
+    "Test yourself often",
+    "Plan with real hours",
+    "Use AI honestly"
+   ],
+   "glossary": [
+    {
+     "term": "Active recall",
+     "meaning": "Remembering without looking at notes."
+    },
+    {
+     "term": "Flashcard",
+     "meaning": "A card with a question on one side and the answer on the other."
+    },
+    {
+     "term": "Study plan",
+     "meaning": "A schedule of what to learn and when."
+    },
+    {
+     "term": "Analogy",
+     "meaning": "A comparison that makes an idea easier to understand."
+    }
+   ],
+   "homework": "Follow your study plan for 3 days and track results."
+  }
+ },
+ {
+  "number": 9,
+  "week": 2,
+  "week_title": "AI for Everyday Productivity",
+  "week_goal": "Use AI to research, summarize, plan, learn and work faster in real life.",
+  "title": "Spreadsheets and documents with AI",
+  "content": {
+   "objectives": [
+    "Use AI to write spreadsheet formulas and clean data",
+    "Build a budget sheet with a chart",
+    "Turn meeting notes into action lists",
+    "Create an invoice or schedule template"
+   ],
+   "intro": "Spreadsheets are among the most useful tools in business and home life, and many people avoid them because formulas look scary. AI can explain a formula in plain words, write it for you and fix errors. Today you will build something real: a budget you will actually use.",
+   "concepts": [
+    {
+     "heading": "Describing what you want to a spreadsheet",
+     "text": "You do not need to remember formula names. Describe your table: which column holds what, and what result you want. For example: 'Column A has dates, column B has categories, column C has amounts. Write a formula that totals the amounts for the category in cell F2.' Ask the AI to explain the formula so you learn, and test it with a few numbers you can check in your head before trusting it.",
+     "points": [
+      "Describe columns and the result",
+      "Ask for an explanation of every formula",
+      "Test with simple numbers"
+     ]
+    },
+    {
+     "heading": "Cleaning and organising data",
+     "text": "Messy lists are common: names with extra spaces, inconsistent spelling, dates in different styles, duplicate rows. Ask the AI how to clean them using spreadsheet tools such as sort, filter, remove duplicates and text functions. Always work on a copy of the original data. If you paste data into an AI chat, remove private details first.",
+     "points": [
+      "Work on a copy",
+      "Use sort, filter and remove duplicates",
+      "Remove private data before pasting"
+     ]
+    },
+    {
+     "heading": "Budgets, charts and simple analysis",
+     "text": "A basic budget has income, fixed costs such as rent, variable costs such as food and transport, savings and a monthly total. Ask AI to suggest categories that suit your life and to build the formulas for totals and the difference. Then create a chart, for example a pie chart of spending by category, and ask the AI to help you describe what the chart shows. The goal is a clear picture, not complicated maths.",
+     "points": [
+      "Income, fixed, variable, savings",
+      "Totals and difference by formula",
+      "Chart plus one sentence of insight"
+     ]
+    },
+    {
+     "heading": "Notes, actions and templates",
+     "text": "AI can turn messy meeting notes into a tidy list of decisions and actions with owners and deadlines. It can also produce templates: an invoice, a weekly schedule, a delivery log or a class timetable. Always review names, amounts and dates. Save templates in a folder so you can copy and reuse them.",
+     "points": [
+      "Notes to decisions, actions, owners, dates",
+      "Templates save time",
+      "Review amounts and dates carefully"
+     ]
+    }
+   ],
+   "steps": [
+    "Open a new spreadsheet and ask AI to suggest budget categories for your situation",
+    "Enter sample figures and ask AI for the formulas for totals and balance; check them manually",
+    "Add a chart and write a one-sentence summary of what it shows",
+    "Clean a messy list of 20 names or products using sort, filter and remove duplicates",
+    "Paste fake meeting notes and ask for actions with owners and deadlines",
+    "Create an invoice or weekly schedule template and save it in a folder named Templates"
+   ],
+   "lab": "Build a household or small business budget sheet with AI-generated formulas and a chart. Create an invoice template.",
+   "examples": [
+    {
+     "label": "Formula prompt",
+     "text": "I have a Google Sheet. Column A is date, B is category, C is amount. Write a formula to total March spending for the category in F2 and explain how it works."
+    },
+    {
+     "label": "Notes prompt",
+     "text": "Turn these notes into a table with columns Decision, Action, Owner, Deadline. Mark anything unclear. [paste notes]"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Trusting a formula without testing",
+    "Working on the only copy of your data",
+    "Sharing private customer data in prompts",
+    "Making the budget too complicated to keep updating"
+   ],
+   "quiz": [
+    {
+     "q": "How should you describe a formula request?",
+     "a": "State what each column holds and the result you want."
+    },
+    {
+     "q": "Why test formulas with simple numbers?",
+     "a": "So you can confirm the answer is correct."
+    },
+    {
+     "q": "What four groups are in a basic budget?",
+     "a": "Income, fixed costs, variable costs, savings."
+    },
+    {
+     "q": "Why work on a copy of data?",
+     "a": "To avoid destroying the original."
+    },
+    {
+     "q": "What should meeting actions include?",
+     "a": "Owner and deadline."
+    }
+   ],
+   "takeaways": [
+    "Describe your table clearly",
+    "Test every formula",
+    "Keep budgets simple",
+    "Save templates for reuse"
+   ],
+   "glossary": [
+    {
+     "term": "Formula",
+     "meaning": "An instruction that calculates a value in a spreadsheet."
+    },
+    {
+     "term": "Cell",
+     "meaning": "One box in a spreadsheet."
+    },
+    {
+     "term": "Template",
+     "meaning": "A ready-made file to copy and reuse."
+    },
+    {
+     "term": "Duplicate",
+     "meaning": "A repeated entry."
+    }
+   ],
+   "homework": "Track real spending for 3 days in your sheet."
+  }
+ },
+ {
+  "number": 10,
+  "week": 2,
+  "week_title": "AI for Everyday Productivity",
+  "week_goal": "Use AI to research, summarize, plan, learn and work faster in real life.",
+  "title": "Lab day: Plan Your Life Project",
+  "content": {
+   "objectives": [
+    "Combine several AI tools into one workflow",
+    "Audit five tasks for time saved with AI",
+    "Build a weekly planner and routine",
+    "Give a two-minute demo of your workflow"
+   ],
+   "intro": "This lab day connects the tools you have learned into a system for a real week of your life. The measure of success is simple: do you save time, and is the quality at least as good as before? You will measure both honestly.",
+   "concepts": [
+    {
+     "heading": "Where AI helps and where it does not",
+     "text": "Not every task benefits from AI. Good candidates are repetitive writing, planning, summarizing, translating and organizing. Poor candidates are tasks involving private or very sensitive information, tasks that need personal care such as a condolence message to a friend, and tasks where mistakes are very costly and cannot be checked. Looking at your week honestly shows where to start.",
+     "points": [
+      "Good: repetitive and structured tasks",
+      "Poor: private, personal or unverifiable tasks",
+      "Start small and measure"
+     ]
+    },
+    {
+     "heading": "The time audit",
+     "text": "Choose five regular tasks. Write down how long each takes without AI. Do them with AI and write the new time and a quality score from one to five. Include the time spent checking, because checking is part of the job. If AI does not save time or lowers quality, drop it for that task. Honest measurement stops you from believing hype.",
+     "points": [
+      "Time before and after, including checking",
+      "Score quality 1-5",
+      "Drop what does not help"
+     ]
+    },
+    {
+     "heading": "Designing a workflow",
+     "text": "A workflow is a repeatable chain: input, AI step, human check, output. For example: you collect notes, AI organises them, you correct, then you send. Write each step on paper and decide which are done by you and which by AI. A good workflow is simple enough to remember and has a check before anything leaves your hands.",
+     "points": [
+      "Input, AI step, human check, output",
+      "Write it down on one page",
+      "Always include a check"
+     ]
+    },
+    {
+     "heading": "Presenting your work",
+     "text": "Presenting is a skill that employers value. Keep a two-minute demo simple: the problem, what you did, the before and after times, and one lesson. Show the real screen if you can. Speak slowly and invite one question. Practising with a partner first makes a big difference.",
+     "points": [
+      "Problem, solution, results, lesson",
+      "Show the real thing",
+      "Practise with a partner"
+     ]
+    }
+   ],
+   "steps": [
+    "List 10 recurring tasks in your week and circle five to test",
+    "Record the time each takes without AI",
+    "Complete each with AI and record new time and a quality score",
+    "Build a weekly planner with AI: tasks, deadlines and a daily routine that fits your life",
+    "Draw your workflow on one page: input, AI step, check, output",
+    "Give a two-minute demo to a partner or the class and take one question"
+   ],
+   "lab": "Build a weekly planner, task list and reminder routine using AI. Time-audit 5 tasks before and after.",
+   "examples": [
+    {
+     "label": "Planner prompt",
+     "text": "I am a [role]. Here are my fixed commitments: [list]. Build a weekly plan with time for [goals]. Make it realistic and include two rest periods each day."
+    },
+    {
+     "label": "Audit prompt",
+     "text": "Here is my task list with times: [paste]. Which tasks are best suited for AI help and what is the safest way to do each?"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Using AI for everything without measuring",
+    "Forgetting the time spent checking",
+    "Building a plan with no rest",
+    "Reading from slides instead of speaking"
+   ],
+   "quiz": [
+    {
+     "q": "Name one good and one poor task for AI.",
+     "a": "Good: repetitive writing; poor: very private or unverifiable tasks."
+    },
+    {
+     "q": "What should the time audit include?",
+     "a": "Time before, time after including checking, and a quality score."
+    },
+    {
+     "q": "What are the four parts of a workflow?",
+     "a": "Input, AI step, human check, output."
+    },
+    {
+     "q": "What goes in a two-minute demo?",
+     "a": "Problem, solution, results and one lesson."
+    },
+    {
+     "q": "What do you do if AI lowers quality?",
+     "a": "Stop using it for that task."
+    }
+   ],
+   "takeaways": [
+    "Measure before believing",
+    "Always include a human check",
+    "Keep workflows simple",
+    "Present with clear results"
+   ],
+   "glossary": [
+    {
+     "term": "Workflow",
+     "meaning": "A repeatable chain of steps."
+    },
+    {
+     "term": "Audit",
+     "meaning": "A careful measurement and review."
+    },
+    {
+     "term": "Routine",
+     "meaning": "A set pattern of activities."
+    },
+    {
+     "term": "Demo",
+     "meaning": "A short live presentation of your work."
+    }
+   ],
+   "homework": "Prepare a 2-minute demo of your workflow."
+  }
+ },
+ {
+  "number": 11,
+  "week": 3,
+  "week_title": "Create and Earn: Content, Design and Small Business",
+  "week_goal": "Make professional content and business materials and discover simple ways to earn.",
+  "title": "AI image and design basics",
+  "content": {
+   "objectives": [
+    "Write image prompts that describe subject, style and mood",
+    "Design a poster and social media graphic in Canva",
+    "Use background removal, resizing and brand colours",
+    "Understand copyright and ethics for AI images"
+   ],
+   "intro": "Good design used to need expensive software and training. Today you will use AI image tools and Canva to make professional-looking posters and posts in minutes. You will also learn the design rules that make any poster work, because the AI cannot fix a poor plan.",
+   "concepts": [
+    {
+     "heading": "Writing image prompts",
+     "text": "An image prompt works like a short photo brief: subject, setting, style, lighting, mood, colours and what to avoid. For example: 'A friendly woman selling fresh vegetables at a bright market stall in Kenya, warm morning light, realistic photo style, no text.' Ask for simple pictures: AI often struggles with text inside images, hands and exact logos. Generate several versions and choose the best, then refine with specific changes.",
+     "points": [
+      "Subject, setting, style, light, mood",
+      "Say 'no text' and add text in Canva",
+      "Generate several versions and refine"
+     ]
+    },
+    {
+     "heading": "Design basics that always work",
+     "text": "Four rules make most designs look professional. First, one clear message: what is the single thing people should notice? Second, hierarchy: the biggest text is the headline, then details, then contact information. Third, contrast: dark text on a light background or the reverse, never similar colours. Fourth, space: leave breathing room and limit yourself to two fonts and three colours. A poster must be readable from a distance in three seconds.",
+     "points": [
+      "One message, clear hierarchy",
+      "Strong contrast and whitespace",
+      "Two fonts, three colours"
+     ]
+    },
+    {
+     "heading": "Working in Canva",
+     "text": "In Canva you can start from a template or a blank page, set the correct size for print or social media, add images, text and shapes, and use tools for removing backgrounds, resizing and suggesting layouts. Use your brand colours consistently by saving them in a brand kit. Download in the right format: PNG or JPG for sharing, PDF for printing. Check spelling and phone numbers very carefully before you publish or print.",
+     "points": [
+      "Choose the right size and template",
+      "Brand colours and fonts for consistency",
+      "PDF for print, PNG or JPG for sharing"
+     ]
+    },
+    {
+     "heading": "Copyright, honesty and respect",
+     "text": "Do not copy another artist's work or use brand logos you do not own. Check the licence of any image you download. Do not create pictures of real people doing things they did not do, and never create images meant to deceive, harass or embarrass. If an image is AI-generated and could be mistaken for a real photograph, say so when it matters, for example in news or advertising claims.",
+     "points": [
+      "Respect licences and artists",
+      "Never fake real people",
+      "Label AI images where honesty matters"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose a real or imaginary Ruiru business and write its one-sentence message",
+    "Write three image prompts, generate versions, and pick the best",
+    "Open Canva, select an A4 poster size and build the poster using the four design rules",
+    "Resize the poster into a social media square and a WhatsApp status",
+    "Remove the background from one image and test two colour combinations for contrast",
+    "Proofread all text and phone numbers, export a PDF and a PNG, and show a partner"
+   ],
+   "lab": "Design an event poster and a social media square for a real or imaginary Ruiru business.",
+   "examples": [
+    {
+     "label": "Image prompt",
+     "text": "A smiling tailor measuring a customer in a clean small shop in Kenya, soft daylight, realistic photo style, warm colours, no text."
+    },
+    {
+     "label": "Design prompt",
+     "text": "Suggest a layout, three colours and two fonts for an event poster for [event]. Explain the hierarchy of text."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Putting too much text on a poster",
+    "Low-contrast colours",
+    "Trying to get AI to write exact text inside images",
+    "Not proofreading phone numbers"
+   ],
+   "quiz": [
+    {
+     "q": "What are four parts of an image prompt?",
+     "a": "Subject, setting, style, lighting or mood."
+    },
+    {
+     "q": "What are the four design basics?",
+     "a": "One message, hierarchy, contrast, whitespace."
+    },
+    {
+     "q": "Which file format suits printing?",
+     "a": "PDF."
+    },
+    {
+     "q": "Why avoid text in AI images?",
+     "a": "AI often spells text wrongly; add text in Canva."
+    },
+    {
+     "q": "Name one ethical rule for AI images.",
+     "a": "Do not fake real people or deceive viewers."
+    }
+   ],
+   "takeaways": [
+    "Plan the message before designing",
+    "Use contrast and space",
+    "Check licences and ethics",
+    "Proofread everything"
+   ],
+   "glossary": [
+    {
+     "term": "Hierarchy",
+     "meaning": "Order of importance in a design."
+    },
+    {
+     "term": "Contrast",
+     "meaning": "Difference between colours that makes text readable."
+    },
+    {
+     "term": "Brand kit",
+     "meaning": "Saved colours, fonts and logos."
+    },
+    {
+     "term": "Licence",
+     "meaning": "Permission rules for using an image."
+    }
+   ],
+   "homework": "Redesign a flyer you have seen locally and compare."
+  }
+ },
+ {
+  "number": 12,
+  "week": 3,
+  "week_title": "Create and Earn: Content, Design and Small Business",
+  "week_goal": "Make professional content and business materials and discover simple ways to earn.",
+  "title": "Social media content",
+  "content": {
+   "objectives": [
+    "Generate content ideas, captions and hashtags",
+    "Plan a two-week content calendar",
+    "Write short video scripts",
+    "Create posts in English and Swahili for local audiences"
+   ],
+   "intro": "Businesses, churches, schools and groups all need to communicate on social media regularly. The hard part is consistency: knowing what to post and finding time. Today you will build a simple system to plan, write and publish content with AI as your assistant.",
+   "concepts": [
+    {
+     "heading": "Content pillars and ideas",
+     "text": "Do not start with 'what should I post today?'. Choose three or four content pillars, which are themes you will return to, such as educating customers, showing your products, sharing customer stories and special offers. Ask AI for twenty ideas per pillar based on your audience and place. Choose the best, discard the generic ones and add your own real photos and stories, because real content builds trust.",
+     "points": [
+      "Choose 3-4 content pillars",
+      "Ask for many ideas, select the best",
+      "Add real photos and local stories"
+     ]
+    },
+    {
+     "heading": "Captions, hashtags and calls to action",
+     "text": "A good caption has a hook in the first line, a useful or interesting middle, and one clear call to action such as 'Send us a message to order'. Ask AI for several versions and choose the one that sounds like you. Use a few relevant hashtags, not dozens. Keep the language of your audience in mind: short, friendly English, Swahili, or a mix if that is how your customers speak.",
+     "points": [
+      "Hook, value, one call to action",
+      "A few relevant hashtags",
+      "Match your audience's language"
+     ]
+    },
+    {
+     "heading": "Calendars and consistency",
+     "text": "Posting three times a week reliably beats posting ten times one week and nothing the next. Ask AI to create a two-week calendar with the day, the pillar, the idea and the format such as photo, reel or text. Prepare several posts in one sitting, a practice called batching. Review what worked after two weeks by looking at likes, comments and messages received, and do more of what works.",
+     "points": [
+      "Consistency beats volume",
+      "Batch your content",
+      "Review results and adjust"
+     ]
+    },
+    {
+     "heading": "Short video scripts",
+     "text": "Short videos work well for reaching new people. A simple structure is: a hook in the first three seconds, one useful point, and a final call to action. Ask AI to write a thirty-second script with the words to say and what to show on screen. Film on your phone in good light, speak clearly, add captions and keep it under forty-five seconds.",
+     "points": [
+      "Hook in three seconds",
+      "One idea per video",
+      "Add captions"
+     ]
+    }
+   ],
+   "steps": [
+    "Describe a business or group and choose three content pillars",
+    "Generate 20 ideas per pillar and shortlist 10 in total",
+    "Write captions in English and Swahili for six posts with a call to action each",
+    "Build a two-week calendar table with date, pillar, idea, format and caption",
+    "Write one 30-second video script and rehearse it",
+    "Peer review: check tone, spelling, honesty of claims and contact information"
+   ],
+   "lab": "Create a 2-week content calendar plus 6 finished posts for one business.",
+   "examples": [
+    {
+     "label": "Pillars prompt",
+     "text": "I run a [business] in [place] serving [audience]. Suggest 4 content pillars and 10 post ideas for each."
+    },
+    {
+     "label": "Caption prompt",
+     "text": "Write 3 short captions for this post idea in friendly English and Swahili with one call to action. Idea: [idea]"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Posting random content with no plan",
+    "Making claims you cannot prove",
+    "Using many hashtags that are unrelated",
+    "Never reviewing results"
+   ],
+   "quiz": [
+    {
+     "q": "What is a content pillar?",
+     "a": "A regular theme you post about."
+    },
+    {
+     "q": "What are the parts of a caption?",
+     "a": "Hook, value and a call to action."
+    },
+    {
+     "q": "Why batch content?",
+     "a": "To save time and stay consistent."
+    },
+    {
+     "q": "What is a good video structure?",
+     "a": "Hook, one point, call to action."
+    },
+    {
+     "q": "What should you review after two weeks?",
+     "a": "What got the most engagement and messages."
+    }
+   ],
+   "takeaways": [
+    "Plan pillars first",
+    "Consistency over volume",
+    "Real content builds trust",
+    "Review and improve"
+   ],
+   "glossary": [
+    {
+     "term": "Content pillar",
+     "meaning": "A main theme of your posts."
+    },
+    {
+     "term": "Call to action",
+     "meaning": "What you ask the reader to do next."
+    },
+    {
+     "term": "Batching",
+     "meaning": "Making many pieces at once."
+    },
+    {
+     "term": "Engagement",
+     "meaning": "Likes, comments, shares and messages."
+    }
+   ],
+   "homework": "Post 3 pieces for a real page (yours or a friend's)."
+  }
+ },
+ {
+  "number": 13,
+  "week": 3,
+  "week_title": "Create and Earn: Content, Design and Small Business",
+  "week_goal": "Make professional content and business materials and discover simple ways to earn.",
+  "title": "CVs, cover letters and job search",
+  "content": {
+   "objectives": [
+    "Tailor a CV to a specific job advert",
+    "Write a clear cover letter and LinkedIn summary",
+    "Practise interviews with AI as the interviewer",
+    "Apply for a real opportunity with confidence"
+   ],
+   "intro": "Finding work or a new opportunity is stressful, and many applicants are rejected because their CV does not match what the employer asked. Today you will use AI to make your application clear, honest and targeted, and to practise for interviews until you feel prepared.",
+   "concepts": [
+    {
+     "heading": "A CV that matches the job",
+     "text": "Read the job advert and underline the key requirements. Then tell the AI your real experience, skills and achievements and ask it to organise them to match the advert. Use simple headings: contact details, profile, skills, experience, education, referees. Describe achievements with numbers when you can, such as 'served 40 customers daily' or 'raised sales by 15 percent'. Never invent experience: employers check, and interviews quickly reveal it.",
+     "points": [
+      "Match the advert's keywords honestly",
+      "Use achievements and numbers",
+      "Keep to one or two pages"
+     ]
+    },
+    {
+     "heading": "Cover letters and LinkedIn",
+     "text": "A cover letter answers three questions: who are you, why this job, and why should we choose you. Keep it to about 250 words. Give the AI the advert, your CV and the company name and ask for a first draft, then add a personal sentence about why you want this role. A LinkedIn summary is similar but written for the general public: your skills, what you are looking for and a way to contact you.",
+     "points": [
+      "Who, why this job, why you",
+      "About 250 words",
+      "A personal sentence makes it yours"
+     ]
+    },
+    {
+     "heading": "Interview practice",
+     "text": "Ask the AI to act as an interviewer for a specific role, one question at a time, waiting for your answer and then giving honest feedback. Practise common questions: tell me about yourself, strengths and weaknesses, a time you solved a problem, why should we hire you. Use the STAR method for stories: Situation, Task, Action, Result. Practise aloud, because speaking is different from writing.",
+     "points": [
+      "Practise aloud with AI as interviewer",
+      "Use STAR for stories",
+      "Ask for feedback and a score"
+     ]
+    },
+    {
+     "heading": "Staying safe while job hunting",
+     "text": "Fake job offers are common. Real employers do not ask you to pay for an interview, a uniform or a visa before you are hired. Be careful when asked to send ID copies or bank details early. Check that the company exists, look for official contacts, and ask a trusted person before sending money or documents. If it sounds too good to be true, it usually is.",
+     "points": [
+      "Never pay to get a job",
+      "Verify the company and contacts",
+      "Share ID details only when appropriate"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose a real job advert and underline the top five requirements",
+    "Write your honest experience and achievements in plain notes",
+    "Ask AI to build a one-page CV targeted to the advert, then correct anything untrue or unclear",
+    "Produce a 250-word cover letter and a short LinkedIn summary",
+    "Run a 10-question mock interview and write the feedback you received",
+    "Use STAR to prepare three stories from your own life and practise them aloud with a partner"
+   ],
+   "lab": "Produce a tailored CV, cover letter and run a 10-question mock interview, recorded in notes.",
+   "examples": [
+    {
+     "label": "CV prompt",
+     "text": "Here is a job advert: [paste]. Here are my real notes: [paste]. Create a one-page CV in this order: profile, skills, experience, education. Do not add anything I did not mention."
+    },
+    {
+     "label": "Interview prompt",
+     "text": "Act as an interviewer for [role]. Ask one question at a time, wait for my answer, then give feedback and a score out of 10."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Inventing experience or qualifications",
+    "Sending the same CV for every job",
+    "Writing a cover letter that repeats the CV",
+    "Falling for job offers that ask for payment"
+   ],
+   "quiz": [
+    {
+     "q": "Why tailor a CV?",
+     "a": "To show you match the specific requirements."
+    },
+    {
+     "q": "What three questions does a cover letter answer?",
+     "a": "Who you are, why this job, why you."
+    },
+    {
+     "q": "What does STAR stand for?",
+     "a": "Situation, Task, Action, Result."
+    },
+    {
+     "q": "Should you pay to get an interview?",
+     "a": "No; that is a scam sign."
+    },
+    {
+     "q": "Why must you avoid false claims?",
+     "a": "They can be checked and cost you the job and reputation."
+    }
+   ],
+   "takeaways": [
+    "Match the advert honestly",
+    "Use numbers for achievements",
+    "Practise interviews aloud",
+    "Beware job scams"
+   ],
+   "glossary": [
+    {
+     "term": "CV",
+     "meaning": "A summary of your education, skills and experience."
+    },
+    {
+     "term": "STAR",
+     "meaning": "Method for telling a story: Situation, Task, Action, Result."
+    },
+    {
+     "term": "Referee",
+     "meaning": "Someone who can vouch for your character or work."
+    },
+    {
+     "term": "Cover letter",
+     "meaning": "A letter introducing yourself for a specific job."
+    }
+   ],
+   "homework": "Apply to one real opportunity using your new CV."
+  }
+ },
+ {
+  "number": 14,
+  "week": 3,
+  "week_title": "Create and Earn: Content, Design and Small Business",
+  "week_goal": "Make professional content and business materials and discover simple ways to earn.",
+  "title": "AI for small business",
+  "content": {
+   "objectives": [
+    "Write product descriptions and a WhatsApp Business catalogue",
+    "Create quick replies and customer messages",
+    "Do simple market and competitor research",
+    "Plan a basic promotion"
+   ],
+   "intro": "Small businesses are the backbone of Ruiru and Kenya. AI will not run your shop, but it can write, translate, organise and plan so that you spend more time with customers. Today you will set up the basic communication of a small business.",
+   "concepts": [
+    {
+     "heading": "Describing what you sell",
+     "text": "A good product description answers the customer's questions before they ask: what is it, who is it for, what makes it good, what does it cost and how do I order. Give the AI the product facts and ask for a short, honest description with benefits. Never claim something untrue such as 'cures disease' or 'guaranteed results'. Photos with good light matter as much as words.",
+     "points": [
+      "What, who for, benefit, price, how to order",
+      "Honest claims only",
+      "Good photos matter"
+     ]
+    },
+    {
+     "heading": "WhatsApp Business catalogue and quick replies",
+     "text": "WhatsApp Business lets you create a catalogue with product pictures, prices and descriptions, a business profile, and quick replies that save you from retyping common answers such as prices, location and opening hours. Ask AI to draft a greeting message, an away message and short replies for common questions in English and Swahili. Keep a polite, warm and clear tone, and always confirm orders in writing.",
+     "points": [
+      "Catalogue, profile, quick replies",
+      "Greeting and away messages",
+      "Confirm orders in writing"
+     ]
+    },
+    {
+     "heading": "Simple market research",
+     "text": "Before pricing or promotion, understand your customers and competitors. Ask AI to list the likely needs of your customers and the questions they ask, then check this by talking to real customers. Look at what nearby competitors offer and how they price. Use this to decide how you are different: cheaper, faster, better quality, more convenient or friendlier. AI suggestions are a start; local knowledge is your advantage.",
+     "points": [
+      "List customer needs, then verify with real customers",
+      "Compare competitors honestly",
+      "Decide how you are different"
+     ]
+    },
+    {
+     "heading": "Promotions and customer care",
+     "text": "A promotion needs an offer, a time limit and a way to respond. For example: 'Buy two get one free this weekend, order on WhatsApp'. Test the message with five real contacts before sending to many. After every sale, thank the customer and ask for feedback or a referral. Keep a simple record of customers and orders in a spreadsheet, and respect their privacy: do not share numbers without permission.",
+     "points": [
+      "Offer, deadline, how to respond",
+      "Test before sending widely",
+      "Thank customers and protect their data"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose a product or service and write five facts about it",
+    "Generate a short honest description for the product and three alternatives",
+    "Draft a WhatsApp Business greeting, away message and five quick replies in English and Swahili",
+    "Do research: list customer needs and three competitors, then validate one point by asking a real person",
+    "Create a weekend promotion message and test it on five contacts",
+    "Record the feedback and improve the message"
+   ],
+   "lab": "Set up a WhatsApp Business catalog draft with 5 products, auto-reply and a promotion message.",
+   "examples": [
+    {
+     "label": "Product prompt",
+     "text": "Write a short, honest product description for [product] priced at [price] for customers in [place]. Mention [two benefits] and how to order on WhatsApp."
+    },
+    {
+     "label": "Quick replies prompt",
+     "text": "Create 5 quick replies for a [business]: price, location, hours, delivery, payment. Use friendly English and Swahili."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Exaggerating claims",
+    "Sending promotions to people who did not agree to receive them",
+    "Not confirming orders in writing",
+    "Copying competitors without a difference"
+   ],
+   "quiz": [
+    {
+     "q": "What should a product description include?",
+     "a": "What it is, who it is for, benefit, price, how to order."
+    },
+    {
+     "q": "What are quick replies for?",
+     "a": "Answering common questions quickly and consistently."
+    },
+    {
+     "q": "How do you check AI market research?",
+     "a": "Talk to real customers and observe competitors."
+    },
+    {
+     "q": "What three parts make a promotion?",
+     "a": "Offer, time limit, and how to respond."
+    },
+    {
+     "q": "Why protect customer numbers?",
+     "a": "Privacy and trust."
+    }
+   ],
+   "takeaways": [
+    "Honest descriptions sell",
+    "Quick replies save time",
+    "Verify research locally",
+    "Test promotions first"
+   ],
+   "glossary": [
+    {
+     "term": "Catalogue",
+     "meaning": "A list of products with prices and pictures."
+    },
+    {
+     "term": "Quick reply",
+     "meaning": "A saved message you can insert in chat."
+    },
+    {
+     "term": "Competitor",
+     "meaning": "A business selling similar things nearby."
+    },
+    {
+     "term": "Promotion",
+     "meaning": "A limited offer to attract customers."
+    }
+   ],
+   "homework": "Test your promotion message with 5 real contacts."
+  }
+ },
+ {
+  "number": 15,
+  "week": 3,
+  "week_title": "Create and Earn: Content, Design and Small Business",
+  "week_goal": "Make professional content and business materials and discover simple ways to earn.",
+  "title": "Lab day: Build a Business-in-a-Box",
+  "content": {
+   "objectives": [
+    "Combine branding, content and customer messages into one pack",
+    "Cost and price a service or product",
+    "Create a one-page business plan summary",
+    "Deliver a 90-second pitch"
+   ],
+   "intro": "This lab day brings the week together. You will build a complete starter pack for a business idea, real or imagined, and practise pitching it. Many successful businesses started with a simple plan, a clear message and consistent communication.",
+   "concepts": [
+    {
+     "heading": "Name, promise and customers",
+     "text": "Start with three simple questions: who is it for, what problem does it solve, and why would they choose you? Write a one-sentence promise. Choose a name that is easy to say, spell and remember, and check that nobody nearby is already using it. Pick two or three brand colours and keep them everywhere. AI can suggest names and slogans, but you decide, and you should test them on real people.",
+     "points": [
+      "Customer, problem, promise",
+      "Easy name and consistent colours",
+      "Test with real people"
+     ]
+    },
+    {
+     "heading": "Costs and pricing",
+     "text": "Pricing starts with costs: what does it cost to make or buy one item, plus transport, packaging, rent, electricity, airtime and your own time. Add a profit that makes the business worth doing and compare it with what customers will accept. AI can build a cost table and test different prices, but you must enter real numbers. Do not guess; ask suppliers and check shop prices.",
+     "points": [
+      "List all costs per item",
+      "Add a fair profit",
+      "Compare with customer reality"
+     ]
+    },
+    {
+     "heading": "The one-page plan",
+     "text": "A one-page plan keeps you focused: the idea, customers, how you reach them, price, monthly costs, expected sales and the first three actions. Ask AI to organise your notes into this layout and then check every number. A plan is a living document: update it as you learn.",
+     "points": [
+      "Idea, customers, channels",
+      "Costs, price, sales",
+      "Three first actions"
+     ]
+    },
+    {
+     "heading": "Pitching in 90 seconds",
+     "text": "A short pitch has four parts: the problem, your solution, why you, and the next step you want. Practise out loud, standing up, and time yourself. Use simple words and look at your audience. Expect questions and prepare answers for the three most likely: price, competition and why now. Confidence grows with repetition.",
+     "points": [
+      "Problem, solution, why you, next step",
+      "Practise aloud and time yourself",
+      "Prepare for three likely questions"
+     ]
+    }
+   ],
+   "steps": [
+    "Define customer, problem and one-sentence promise for your business idea",
+    "Pick a name, colours and write a short slogan; test on three people",
+    "Create a poster, five social posts and a price list using the tools learned this week",
+    "Build a cost table with real prices and calculate a profit-based price",
+    "Write the one-page plan and check every number",
+    "Practise and deliver a 90-second pitch and collect feedback"
+   ],
+   "lab": "Create a complete starter pack for a business idea: name, logo concept, poster, 5 posts, price list, customer messages.",
+   "examples": [
+    {
+     "label": "Plan prompt",
+     "text": "Organise my notes into a one-page business plan with sections: idea, customers, how we reach them, price, monthly costs, expected sales, first three actions. Notes: [paste]"
+    },
+    {
+     "label": "Pitch prompt",
+     "text": "Turn this plan into a 90-second pitch with a problem, solution, why me and a clear ask. Use simple words."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Pricing without counting all costs",
+    "Choosing a hard name to spell",
+    "Making a plan too long to use",
+    "Memorising a pitch word for word"
+   ],
+   "quiz": [
+    {
+     "q": "What are the three starter questions?",
+     "a": "Who is it for, what problem, why you."
+    },
+    {
+     "q": "What costs belong in pricing?",
+     "a": "Item cost, transport, packaging, rent, utilities, airtime, your time."
+    },
+    {
+     "q": "What goes on a one-page plan?",
+     "a": "Idea, customers, channels, price, costs, sales, first actions."
+    },
+    {
+     "q": "What are the four parts of a pitch?",
+     "a": "Problem, solution, why you, next step."
+    },
+    {
+     "q": "Why test names with real people?",
+     "a": "To check they are easy to say and understand."
+    }
+   ],
+   "takeaways": [
+    "Keep the promise simple",
+    "Use real numbers",
+    "Short plans get used",
+    "Practise your pitch aloud"
+   ],
+   "glossary": [
+    {
+     "term": "Pitch",
+     "meaning": "A short talk that persuades."
+    },
+    {
+     "term": "Profit",
+     "meaning": "Money left after all costs."
+    },
+    {
+     "term": "Slogan",
+     "meaning": "A short memorable phrase about a brand."
+    },
+    {
+     "term": "Business plan",
+     "meaning": "A document describing how a business will work."
+    }
+   ],
+   "homework": "Pitch practice: 90 seconds."
+  }
+ },
+ {
+  "number": 16,
+  "week": 4,
+  "week_title": "Apply: Build Your Own AI Assistant and Demo Day",
+  "week_goal": "Customize an AI assistant, complete a real project and present with confidence.",
+  "title": "Your custom AI assistant",
+  "content": {
+   "objectives": [
+    "Explain what a custom AI assistant is",
+    "Write clear instructions: purpose, tone, rules and examples",
+    "Add your own knowledge notes to the assistant",
+    "Test and improve the assistant with real questions"
+   ],
+   "intro": "Until now you have typed a new prompt each time. Many AI tools let you save a set of standing instructions so that the assistant already knows its job, its tone and its rules. Today you will create your own helper for a real need, such as a study buddy, a shop assistant or a job coach.",
+   "concepts": [
+    {
+     "heading": "What is a custom assistant?",
+     "text": "A custom assistant is an AI chat set up with permanent instructions and sometimes your own documents. Depending on the tool, it may be called custom instructions, a project, a GPT or a Gem. It does not become a new AI; it simply starts every conversation with your rules. This saves time and gives consistent results, which is why businesses and teachers use them.",
+     "points": [
+      "Standing instructions saved in advance",
+      "Names differ by tool",
+      "Consistent and reusable"
+     ]
+    },
+    {
+     "heading": "Writing good instructions",
+     "text": "Good instructions cover five things. Purpose: what is the assistant for? Audience: who will use it? Tone: how should it speak? Rules: what must it always or never do, for example never invent prices, always ask a clarifying question when information is missing, answer in the language the user writes in. Examples: show one or two samples of a perfect answer. Keep the instructions clear and short; long confusing instructions are followed less well.",
+     "points": [
+      "Purpose, audience, tone, rules, examples",
+      "Say what to do when unsure",
+      "Keep it clear and short"
+     ]
+    },
+    {
+     "heading": "Adding knowledge",
+     "text": "Upload or paste information the assistant should rely on, such as your price list, opening hours, course notes or frequently asked questions. Tell it to use this information first and to say 'I do not know, please contact us' when the answer is not there. Never upload private data or documents you do not have the right to share. Keep the knowledge up to date, because old prices cause real problems.",
+     "points": [
+      "Use your own accurate information",
+      "Tell it what to do when it does not know",
+      "No private or unauthorised data"
+     ]
+    },
+    {
+     "heading": "Testing and improving",
+     "text": "Test with the questions real users ask, including difficult and silly ones. Try to break it: ask for things outside its job, ask in Swahili, give incomplete information. Write down each failure and change the instructions to fix it. Test again. An assistant is good only after many rounds of testing with real people.",
+     "points": [
+      "Test with real and tricky questions",
+      "Fix instructions after each failure",
+      "Retest and ask others to try"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose a real need and write one sentence describing the assistant's job",
+    "Draft its instructions using purpose, audience, tone, rules and two examples",
+    "Create the assistant in your chosen tool and add a short knowledge document",
+    "Ask it ten normal questions and five difficult ones; record results in a table",
+    "Improve the instructions to fix the three biggest problems",
+    "Ask a classmate to test it for five minutes and note what surprised them"
+   ],
+   "lab": "Build an assistant for a real need (study buddy, shop helper, church or community notice writer, job coach).",
+   "examples": [
+    {
+     "label": "Instruction draft",
+     "text": "You are a friendly study assistant for Form 4 students in Kenya. Explain simply, give a local example, then ask one question to check understanding. If you are not sure of a fact, say so. Never write full essays for students to submit."
+    },
+    {
+     "label": "Rule for unknown",
+     "text": "If the answer is not in the provided notes, say you do not know and suggest contacting the shop on the number provided."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Writing vague instructions like 'be helpful'",
+    "Uploading outdated or private information",
+    "Testing only with easy questions",
+    "Never updating the knowledge"
+   ],
+   "quiz": [
+    {
+     "q": "What is a custom assistant?",
+     "a": "An AI chat set up with saved instructions and sometimes your own notes."
+    },
+    {
+     "q": "List the five parts of good instructions.",
+     "a": "Purpose, audience, tone, rules, examples."
+    },
+    {
+     "q": "What should it do when it does not know?",
+     "a": "Say so and suggest where to get help."
+    },
+    {
+     "q": "Why test with tricky questions?",
+     "a": "To find failures before real users do."
+    },
+    {
+     "q": "Why keep knowledge updated?",
+     "a": "Wrong information causes real problems."
+    }
+   ],
+   "takeaways": [
+    "Instructions give consistent behaviour",
+    "Cover purpose, audience, tone, rules, examples",
+    "Test, fix, retest",
+    "Keep knowledge accurate"
+   ],
+   "glossary": [
+    {
+     "term": "Custom instructions",
+     "meaning": "Saved rules that shape how an AI responds."
+    },
+    {
+     "term": "Knowledge file",
+     "meaning": "Information you give the assistant to use."
+    },
+    {
+     "term": "Edge case",
+     "meaning": "An unusual situation that tests a system."
+    },
+    {
+     "term": "Version",
+     "meaning": "A saved stage of your work."
+    }
+   ],
+   "homework": "Collect 5 test conversations and note improvements."
+  }
+ },
+ {
+  "number": 17,
+  "week": 4,
+  "week_title": "Apply: Build Your Own AI Assistant and Demo Day",
+  "week_goal": "Customize an AI assistant, complete a real project and present with confidence.",
+  "title": "Mini project sprint 1: plan and build",
+  "content": {
+   "objectives": [
+    "Choose a real problem and define the user",
+    "Complete a project canvas",
+    "Build the first working version",
+    "Check progress with mentors at regular intervals"
+   ],
+   "intro": "The mini project is where you prove to yourself that you can use AI to solve a real problem. It does not need to be big. A small, finished and useful project is better than a big idea that is never completed. Today you plan and build the first version.",
+   "concepts": [
+    {
+     "heading": "Choosing a good problem",
+     "text": "A good project is real, small and measurable. Look for a problem you or someone you know faces: a student who needs revision help, a shop that needs messages, a family that wants a budget, a church that needs notices written. Ask yourself: who exactly has this problem, how often, and what would success look like? If you cannot name a real person who would use it, choose another problem.",
+     "points": [
+      "Real, small, measurable",
+      "Name the person who will use it",
+      "Define success before starting"
+     ]
+    },
+    {
+     "heading": "The project canvas",
+     "text": "A project canvas is one page that answers: Who is the user? What is the problem? How will AI help? What will I produce? What could go wrong? How will I know it works? Writing it takes ten minutes and saves hours of confusion. Share it with a mentor before building and keep it visible while you work.",
+     "points": [
+      "User, problem, AI help, output, risks, success",
+      "One page only",
+      "Share before building"
+     ]
+    },
+    {
+     "heading": "Build the first version fast",
+     "text": "Your first version should be simple and ugly but working. Use the tools you already know: a custom assistant, a set of prompts, a poster set or a spreadsheet. Do the core job first and leave decoration for later. Set a timer for each task. When stuck for more than ten minutes, ask a classmate or a mentor.",
+     "points": [
+      "Simple first, polish later",
+      "Use tools you already know",
+      "Ask for help after ten minutes"
+     ]
+    },
+    {
+     "heading": "Staying on track",
+     "text": "Mentors will check in every thirty minutes. Be ready to say what you completed, what you are doing next and what is blocking you. Keep a visible to-do list and tick things off. If the plan is too big, remove features: finishing a smaller project is better than abandoning a big one.",
+     "points": [
+      "Report done, next, blocked",
+      "Keep a visible to-do list",
+      "Cut scope if needed"
+     ]
+    }
+   ],
+   "steps": [
+    "Write three possible problems and choose one using the real, small, measurable test",
+    "Complete the project canvas on paper or in a document",
+    "List the five tasks needed to build the first version",
+    "Build the core of the project; stop for mentor check-ins every 30 minutes",
+    "Write down what is working and what is not",
+    "Ask one real user to try it and note their reaction"
+   ],
+   "lab": "Write the project canvas and build the first version with mentor check-ins every 30 minutes.",
+   "examples": [
+    {
+     "label": "Canvas prompt",
+     "text": "Help me complete a one-page project canvas for this idea: [idea]. Ask me questions about the user, the problem, how AI will help, risks and how I will measure success."
+    },
+    {
+     "label": "Scope prompt",
+     "text": "My project plan is below. Suggest what I should remove to finish it in 3 hours. [paste]"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Choosing a problem nobody has",
+    "Starting without a plan",
+    "Building too many features",
+    "Hiding when you are stuck"
+   ],
+   "quiz": [
+    {
+     "q": "What makes a good project?",
+     "a": "Real, small and measurable."
+    },
+    {
+     "q": "What does a canvas include?",
+     "a": "User, problem, AI help, output, risks, success measure."
+    },
+    {
+     "q": "What should the first version be?",
+     "a": "Simple but working."
+    },
+    {
+     "q": "When should you ask for help?",
+     "a": "After about ten minutes of being stuck."
+    },
+    {
+     "q": "What do you report at check-ins?",
+     "a": "Done, next, blocked."
+    }
+   ],
+   "takeaways": [
+    "Real user, real problem",
+    "Plan on one page",
+    "Working beats perfect",
+    "Cut scope to finish"
+   ],
+   "glossary": [
+    {
+     "term": "Canvas",
+     "meaning": "A one-page project plan."
+    },
+    {
+     "term": "Scope",
+     "meaning": "What is included in a project."
+    },
+    {
+     "term": "Prototype",
+     "meaning": "An early working version."
+    },
+    {
+     "term": "Blocker",
+     "meaning": "Something stopping progress."
+    }
+   ],
+   "homework": "Gather feedback from one real user."
+  }
+ },
+ {
+  "number": 18,
+  "week": 4,
+  "week_title": "Apply: Build Your Own AI Assistant and Demo Day",
+  "week_goal": "Customize an AI assistant, complete a real project and present with confidence.",
+  "title": "Mini project sprint 2: improve and test",
+  "content": {
+   "objectives": [
+    "Gather feedback from real users and act on it",
+    "Use a quality checklist for accuracy, tone, safety and usefulness",
+    "Improve your project in focused rounds",
+    "Prepare your demo script"
+   ],
+   "intro": "A project becomes good through testing and improving. Today you put your work in front of real people, watch carefully and fix what you find. This is the same cycle professionals use, and it is humbling and useful.",
+   "concepts": [
+    {
+     "heading": "How to test with users",
+     "text": "Ask a classmate or friend to use your project without your help. Watch silently and note where they hesitate, misunderstand or smile. Afterwards ask: what was easy, what was confusing, what would you change? Do not defend your work during testing; just listen. Three honest testers will reveal most of the serious problems.",
+     "points": [
+      "Let them try without help",
+      "Watch and listen, do not defend",
+      "Three testers find most problems"
+     ]
+    },
+    {
+     "heading": "The quality checklist",
+     "text": "Check four things. Accuracy: are the facts and numbers correct? Tone: does it sound right for the user? Safety: does it protect private data and avoid harmful advice? Usefulness: does it actually solve the problem? Mark each as pass, partly or fail and fix the fails first. Check with the Safe AI Rules you wrote in week one.",
+     "points": [
+      "Accuracy, tone, safety, usefulness",
+      "Fix fails first",
+      "Review your Safe AI Rules"
+     ]
+    },
+    {
+     "heading": "Improving in rounds",
+     "text": "Do not try to fix everything at once. List the issues, order them by importance, and fix the top three. Then test again. Two or three short rounds produce a better result than one long round. Keep a record of what you changed and why, because it becomes part of your portfolio story.",
+     "points": [
+      "List, rank, fix top three",
+      "Repeat the test",
+      "Record what changed"
+     ]
+    },
+    {
+     "heading": "Preparing your demo",
+     "text": "A strong demo shows, not just tells. Plan three minutes: one minute on the problem and user, one minute showing it working, one minute on what you learned and what is next. Prepare a backup in case the internet fails: screenshots or a short recording. Rehearse twice with a timer.",
+     "points": [
+      "Problem, show it working, lessons",
+      "Have a backup plan",
+      "Rehearse with a timer"
+     ]
+    }
+   ],
+   "steps": [
+    "Ask three classmates to test your project and record their comments in a table",
+    "Score your project on accuracy, tone, safety and usefulness",
+    "Rank the problems and fix the top three",
+    "Test again with one new person",
+    "Write a three-minute demo script and prepare backup screenshots",
+    "Rehearse your demo twice and ask for timing feedback"
+   ],
+   "lab": "Test with 3 classmates, improve, and complete the quality checklist.",
+   "examples": [
+    {
+     "label": "Feedback prompt",
+     "text": "Here are 5 comments from testers: [paste]. Group them by theme and rank the most important issues to fix."
+    },
+    {
+     "label": "Checklist prompt",
+     "text": "Review my project against this checklist: accuracy, tone, safety, usefulness. Tell me honestly what could fail."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Explaining and defending during tests",
+    "Fixing small things before big ones",
+    "Skipping a backup for the demo",
+    "Not rehearsing"
+   ],
+   "quiz": [
+    {
+     "q": "Why not help during user testing?",
+     "a": "You need to see where real users get stuck."
+    },
+    {
+     "q": "What four things are on the quality checklist?",
+     "a": "Accuracy, tone, safety, usefulness."
+    },
+    {
+     "q": "How many problems do you fix per round?",
+     "a": "The top three or so."
+    },
+    {
+     "q": "What should a backup for a demo be?",
+     "a": "Screenshots or a recording."
+    },
+    {
+     "q": "How long should a demo script be?",
+     "a": "About three minutes."
+    }
+   ],
+   "takeaways": [
+    "Listen to users",
+    "Use the checklist",
+    "Improve in rounds",
+    "Prepare a backup"
+   ],
+   "glossary": [
+    {
+     "term": "Feedback",
+     "meaning": "Comments that help you improve."
+    },
+    {
+     "term": "Iteration",
+     "meaning": "Repeated cycles of testing and improving."
+    },
+    {
+     "term": "Checklist",
+     "meaning": "A list of items to check."
+    },
+    {
+     "term": "Rehearsal",
+     "meaning": "Practice before a performance."
+    }
+   ],
+   "homework": "Prepare slides or a demo script."
+  }
+ },
+ {
+  "number": 19,
+  "week": 4,
+  "week_title": "Apply: Build Your Own AI Assistant and Demo Day",
+  "week_goal": "Customize an AI assistant, complete a real project and present with confidence.",
+  "title": "Portfolio and next steps",
+  "content": {
+   "objectives": [
+    "Assemble a portfolio of your best work",
+    "Write short descriptions of each piece",
+    "Describe your new skills on a CV and LinkedIn",
+    "Choose your next learning steps"
+   ],
+   "intro": "You have made many things in three weeks. A portfolio turns them into proof of your skills. Employers, clients and customers trust what they can see. Today you select your best work, describe it clearly and plan how to keep growing.",
+   "concepts": [
+    {
+     "heading": "Choosing your best eight pieces",
+     "text": "Quality matters more than quantity. Choose eight pieces that show different skills: writing, research, a study plan, a spreadsheet, a poster, a social media set, a CV, a business pack and your mini project. For each piece, ask: is it finished, is it correct and would I be proud to show it? Improve the weakest items or leave them out.",
+     "points": [
+      "Eight strong pieces",
+      "Show variety",
+      "Finish and proofread"
+     ]
+    },
+    {
+     "heading": "Describing your work",
+     "text": "Next to each piece write three or four lines: the problem or goal, what you did, which tools you used and the result. Use simple, honest language. If the work was for a real person or business, mention it with their permission. Remove private information from every sample before sharing.",
+     "points": [
+      "Problem, what you did, tools, result",
+      "Simple honest language",
+      "Remove private details"
+     ]
+    },
+    {
+     "heading": "Presenting your skills",
+     "text": "Add a line to your CV and LinkedIn: 'Practical AI skills: writing, research, content creation, spreadsheets and customer communication using ChatGPT, Gemini, Claude and Canva'. Give examples, not just a list of tools. Share your portfolio with family, friends and potential clients so they know what you can do.",
+     "points": [
+      "Examples beat tool lists",
+      "Update CV and LinkedIn",
+      "Share your portfolio"
+     ]
+    },
+    {
+     "heading": "Continuing to learn",
+     "text": "AI tools change quickly, so the real skill is learning. Practise a little every week, keep your prompt library growing, follow a few reliable sources, and join the learning community at the workspace. Consider the Intermediate path to build automations and client projects. Teach someone else what you learned: teaching is the best way to remember.",
+     "points": [
+      "Weekly practice habit",
+      "Keep improving your prompts",
+      "Teach someone else"
+     ]
+    }
+   ],
+   "steps": [
+    "List everything you have made and select the best eight",
+    "Fix errors and remove private information from each piece",
+    "Write a four-line description for each item",
+    "Organise the pieces in one folder or a simple Canva presentation",
+    "Update your CV and LinkedIn with a skills line and two examples",
+    "Give feedback to two classmates on their portfolios and rehearse your demo"
+   ],
+   "lab": "Assemble portfolio: best 8 pieces with a short description each. Peer feedback round.",
+   "examples": [
+    {
+     "label": "Description prompt",
+     "text": "Write a four-line portfolio description for this project: problem [..], what I did [..], tools [..], result [..]. Keep it simple and honest."
+    },
+    {
+     "label": "CV prompt",
+     "text": "Suggest a skills summary for my CV based on these completed projects: [list]. Do not exaggerate."
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Including unfinished work",
+    "Showing private data",
+    "Listing tools without examples",
+    "Stopping practice after the course"
+   ],
+   "quiz": [
+    {
+     "q": "How many pieces make a good portfolio here?",
+     "a": "About eight strong, varied pieces."
+    },
+    {
+     "q": "What should each description include?",
+     "a": "Problem, what you did, tools, result."
+    },
+    {
+     "q": "Why give examples instead of tool lists?",
+     "a": "Examples prove your skills."
+    },
+    {
+     "q": "What must you remove before sharing?",
+     "a": "Private information."
+    },
+    {
+     "q": "What is the best way to remember what you learned?",
+     "a": "Teach it to someone else."
+    }
+   ],
+   "takeaways": [
+    "Quality over quantity",
+    "Describe with simple honesty",
+    "Show examples",
+    "Keep practising"
+   ],
+   "glossary": [
+    {
+     "term": "Portfolio",
+     "meaning": "A collection of your best work."
+    },
+    {
+     "term": "Case study",
+     "meaning": "A short story of a project and its results."
+    },
+    {
+     "term": "Skills summary",
+     "meaning": "A brief list of what you can do."
+    },
+    {
+     "term": "Community",
+     "meaning": "A group that learns together."
+    }
+   ],
+   "homework": "Rehearse your demo."
+  }
+ },
+ {
+  "number": 20,
+  "week": 4,
+  "week_title": "Apply: Build Your Own AI Assistant and Demo Day",
+  "week_goal": "Customize an AI assistant, complete a real project and present with confidence.",
+  "title": "Demo Day and graduation",
+  "content": {
+   "objectives": [
+    "Present a three-minute demo with confidence",
+    "Answer questions honestly and calmly",
+    "Give kind, useful feedback to others",
+    "Celebrate and plan your next steps"
+   ],
+   "intro": "Demo Day is a celebration. You will show families, friends and local business owners what you have built. You are not expected to be perfect. You are expected to be honest about what you made, what you learned and what you will do next.",
+   "concepts": [
+    {
+     "heading": "Delivering a clear demo",
+     "text": "Stand where everyone can see, speak slowly and start with the problem. Show your project working and explain one decision you made. Keep your eyes on the audience, not the screen. If something fails, stay calm, move to your backup and say what should have happened. Audiences remember confidence and honesty far longer than technical glitches.",
+     "points": [
+      "Start with the problem",
+      "Show it working",
+      "Stay calm if something fails"
+     ]
+    },
+    {
+     "heading": "Handling questions",
+     "text": "Listen to the whole question, pause, then answer briefly. If you do not know, say 'I do not know yet, but I would find out by...' That is an honest and professional answer. Never invent facts to look clever. Thank the person for the question. Prepare answers for three likely questions: why did you build this, how does AI help, what are the limits?",
+     "points": [
+      "Listen, pause, answer briefly",
+      "Honest 'I do not know yet'",
+      "Prepare three likely questions"
+     ]
+    },
+    {
+     "heading": "Feedback and reflection",
+     "text": "Give feedback to others using one strength, one question and one idea. Receive feedback by listening and writing it down. Afterwards complete the reflection sheet: what are you proud of, what was hard, what will you do next week, and how could AI help your community? Reflection turns an experience into learning.",
+     "points": [
+      "Strength, question, idea",
+      "Write down feedback",
+      "Complete the reflection sheet"
+     ]
+    },
+    {
+     "heading": "Next steps and community",
+     "text": "Learning does not end today. Use the workspace to keep practising, set a goal for the next month, and find a partner for accountability. Think about how to help others, for example by teaching a parent or running a small session for friends. When you are ready, join the Intermediate path to build automations and client projects.",
+     "points": [
+      "Set a 30-day goal",
+      "Find an accountability partner",
+      "Teach others and consider Intermediate"
+     ]
+    }
+   ],
+   "steps": [
+    "Do a final technical check of your demo and backup",
+    "Present your three-minute demo to the audience",
+    "Answer at least two questions from the audience",
+    "Give feedback to two other presenters using strength, question, idea",
+    "Complete the reflection and course feedback forms",
+    "Set a personal 30-day goal and share it with a partner"
+   ],
+   "lab": "Present to the class and invited guests (families, local business owners). Complete reflection and feedback form.",
+   "examples": [
+    {
+     "label": "Reflection prompt",
+     "text": "Help me reflect on this course. Ask me five questions one at a time about what I learned, what was hard and what I will do next."
+    },
+    {
+     "label": "Goal prompt",
+     "text": "Turn this goal into a simple 30-day plan with weekly actions: [goal]"
+    }
+   ],
+   "code": null,
+   "mistakes": [
+    "Reading from notes the whole time",
+    "Inventing answers to questions",
+    "Not saying thank you",
+    "Forgetting to set a next goal"
+   ],
+   "quiz": [
+    {
+     "q": "How should a demo start?",
+     "a": "With the problem."
+    },
+    {
+     "q": "What do you say if you do not know an answer?",
+     "a": "That you do not know yet and how you would find out."
+    },
+    {
+     "q": "What are the parts of kind feedback?",
+     "a": "Strength, question, idea."
+    },
+    {
+     "q": "Why complete a reflection?",
+     "a": "It turns experience into learning."
+    },
+    {
+     "q": "Name one next step after the course.",
+     "a": "Set a goal, practise weekly, teach others or join Intermediate."
+    }
+   ],
+   "takeaways": [
+    "Be honest and calm",
+    "Listen to questions",
+    "Give and receive feedback",
+    "Keep learning with a plan"
+   ],
+   "glossary": [
+    {
+     "term": "Demo",
+     "meaning": "A live presentation of your work."
+    },
+    {
+     "term": "Reflection",
+     "meaning": "Thinking about what you learned."
+    },
+    {
+     "term": "Accountability",
+     "meaning": "Being responsible to someone for your goals."
+    },
+    {
+     "term": "Graduation",
+     "meaning": "Completing the course."
+    }
+   ],
+   "homework": "Share your project and keep learning in the workspace."
+  }
+ }
+]

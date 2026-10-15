@@ -1,0 +1,2542 @@
+[
+ {
+  "number": 1,
+  "week": 1,
+  "week_title": "Advanced Prompting and the Content Engine",
+  "week_goal": "Get consistent, professional quality from AI and run a repeatable content workflow.",
+  "title": "Advanced prompting techniques",
+  "content": {
+   "objectives": [
+    "Use few-shot examples, constraints and step-by-step instructions to improve results",
+    "Request structured outputs such as tables and checklists",
+    "Use self-critique loops to raise quality",
+    "Build a personal prompt playbook with tested prompts"
+   ],
+   "intro": "In the Beginner path you learned to write clear prompts. At this level you learn to engineer them: to get the same good result every time, in the format you need, for work that other people will rely on. Today you collect a toolbox of techniques and test them on real tasks from your own life or business.",
+   "concepts": [
+    {
+     "heading": "Examples teach better than descriptions",
+     "text": "Showing the AI one to three examples of the output you want is called few-shot prompting, and it is often more powerful than a long explanation. Paste an example of a perfect product description, a perfect reply to an angry customer, or a perfect summary, and say 'write the next one in exactly this style'. Use examples that are typical of your real work, and vary them slightly so the AI learns the pattern and not the exact words.",
+     "points": [
+      "One to three real examples",
+      "Typical but varied",
+      "Say 'follow this style exactly'"
+     ]
+    },
+    {
+     "heading": "Constraints and structure",
+     "text": "Constraints stop the AI from wandering: word limits, forbidden words, required sections, reading level, and the order of information. Ask for structure that you can scan or paste into other tools, such as a table with named columns, a checklist, numbered steps or labelled sections. Structured answers are easier to check, easier to reuse and easier to automate later in the course.",
+     "points": [
+      "Length, tone, required sections, banned words",
+      "Tables, checklists, labelled sections",
+      "Structure makes checking and automation easier"
+     ]
+    },
+    {
+     "heading": "Step-by-step and self-critique",
+     "text": "For harder tasks ask the AI to work in stages: first list the key points, then draft, then check the draft against a list of requirements and fix any problems. A self-critique prompt such as 'review your answer against these five criteria, score each from 1 to 5 and rewrite anything below 4' often lifts quality noticeably. It does not replace your own review, but it catches many obvious weaknesses before you see them.",
+     "points": [
+      "Work in stages",
+      "Ask the AI to score its own draft against criteria",
+      "Still review it yourself"
+     ]
+    },
+    {
+     "heading": "Testing and recording what works",
+     "text": "Professionals test prompts instead of trusting a lucky result. Run the same prompt three times and with two different inputs; if the results vary wildly, tighten the instructions. Compare two prompt versions side by side and keep the better one. Record the winning prompt, the date, what it is for and a sample of good output in your playbook. A playbook of fifteen tested prompts is a real business asset.",
+     "points": [
+      "Run each prompt several times",
+      "Compare versions side by side",
+      "Record winners with examples"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose five real tasks (a reply, a summary, a product description, a plan, an announcement) and write your current prompt for each",
+    "Rewrite each prompt with examples, constraints and a required structure",
+    "Run old and new versions side by side and score both from 1 to 5 on accuracy, tone and usefulness",
+    "Add a self-critique step to the two weakest results and re-score",
+    "Test the best three prompts twice more with different inputs to check consistency",
+    "Record your winners in the Prompt Playbook table"
+   ],
+   "lab": "Take 5 weak real tasks and build high-performance prompts. Run A/B comparison on 2 assistants.",
+   "examples": [
+    {
+     "label": "Few-shot prompt",
+     "text": "Here are two examples of good replies to customer complaints: [example 1] [example 2]. Write a reply to this new complaint in exactly the same style: [complaint]."
+    },
+    {
+     "label": "Self-critique prompt",
+     "text": "Review your answer against these criteria: accurate, friendly, under 100 words, one clear next step. Score each from 1 to 5, then rewrite anything below 4."
+    }
+   ],
+   "code": "PROMPT PLAYBOOK ENTRY\nName:        Customer complaint reply\nUsed for:    Replying to unhappy customers on WhatsApp\nPrompt:      Act as [business] support. Tone: warm, calm, brief.\n             Follow the examples below exactly.\n             Examples: [ex1] [ex2]\n             Complaint: [paste]\n             Rules: under 100 words, apologise once, give one next step.\nTested on:   5 real complaints, average score 4.4 / 5\nLast update: [date]\nNotes:       Fails when complaint contains legal threats: escalate.",
+   "mistakes": [
+    "Relying on one lucky answer",
+    "Giving examples that are all identical",
+    "Skipping your own review after self-critique",
+    "Never recording what worked"
+   ],
+   "quiz": [
+    {
+     "q": "What is few-shot prompting?",
+     "a": "Giving the AI a few examples of the output you want."
+    },
+    {
+     "q": "Name three useful constraints.",
+     "a": "For example length, tone, required sections or banned words."
+    },
+    {
+     "q": "What does a self-critique prompt do?",
+     "a": "Has the AI score and improve its own draft against criteria."
+    },
+    {
+     "q": "Why run a prompt several times?",
+     "a": "To check it gives consistent results."
+    },
+    {
+     "q": "What goes into a prompt playbook entry?",
+     "a": "Name, use, prompt, test results, date and notes."
+    }
+   ],
+   "takeaways": [
+    "Examples beat long explanations",
+    "Structure and constraints give control",
+    "Test before trusting",
+    "Record winners in a playbook"
+   ],
+   "glossary": [
+    {
+     "term": "Few-shot",
+     "meaning": "Giving examples inside a prompt."
+    },
+    {
+     "term": "Constraint",
+     "meaning": "A rule that limits the answer."
+    },
+    {
+     "term": "Self-critique",
+     "meaning": "Asking the AI to review its own work."
+    },
+    {
+     "term": "Playbook",
+     "meaning": "A saved collection of tested prompts."
+    }
+   ],
+   "homework": "Add 3 prompts to your playbook."
+  }
+ },
+ {
+  "number": 2,
+  "week": 1,
+  "week_title": "Advanced Prompting and the Content Engine",
+  "week_goal": "Get consistent, professional quality from AI and run a repeatable content workflow.",
+  "title": "Prompt chains and brand voice",
+  "content": {
+   "objectives": [
+    "Break large tasks into prompt chains",
+    "Create a brand voice guide the AI can follow",
+    "Build reusable prompt templates with variables",
+    "Produce content in a consistent voice across several formats"
+   ],
+   "intro": "One giant prompt rarely gives a great result. Professionals split work into a chain of smaller steps, each with its own check. Today you learn chains, and you teach the AI the voice of a brand so that everything it writes sounds like the same trustworthy business.",
+   "concepts": [
+    {
+     "heading": "What a prompt chain is",
+     "text": "A prompt chain passes the output of one step into the next: research, then outline, then draft, then edit, then final polish. Each step has a narrow job, so each result is easier to check and to fix. If the draft is weak you can rerun only that step instead of starting over. Chains also make it possible to save time by reusing the early steps for several products or campaigns.",
+     "points": [
+      "Output of one step becomes input of the next",
+      "Narrow jobs are easier to check",
+      "Rerun only the weak step"
+     ]
+    },
+    {
+     "heading": "Brand voice guide",
+     "text": "A brand voice guide tells the AI how the business speaks. It states who the customers are, three words that describe the tone and three that do not, words and phrases to use or avoid, and five real sample sentences. Paste the guide at the start of any writing task. The best guides are written from real messages the business has already sent, because AI copies what it sees.",
+     "points": [
+      "Audience, tone words, vocabulary, samples",
+      "Built from real past messages",
+      "Pasted at the start of every task"
+     ]
+    },
+    {
+     "heading": "Templates with variables",
+     "text": "Turn successful chains into templates with variables in square brackets such as [product], [audience] and [offer]. A template lets you or a teammate produce a full piece of content in minutes by filling the brackets. Store templates in a shared document with a short name and instructions. Update them when you learn something better, and note the date of the last change.",
+     "points": [
+      "Variables in [brackets]",
+      "Shared document with clear names",
+      "Update and date every change"
+     ]
+    },
+    {
+     "heading": "Consistency across formats",
+     "text": "The same message needs different shapes on different channels: a long email, a short WhatsApp message, a caption with hashtags, a poster headline. Ask the AI to adapt one approved core message to each format instead of writing each from scratch, so facts and tone stay consistent. Always check that prices, dates and contact details match in every version.",
+     "points": [
+      "One core message, many formats",
+      "Check prices and dates in every version",
+      "Keep tone consistent"
+     ]
+    }
+   ],
+   "steps": [
+    "Collect five real messages or posts from a business (yours, a friend's or a local shop) and underline what makes them sound like that business",
+    "Write the brand voice guide using the template",
+    "Build a four-step chain: research, outline, draft, edit and run it for one topic",
+    "Save the chain as a template with [variables]",
+    "Use one core message to produce an email, a WhatsApp message, a caption and a poster headline",
+    "Compare outputs against the guide and fix anything that does not sound right"
+   ],
+   "lab": "Create a brand voice guide for a business (real client or friend). Test with 3 content types.",
+   "examples": [
+    {
+     "label": "Voice prompt",
+     "text": "Use the brand voice guide below for everything you write. [paste guide]. First confirm in two sentences how you will write, then wait for my request."
+    },
+    {
+     "label": "Chain step",
+     "text": "Using the outline above, write the first draft in the brand voice. Do not add facts that are not in the outline."
+    }
+   ],
+   "code": "CONTENT CHAIN\n1 RESEARCH  Act as a market researcher for [business, place]. List 10 customer pain points.\n2 OUTLINE   Using those pain points, propose 3 content ideas with a hook each.\n3 DRAFT     Write the chosen idea in the brand voice: [paste guide].\n4 EDIT      Review the draft against: one idea, clear hook, local relevance, one call to action.\n            Score each 1-5 and rewrite where below 4.\n5 ADAPT     Convert the final text into: email, WhatsApp message, caption, poster headline.",
+   "mistakes": [
+    "Writing one huge prompt for everything",
+    "A voice guide invented instead of based on real messages",
+    "Changing facts between formats",
+    "Never saving the chains that work"
+   ],
+   "quiz": [
+    {
+     "q": "What is a prompt chain?",
+     "a": "A series of steps where each output feeds the next."
+    },
+    {
+     "q": "Why is chaining useful?",
+     "a": "Each step is smaller, easier to check and easy to rerun."
+    },
+    {
+     "q": "What goes in a brand voice guide?",
+     "a": "Audience, tone words, vocabulary and sample sentences."
+    },
+    {
+     "q": "Why use variables in templates?",
+     "a": "So the template can be reused quickly for different cases."
+    },
+    {
+     "q": "What must you check across formats?",
+     "a": "Prices, dates, contacts and tone."
+    }
+   ],
+   "takeaways": [
+    "Chains beat giant prompts",
+    "Voice guides come from real samples",
+    "Templates save time",
+    "Check consistency"
+   ],
+   "glossary": [
+    {
+     "term": "Prompt chain",
+     "meaning": "A sequence of connected prompts."
+    },
+    {
+     "term": "Brand voice",
+     "meaning": "The consistent way a business sounds."
+    },
+    {
+     "term": "Template",
+     "meaning": "A reusable structure with blanks."
+    },
+    {
+     "term": "Core message",
+     "meaning": "The main idea that every format repeats."
+    }
+   ],
+   "homework": "Collect 5 samples of a brand's real writing."
+  }
+ },
+ {
+  "number": 3,
+  "week": 1,
+  "week_title": "Advanced Prompting and the Content Engine",
+  "week_goal": "Get consistent, professional quality from AI and run a repeatable content workflow.",
+  "title": "Research and strategy with AI",
+  "content": {
+   "objectives": [
+    "Run a structured market and competitor research workflow",
+    "Create customer personas based on evidence",
+    "Verify AI research with real sources and real customers",
+    "Write a two-page strategy brief"
+   ],
+   "intro": "Good content and good automation both start with understanding customers. AI can speed up research dramatically, but it can also give you confident nonsense about your market. Today you use AI to draft research and then you do the human work of checking it against reality.",
+   "concepts": [
+    {
+     "heading": "A research workflow",
+     "text": "Start by writing the research question precisely: who is the customer, what are you trying to decide, and what place and time do you care about. Ask AI for a first map of the market: customer groups, needs, competitors, prices and trends. Treat this as a list of hypotheses, not facts. Then check the most important ones through real sources: competitor websites and pages, price lists, local observation and customer conversations.",
+     "points": [
+      "Precise research question",
+      "AI output = hypotheses",
+      "Verify with real sources"
+     ]
+    },
+    {
+     "heading": "Competitor analysis",
+     "text": "List three to five competitors, including informal ones such as the shop down the road or a popular online seller. For each note what they sell, their prices, how they communicate, what customers praise or complain about and what they do not offer. Ask AI to organise your notes into a comparison table and to highlight gaps. The gaps are your opportunities.",
+     "points": [
+      "3-5 competitors including informal ones",
+      "Compare offer, price, tone, complaints",
+      "Gaps are opportunities"
+     ]
+    },
+    {
+     "heading": "Personas from evidence",
+     "text": "A persona is a short description of a typical customer: who they are, their goals, worries, where they spend time and how they decide. Build personas from real interviews and observations, then ask AI to polish them. Personas invented from imagination lead to stereotypes. Give each persona a name, a one-sentence need and the exact words they use to describe their problem.",
+     "points": [
+      "Based on real conversations",
+      "Name, need, worries, channels",
+      "Use customers' own words"
+     ]
+    },
+    {
+     "heading": "The strategy brief",
+     "text": "Summarise everything in a two-page brief: the audience, their top needs, your offer, how you are different, three content themes and three measures of success. Ask AI to draft it from your verified notes and mark anything unverified. A short evidence-based brief guides every later decision and protects you from chasing every new idea.",
+     "points": [
+      "Audience, needs, offer, difference, themes, measures",
+      "Mark anything unverified",
+      "Two pages only"
+     ]
+    }
+   ],
+   "steps": [
+    "Write your research question and the decision it supports",
+    "Ask AI for a market map and list the five claims that matter most",
+    "Verify at least three claims using real sources and mark each as confirmed, wrong or unknown",
+    "Build a competitor table for four competitors from your own observation",
+    "Interview two real people for ten minutes and write down their exact words",
+    "Produce a two-page strategy brief with two personas and mark unverified items"
+   ],
+   "lab": "Produce a 2-page strategy brief: audience, offer, 3 content pillars, 5 competitors reviewed.",
+   "examples": [
+    {
+     "label": "Research prompt",
+     "text": "Act as a market researcher. I want to decide [decision] for a [business] in [place]. List customer groups, needs, typical competitors and price ranges, and mark which claims I must verify."
+    },
+    {
+     "label": "Persona prompt",
+     "text": "Turn these interview notes into a one-paragraph persona with name, goal, worries and the exact phrases they used: [notes]"
+    }
+   ],
+   "code": "STRATEGY BRIEF (2 pages)\nAudience:        [who] - top 3 needs: 1 .. 2 .. 3 ..   (confirmed by 2 interviews)\nPersona 1:       [name], [age/role] - goal, worries, exact words: \"[quote]\"\nOffer:           [what we sell and the price range]\nCompetitors:     [A] [B] [C]  - gaps we can fill: ..\nHow we differ:   [one sentence]\nContent themes:  1 .. 2 .. 3 ..\nSuccess measures: [reach / enquiries / sales target]\nUnverified items: [list anything not yet checked]",
+   "mistakes": [
+    "Treating AI market numbers as facts",
+    "Ignoring informal competitors",
+    "Inventing personas without talking to anyone",
+    "Writing a long brief nobody reads"
+   ],
+   "quiz": [
+    {
+     "q": "Why treat AI research as hypotheses?",
+     "a": "It can be wrong or outdated and must be verified."
+    },
+    {
+     "q": "What should a competitor table compare?",
+     "a": "Offer, price, communication, complaints and gaps."
+    },
+    {
+     "q": "What is a persona?",
+     "a": "A short description of a typical customer."
+    },
+    {
+     "q": "Why interview real customers?",
+     "a": "They reveal real needs and words that AI cannot know."
+    },
+    {
+     "q": "How long should a strategy brief be?",
+     "a": "About two pages."
+    }
+   ],
+   "takeaways": [
+    "Verify AI research",
+    "Use real conversations",
+    "Gaps are opportunities",
+    "Keep the brief short"
+   ],
+   "glossary": [
+    {
+     "term": "Hypothesis",
+     "meaning": "An idea that still needs checking."
+    },
+    {
+     "term": "Persona",
+     "meaning": "A typical customer profile."
+    },
+    {
+     "term": "Competitor",
+     "meaning": "A business that serves the same customers."
+    },
+    {
+     "term": "Differentiator",
+     "meaning": "What makes you different."
+    }
+   ],
+   "homework": "Interview one real customer for 10 minutes."
+  }
+ },
+ {
+  "number": 4,
+  "week": 1,
+  "week_title": "Advanced Prompting and the Content Engine",
+  "week_goal": "Get consistent, professional quality from AI and run a repeatable content workflow.",
+  "title": "Visual and video content",
+  "content": {
+   "objectives": [
+    "Write effective image prompts for consistent brand visuals",
+    "Design carousels, posters and thumbnails in Canva",
+    "Produce a short video from script to captions",
+    "Follow ethics and licence rules for AI visuals"
+   ],
+   "intro": "Visuals decide whether people stop scrolling. Today you create a matching set of designs and a short video for one brand, using AI for ideas and drafts and your own judgement for quality, honesty and style.",
+   "concepts": [
+    {
+     "heading": "Visual consistency",
+     "text": "A brand looks professional when colours, fonts, image style and layout repeat. Choose two or three brand colours, two fonts and an image style such as bright realistic photos or flat illustrations, and write them in your brand guide. Add the style to every image prompt: 'warm natural light, realistic photo, green and yellow palette'. Save good prompts so that future images match.",
+     "points": [
+      "2-3 colours, 2 fonts, one image style",
+      "Put the style in every image prompt",
+      "Save prompts that match your brand"
+     ]
+    },
+    {
+     "heading": "Carousels, posters and thumbnails",
+     "text": "A carousel tells a story across several slides: a hook slide, three to five value slides, and a final call to action. Posters need one message and clear hierarchy. Thumbnails need a big readable phrase and a strong image. Use Canva templates as a starting point, replace the content with your own and check readability on a phone-sized screen. If the text is hard to read at thumbnail size, it is too small.",
+     "points": [
+      "Hook, value slides, call to action",
+      "One message per poster",
+      "Check readability on a phone"
+     ]
+    },
+    {
+     "heading": "Short video workflow",
+     "text": "A thirty to forty-five second video has a hook in the first three seconds, one useful idea and a call to action. Ask AI for a script and a shot list, then film on your phone in good light with steady hands and clear sound. Add captions because many people watch without sound. Edit in a simple tool such as CapCut, keep cuts quick and end with your contact or next step.",
+     "points": [
+      "Hook, one idea, call to action",
+      "Script and shot list first",
+      "Captions always"
+     ]
+    },
+    {
+     "heading": "Ethics, licences and honesty",
+     "text": "Do not copy the style of a living artist or use a brand's logos without permission. Check licences for music and stock images. Do not create realistic images of real people doing things they did not do. If an image is AI-generated and could be mistaken for a real photo of your product, do not use it to show what the product looks like: customers must get what they see.",
+     "points": [
+      "Respect artists and licences",
+      "No fake images of real people",
+      "Product images must be true"
+     ]
+    }
+   ],
+   "steps": [
+    "Write the visual brand sheet: colours, fonts, image style and three example prompts",
+    "Generate a set of five images that match the style and select the best three",
+    "Design a seven-slide carousel in Canva with hook, value slides and call to action",
+    "Design a poster and a thumbnail from the same message",
+    "Write a 35-second script and shot list, film it, add captions and export",
+    "Review all pieces against the brand sheet and the ethics checklist"
+   ],
+   "lab": "Make 1 carousel, 1 poster and 1 short video (30-45 seconds) for the same brand.",
+   "examples": [
+    {
+     "label": "Image prompt",
+     "text": "A friendly tailor in a bright Kenyan shop holding a measuring tape, warm natural light, realistic photo, green and yellow palette, no text."
+    },
+    {
+     "label": "Script prompt",
+     "text": "Write a 35-second video script with a hook in the first 3 seconds, one useful tip and a call to action for [business]. Add a shot list."
+    }
+   ],
+   "code": "VISUAL BRAND SHEET\nColours:       #0B6E4F (green)  #F4C430 (yellow)  #FFFFFF\nFonts:         Headline - bold sans; Body - clean sans\nImage style:   bright realistic photos, warm natural light, real local settings\nNever:         stock-looking handshakes, fake testimonials, logos we do not own\nPrompt base:   \"[subject], warm natural light, realistic photo, green and yellow palette, no text\"",
+   "mistakes": [
+    "Different colours and fonts on every post",
+    "Tiny text that cannot be read on a phone",
+    "Videos with no captions",
+    "Using AI images that misrepresent the product"
+   ],
+   "quiz": [
+    {
+     "q": "What makes visuals look consistent?",
+     "a": "Repeated colours, fonts, image style and layout."
+    },
+    {
+     "q": "What are the parts of a carousel?",
+     "a": "Hook, value slides and call to action."
+    },
+    {
+     "q": "Why add captions to video?",
+     "a": "Many people watch without sound."
+    },
+    {
+     "q": "What should come in the first three seconds?",
+     "a": "A hook."
+    },
+    {
+     "q": "When must you not use an AI image?",
+     "a": "When it misrepresents the real product."
+    }
+   ],
+   "takeaways": [
+    "Consistency builds trust",
+    "Design for phone screens",
+    "Hook, idea, call to action",
+    "Be honest with visuals"
+   ],
+   "glossary": [
+    {
+     "term": "Carousel",
+     "meaning": "A multi-slide post that tells a story."
+    },
+    {
+     "term": "Thumbnail",
+     "meaning": "The small preview image of a video."
+    },
+    {
+     "term": "Shot list",
+     "meaning": "A list of the shots you will film."
+    },
+    {
+     "term": "Brand sheet",
+     "meaning": "A record of colours, fonts and style."
+    }
+   ],
+   "homework": "Post and measure views for 3 days."
+  }
+ },
+ {
+  "number": 5,
+  "week": 1,
+  "week_title": "Advanced Prompting and the Content Engine",
+  "week_goal": "Get consistent, professional quality from AI and run a repeatable content workflow.",
+  "title": "Lab day: 2-Week Content Pack",
+  "content": {
+   "objectives": [
+    "Batch-produce a two-week content calendar with finished posts",
+    "Apply a quality checklist to every piece",
+    "Schedule or publish and plan measurement",
+    "Present your content pack"
+   ],
+   "intro": "Lab day for Week 1. You will produce a complete two-week content pack for one brand, using everything from the week: playbook, voice guide, research brief, visuals and chains. The goal is a package a real business could start using on Monday.",
+   "concepts": [
+    {
+     "heading": "Planning the pack",
+     "text": "Start from the strategy brief: three content themes, the audience and the measures of success. Plan fourteen days with a mix of educational posts, product posts, customer stories and offers. Decide the format for each day and the call to action. Put the calendar in a table with date, theme, format, caption, visual and status so it is easy to manage and to hand to a client.",
+     "points": [
+      "Themes, mix, format, call to action",
+      "Calendar table with status column",
+      "Ready to hand over"
+     ]
+    },
+    {
+     "heading": "Batching",
+     "text": "Batching means doing the same type of task for many pieces in one session: write all captions first, then make all graphics, then film all videos. It is faster because you avoid switching between tasks. Use your chain templates and brand guide to keep the quality steady, and take short breaks so your judgement stays sharp. Save drafts in a shared folder with a clear naming scheme.",
+     "points": [
+      "Same task for many pieces",
+      "Use chains and guide",
+      "Clear file names"
+     ]
+    },
+    {
+     "heading": "Quality checklist",
+     "text": "Before anything is published check: facts and prices correct, spelling and names correct, tone matches the voice guide, visual matches the brand sheet, one clear call to action, no private data and no claims you cannot prove. Ask a second person to check. A simple checklist stops most embarrassing mistakes.",
+     "points": [
+      "Facts, spelling, tone, visual, call to action",
+      "No private data or unproven claims",
+      "Second person checks"
+     ]
+    },
+    {
+     "heading": "Measuring and learning",
+     "text": "Decide in advance how you will measure success: reach, saves, replies, enquiries or sales. After two weeks look at which themes and formats performed best and do more of those. Write down what you learned and update your playbook and brand guide. Content improves only through this loop of publishing, measuring and adjusting.",
+     "points": [
+      "Choose measures before publishing",
+      "Do more of what works",
+      "Update playbook and guide"
+     ]
+    }
+   ],
+   "steps": [
+    "Review your strategy brief and write the three themes and the success measures",
+    "Build the 14-day calendar table with date, theme, format, caption, visual and status",
+    "Batch all captions, then all graphics, then the videos",
+    "Run the quality checklist on every piece and fix errors",
+    "Swap packs with a partner for a second check using the checklist",
+    "Present your pack in two minutes: audience, themes, three best pieces and how you will measure"
+   ],
+   "lab": "Produce a 14-day calendar with finished copy and visuals for 10 posts; peer review using the rubric.",
+   "examples": [
+    {
+     "label": "Calendar columns",
+     "text": "Date | Theme | Format | Caption | Visual file | CTA | Status | Result"
+    },
+    {
+     "label": "Checklist",
+     "text": "Facts? Spelling? Tone? Visual match? One call to action? No private data? No unproven claims?"
+    }
+   ],
+   "code": "2-WEEK CONTENT PACK TABLE\nDay | Theme      | Format    | Caption (file)   | Visual (file)  | CTA          | Status\n1   | Education  | Carousel  | d01_caption.txt  | d01_slides.png | Save this    | Ready\n2   | Product    | Photo     | d02_caption.txt  | d02_photo.jpg  | Order on WA  | Draft\n3   | Story      | Video     | d03_caption.txt  | d03_video.mp4  | Message us   | Draft\n...",
+   "mistakes": [
+    "Making each piece separately instead of batching",
+    "Skipping the second-person check",
+    "Publishing without measures",
+    "Changing the brand look midway"
+   ],
+   "quiz": [
+    {
+     "q": "What is batching?",
+     "a": "Doing the same type of task for many pieces in one session."
+    },
+    {
+     "q": "Name three checklist items.",
+     "a": "Facts, spelling, tone, visual match, call to action."
+    },
+    {
+     "q": "Why decide measures before publishing?",
+     "a": "So you can judge what worked."
+    },
+    {
+     "q": "What should you do after two weeks?",
+     "a": "Review results, do more of what works and update your guides."
+    },
+    {
+     "q": "Why have a second person check?",
+     "a": "To catch mistakes you no longer see."
+    }
+   ],
+   "takeaways": [
+    "Plan from the strategy",
+    "Batch for speed",
+    "Checklists prevent mistakes",
+    "Measure and improve"
+   ],
+   "glossary": [
+    {
+     "term": "Batching",
+     "meaning": "Producing many similar items in one session."
+    },
+    {
+     "term": "CTA",
+     "meaning": "Call to action: what you ask the audience to do."
+    },
+    {
+     "term": "Engagement",
+     "meaning": "Reactions, saves, replies and shares."
+    },
+    {
+     "term": "Status",
+     "meaning": "Where a piece is in production."
+    }
+   ],
+   "homework": "Present the pack in 2 minutes."
+  }
+ },
+ {
+  "number": 6,
+  "week": 2,
+  "week_title": "Automation and Productivity Systems",
+  "week_goal": "Connect tools so repetitive work runs by itself, with AI inside the workflow.",
+  "title": "Automation thinking",
+  "content": {
+   "objectives": [
+    "Explain triggers, actions, filters and data mapping",
+    "Spot good automation opportunities with the 'do it three times' rule",
+    "Build a simple form-to-sheet-to-email automation",
+    "Think about reliability, errors and security"
+   ],
+   "intro": "Automation means that work happens by itself when something occurs: a form is filled, an email arrives, a time is reached. Combined with AI, it can read, decide and write as part of the chain. Today you learn the building blocks and make your first working automation.",
+   "concepts": [
+    {
+     "heading": "The building blocks",
+     "text": "Every automation has a trigger that starts it, one or more actions that do things, and often filters or conditions that decide whether to continue. Data flows between steps: the name typed in a form becomes a cell in a sheet and a greeting in an email. Matching a piece of data from one step to a field in the next is called mapping. Tools such as Make, n8n and Zapier let you build these chains visually by connecting boxes.",
+     "points": [
+      "Trigger, actions, filters",
+      "Data mapping between steps",
+      "Visual tools: Make, n8n, Zapier"
+     ]
+    },
+    {
+     "heading": "Finding good opportunities",
+     "text": "Use the 'do it three times' rule: if you do the same task three times, consider automating it. The best candidates are frequent, rule-based and low-risk: sending confirmation emails, saving form responses, copying data between tools, weekly reports, reminders and sorting messages. Poor candidates are rare tasks, tasks needing deep judgement, or those with serious consequences if wrong. Estimate the time saved per week to decide whether it is worth building.",
+     "points": [
+      "Frequent, rule-based, low-risk",
+      "Estimate time saved per week",
+      "Avoid high-consequence tasks at first"
+     ]
+    },
+    {
+     "heading": "Process mapping before building",
+     "text": "Never start by clicking in the tool. Draw the current process on paper: who starts it, what information arrives, what decisions are made, what is produced and who is told. Mark each step as manual, decision or automatable. Automating a messy process only makes the mess faster, so remove unnecessary steps first. Then plan the data fields you will need.",
+     "points": [
+      "Draw the process first",
+      "Mark manual, decision, automatable",
+      "Simplify before automating"
+     ]
+    },
+    {
+     "heading": "Reliability, errors and security",
+     "text": "Automations fail: a form field is empty, a service is down, a limit is reached. Plan for it by adding error notifications, default values and a way to see what ran and when. Give each connection the minimum access it needs and never share your login with a tool you do not trust. Test with sample data, not live customer data, and keep a note of what each automation does and who owns it.",
+     "points": [
+      "Add error notifications",
+      "Minimum access for connections",
+      "Test with sample data; document owners"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose a real repetitive task and draw its current process on paper",
+    "Mark each step manual, decision or automatable and estimate weekly time",
+    "Create a Google Form and linked Sheet with five fields",
+    "Build an automation: new form response -> add row -> send confirmation email with data mapped from the form",
+    "Test with five sample entries including an empty field and note what breaks",
+    "Add an error notification and write a three-line description of the automation"
+   ],
+   "lab": "Process-map a real workflow on paper, then build a simple automation (form -> sheet -> email).",
+   "examples": [
+    {
+     "label": "Process map",
+     "text": "Trigger -> data arrives -> decision -> action -> notify -> record. Mark each step M, D or A."
+    },
+    {
+     "label": "Weekly saving",
+     "text": "time per run x runs per week = hours saved. Is it worth building?"
+    }
+   ],
+   "code": "AUTOMATION BLUEPRINT\nName / owner:    Order enquiry confirmation / Amina\nTrigger:         New response in Google Form \"Enquiries\"\nFilter:          Email field is not empty\nActions:         1 Add row to Sheet   2 Send email to customer   3 Notify owner\nData mapping:    {{name}} {{product}} {{phone}} -> email template\nFailure plan:    If email fails, post error to owner and mark row \"needs follow-up\"\nSuccess measure: Replies sent within 1 minute, 100% of enquiries recorded",
+   "mistakes": [
+    "Automating a process you have not mapped",
+    "Automating rare or risky tasks first",
+    "Testing with real customer data",
+    "No error notification"
+   ],
+   "quiz": [
+    {
+     "q": "What starts an automation?",
+     "a": "A trigger."
+    },
+    {
+     "q": "What is data mapping?",
+     "a": "Connecting data from one step to fields in the next."
+    },
+    {
+     "q": "What is the 'do it three times' rule?",
+     "a": "Consider automating tasks you repeat three times."
+    },
+    {
+     "q": "Why draw the process first?",
+     "a": "To simplify and plan before building."
+    },
+    {
+     "q": "Why add error notifications?",
+     "a": "So failures are noticed and fixed."
+    }
+   ],
+   "takeaways": [
+    "Trigger, filter, action",
+    "Map the process first",
+    "Start with low-risk tasks",
+    "Plan for failure"
+   ],
+   "glossary": [
+    {
+     "term": "Trigger",
+     "meaning": "The event that starts an automation."
+    },
+    {
+     "term": "Action",
+     "meaning": "A step the automation performs."
+    },
+    {
+     "term": "Mapping",
+     "meaning": "Linking data fields between steps."
+    },
+    {
+     "term": "Workflow",
+     "meaning": "A chain of automated steps."
+    }
+   ],
+   "homework": "Document 5 processes you could automate."
+  }
+ },
+ {
+  "number": 7,
+  "week": 2,
+  "week_title": "Automation and Productivity Systems",
+  "week_goal": "Connect tools so repetitive work runs by itself, with AI inside the workflow.",
+  "title": "AI inside automations",
+  "content": {
+   "objectives": [
+    "Add an AI step with a prompt template to an automation",
+    "Use AI to classify, summarise and draft inside a workflow",
+    "Design human-in-the-loop approvals",
+    "Test with realistic sample data"
+   ],
+   "intro": "Plain automations follow fixed rules. When you add an AI step, the workflow can read free text, understand it and write a reply. This opens many possibilities but also brings risks, so today we also add a human check. You will build a customer enquiry workflow that classifies, drafts and waits for approval.",
+   "concepts": [
+    {
+     "heading": "Where the AI step goes",
+     "text": "An AI step takes input from earlier in the chain, such as the customer's message, applies a prompt template and produces output that later steps use. Typical jobs are: classify a message (question, complaint, order), extract details (product, quantity, date), summarise a long text, and draft a reply. In your automation tool you add an AI or HTTP step, put the prompt in, and map the message into it.",
+     "points": [
+      "Classify, extract, summarise, draft",
+      "Prompt template with mapped input",
+      "Output feeds later steps"
+     ]
+    },
+    {
+     "heading": "Writing prompts for workflows",
+     "text": "A workflow prompt must work without you watching. State the task, the allowed categories, the exact output format and what to do when unsure. For example: 'Classify into exactly one of: order, question, complaint, other. Reply with only the word.' Fixed outputs let later steps route correctly. Test with many sample messages including strange ones, and tell the AI to answer 'other' rather than guess.",
+     "points": [
+      "Exact output format",
+      "Allowed categories only",
+      "Say what to do when unsure"
+     ]
+    },
+    {
+     "heading": "Human in the loop",
+     "text": "Do not let AI send important messages unchecked. Insert an approval step: the draft is sent to a person by email or chat with approve and reject choices, and only approved drafts are sent. Over time, for low-risk categories and when accuracy is proven, you can reduce approvals. Always keep a human check for money, complaints, health or legal topics.",
+     "points": [
+      "Approval step before sending",
+      "Reduce checks only when proven safe",
+      "Always check sensitive topics"
+     ]
+    },
+    {
+     "heading": "Testing and monitoring",
+     "text": "Build a test set of twenty realistic messages, including spelling errors, mixed languages, angry customers, spam and unclear requests. Run them all and check each result. Record the accuracy of the classification and note failures. After launch look at a sample of real cases every week. AI behaviour changes with prompts and models, so keep testing.",
+     "points": [
+      "20 realistic test messages",
+      "Record accuracy and failures",
+      "Weekly sampling after launch"
+     ]
+    }
+   ],
+   "steps": [
+    "Write 20 sample customer messages with different types, mistakes and tones",
+    "Write the classification prompt with fixed categories and an 'other' fallback",
+    "Build the workflow: form or email trigger -> AI classify -> router by category",
+    "For 'question' and 'order' categories add an AI draft reply step using your brand voice guide",
+    "Add an approval email to the manager with the draft; send the reply only after approval",
+    "Run all 20 samples, record accuracy and fix the prompt until at least 17 are correct"
+   ],
+   "lab": "Build: new customer form -> AI classifies and drafts reply -> manager approves -> email sent.",
+   "examples": [
+    {
+     "label": "Classifier prompt",
+     "text": "Classify the message into exactly one of: order, question, complaint, other. If unsure choose other. Reply with only the word. Message: {{message}}"
+    },
+    {
+     "label": "Draft prompt",
+     "text": "Using the brand voice guide, draft a reply under 80 words to this message: {{message}}. Do not invent prices or dates. If information is missing, ask for it."
+    }
+   ],
+   "code": "WORKFLOW: customer enquiry\n1 Trigger     New message (form / email)\n2 AI classify -> order | question | complaint | other\n3 Router      order -> step 4     question -> step 5     complaint -> manager     other -> log\n4 AI extract  product, quantity, phone as JSON -> write to Sheet\n5 AI draft    reply in brand voice\n6 Approval    email to manager: [Approve] [Edit] [Reject]\n7 Send        approved reply to customer; log result",
+   "mistakes": [
+    "Letting AI send unchecked replies",
+    "Prompts that allow free-form answers to routing steps",
+    "Testing with only perfect messages",
+    "Giving the AI invented prices or policies"
+   ],
+   "quiz": [
+    {
+     "q": "Name three jobs for an AI step.",
+     "a": "Classify, extract, summarise or draft."
+    },
+    {
+     "q": "Why use fixed categories?",
+     "a": "So the workflow can route reliably."
+    },
+    {
+     "q": "What is human in the loop?",
+     "a": "A person approves before an action happens."
+    },
+    {
+     "q": "What should the AI do when unsure?",
+     "a": "Choose 'other' or ask for more information."
+    },
+    {
+     "q": "Why test with messy messages?",
+     "a": "Real messages are messy."
+    }
+   ],
+   "takeaways": [
+    "AI steps need exact output formats",
+    "Add approvals",
+    "Test with realistic messages",
+    "Keep monitoring"
+   ],
+   "glossary": [
+    {
+     "term": "Classification",
+     "meaning": "Sorting items into categories."
+    },
+    {
+     "term": "Router",
+     "meaning": "A step that sends data down different paths."
+    },
+    {
+     "term": "Approval step",
+     "meaning": "A pause for a person to approve."
+    },
+    {
+     "term": "Fallback",
+     "meaning": "What happens when nothing else matches."
+    }
+   ],
+   "homework": "Test with 10 sample entries."
+  }
+ },
+ {
+  "number": 8,
+  "week": 2,
+  "week_title": "Automation and Productivity Systems",
+  "week_goal": "Connect tools so repetitive work runs by itself, with AI inside the workflow.",
+  "title": "Document and data workflows",
+  "content": {
+   "objectives": [
+    "Extract data from emails and documents into a sheet",
+    "Generate documents such as invoices and reports automatically",
+    "Build a scheduled weekly report with an AI summary",
+    "Handle errors and missing data"
+   ],
+   "intro": "A lot of office work is moving information from one place to another: from emails to spreadsheets, from spreadsheets to reports. Today you automate that flow and let AI write the summaries, saving hours every week.",
+   "concepts": [
+    {
+     "heading": "Extracting data from text and files",
+     "text": "AI can read an email, an order message or a text from a PDF and return clean fields such as name, date, product and amount. Ask for JSON or a fixed set of labels so each field lands in the right column. Always allow a 'not found' value instead of letting the AI guess. For scanned files use text recognition first, and check a sample of results by hand.",
+     "points": [
+      "Fixed fields and formats",
+      "Allow 'not found'",
+      "Check a sample by hand"
+     ]
+    },
+    {
+     "heading": "Generating documents",
+     "text": "Once data is in a sheet you can generate documents from templates: invoices, quotations, receipts, certificates or letters. Create a template with placeholders such as {{customer}} and {{total}}, then let the automation fill them and save the result as a PDF in a folder or send it by email. Check calculations in the sheet with formulas, not with the AI, because arithmetic should be exact.",
+     "points": [
+      "Templates with placeholders",
+      "Use formulas for maths",
+      "Save to a folder or email"
+     ]
+    },
+    {
+     "heading": "Scheduled reports",
+     "text": "A weekly report is a perfect automation: on a schedule the workflow reads this week's rows from the sheet, calculates totals, asks AI to write a short plain-language summary and highlights, and emails it to the manager. Give the AI the numbers and tell it to describe only what the numbers show. Include a chart or table from the sheet so the reader can see the data.",
+     "points": [
+      "Schedule trigger",
+      "Numbers calculated by formulas",
+      "AI describes only what data shows"
+     ]
+    },
+    {
+     "heading": "Handling errors and missing data",
+     "text": "Real data has gaps: blank cells, wrong formats, duplicate rows. Add checks before the AI step: skip empty rows, standardise formats and remove duplicates. When something fails, write the row to an 'errors' sheet and send one summary notification rather than many. Keep a run log with date, number of rows processed and failures.",
+     "points": [
+      "Check data before the AI step",
+      "Errors sheet and summary alert",
+      "Keep a run log"
+     ]
+    }
+   ],
+   "steps": [
+    "Prepare 20 sample order emails or messages with varying formats",
+    "Write an extraction prompt returning name, product, quantity, date and 'not found' for missing data",
+    "Build the workflow to add each extracted order to a Sheet",
+    "Create an invoice template and generate three PDF invoices from sheet rows",
+    "Build a weekly report: schedule -> read rows -> calculate totals -> AI summary -> email",
+    "Test with missing and duplicate data and add an errors sheet and run log"
+   ],
+   "lab": "Build a weekly report generator: Sheet data -> AI summary -> email to the boss.",
+   "examples": [
+    {
+     "label": "Extraction prompt",
+     "text": "Extract from the message: name, product, quantity, delivery date. If a field is missing write 'not found'. Return one line: name | product | quantity | date. Message: {{message}}"
+    },
+    {
+     "label": "Report prompt",
+     "text": "Here are this week's totals: {{numbers}}. Write a five-sentence summary for the manager describing only what the numbers show, plus one suggestion."
+    }
+   ],
+   "code": "WEEKLY REPORT AUTOMATION\nTrigger:   Every Monday 07:00\nStep 1     Read rows from Sheet where date is within the last 7 days\nStep 2     Formulas: total sales, orders count, top product (calculated in the Sheet)\nStep 3     AI: \"Write a 5-sentence summary using ONLY these numbers: ...\"\nStep 4     Build email: summary + table of top 5 products\nStep 5     Send to manager; append run to \"RunLog\" (date, rows, errors)",
+   "mistakes": [
+    "Letting AI do arithmetic",
+    "Allowing guessed values",
+    "Many error emails instead of one summary",
+    "No run log"
+   ],
+   "quiz": [
+    {
+     "q": "Why allow 'not found'?",
+     "a": "So the AI does not invent missing information."
+    },
+    {
+     "q": "Who should calculate totals?",
+     "a": "Sheet formulas, not the AI."
+    },
+    {
+     "q": "What triggers a weekly report?",
+     "a": "A schedule."
+    },
+    {
+     "q": "What is an errors sheet for?",
+     "a": "Collecting failed rows for review."
+    },
+    {
+     "q": "What should the AI summary describe?",
+     "a": "Only what the numbers show."
+    }
+   ],
+   "takeaways": [
+    "Extract into fixed fields",
+    "Formulas do maths",
+    "Schedule reports",
+    "Handle bad data"
+   ],
+   "glossary": [
+    {
+     "term": "Extraction",
+     "meaning": "Pulling structured data out of text."
+    },
+    {
+     "term": "Placeholder",
+     "meaning": "A marked spot in a template to be filled."
+    },
+    {
+     "term": "Schedule trigger",
+     "meaning": "A time-based start for an automation."
+    },
+    {
+     "term": "Run log",
+     "meaning": "A record of what an automation did."
+    }
+   ],
+   "homework": "Run it for a week with fake data."
+  }
+ },
+ {
+  "number": 9,
+  "week": 2,
+  "week_title": "Automation and Productivity Systems",
+  "week_goal": "Connect tools so repetitive work runs by itself, with AI inside the workflow.",
+  "title": "Messaging and customer workflows",
+  "content": {
+   "objectives": [
+    "Explain messaging platform workflows and consent rules",
+    "Design a lead capture and follow-up sequence",
+    "Use the WhatsApp Business tools and Cloud API concepts safely",
+    "Write consent wording and opt-out handling"
+   ],
+   "intro": "Many Kenyan businesses sell and serve customers through WhatsApp, calls and social media. Automation can make responses faster, but messaging people carries legal and ethical duties. Today you design customer workflows that are helpful, respectful and legal.",
+   "concepts": [
+    {
+     "heading": "Customer messaging workflows",
+     "text": "A common workflow: a customer enquires, the system records the lead, sends an instant acknowledgement, routes the message to the right person, and follows up after a set time if there is no reply. Each message type has a template. Keep a single sheet or CRM where every lead, status and next action is recorded so nothing is forgotten.",
+     "points": [
+      "Record, acknowledge, route, follow up",
+      "Templates per message type",
+      "One place to track leads"
+     ]
+    },
+    {
+     "heading": "WhatsApp Business and the Cloud API",
+     "text": "WhatsApp Business app offers a profile, catalogue, labels, quick replies and away messages, which is enough for many small businesses. For larger volumes the Cloud API lets software send and receive messages through a webhook, but business-initiated messages must use approved templates and respect the platform's rules. Learn the current policies before building anything, because they change.",
+     "points": [
+      "Business app: catalogue, labels, quick replies",
+      "Cloud API: webhooks and approved templates",
+      "Read current platform policies"
+     ]
+    },
+    {
+     "heading": "Consent, privacy and opt-out",
+     "text": "Only message people who have agreed to hear from you. Collect consent clearly at the point of data collection, say what you will send and how often, and make it easy to stop: a reply such as STOP must be honoured immediately. Store only the data you need, protect it, and do not share customer numbers. Kenya's Data Protection Act expects lawful, transparent handling of personal data.",
+     "points": [
+      "Clear consent at collection",
+      "Easy opt-out honoured at once",
+      "Collect and keep only what you need"
+     ]
+    },
+    {
+     "heading": "Tone and timing",
+     "text": "Automated messages should feel helpful, not pushy. Send during reasonable hours, keep messages short, use the customer's name and make the next step obvious. Limit follow-ups: one reminder after two days is polite, five in a week is spam. Always give a way to reach a human. Review replies regularly and learn from complaints.",
+     "points": [
+      "Reasonable hours, short messages",
+      "Limit follow-ups",
+      "Always offer a human"
+     ]
+    }
+   ],
+   "steps": [
+    "Map your lead process: enquiry, acknowledgement, qualification, quote, follow-up, close",
+    "Write six message templates: acknowledgement, quote, reminder, thank-you, away, opt-out confirmation",
+    "Write the consent wording for your form and an opt-out reply",
+    "Build the Sheet-based lead tracker with status and next action columns",
+    "Simulate the flow using form, Sheet and email steps; add a two-day reminder",
+    "Review the sequence against the consent and tone checklist and swap with a partner for feedback"
+   ],
+   "lab": "Design and simulate a lead follow-up flow; build the Sheet and email parts live.",
+   "examples": [
+    {
+     "label": "Consent text",
+     "text": "By submitting this form you agree that [business] may contact you about your enquiry by WhatsApp or email. Reply STOP at any time to stop messages."
+    },
+    {
+     "label": "Follow-up rule",
+     "text": "One reminder after 2 days with no reply; stop after 2 reminders; never message after 8 pm."
+    }
+   ],
+   "code": "LEAD TRACKER (Sheet columns)\nID | Date | Name | Phone | Source | Consent (Y/N) | Status | Next action | Next date | Owner | Notes\nStatus values:  New -> Contacted -> Quoted -> Follow-up -> Won / Lost / Opted out\nRULES:  Do not message if Consent = N or Status = Opted out\n        Max 2 reminders; if no reply after 7 days set Status = Lost",
+   "mistakes": [
+    "Messaging people who never agreed",
+    "Ignoring opt-out requests",
+    "Sending too many reminders",
+    "Storing more personal data than needed"
+   ],
+   "quiz": [
+    {
+     "q": "What must you collect before messaging customers?",
+     "a": "Their consent."
+    },
+    {
+     "q": "What must you do when someone replies STOP?",
+     "a": "Stop messaging them immediately."
+    },
+    {
+     "q": "Why use templates?",
+     "a": "For fast, consistent and approved messages."
+    },
+    {
+     "q": "Why limit follow-ups?",
+     "a": "To avoid being pushy or spamming."
+    },
+    {
+     "q": "Name one data protection principle.",
+     "a": "Lawful use, transparency or data minimisation."
+    }
+   ],
+   "takeaways": [
+    "Consent first",
+    "Easy opt-out",
+    "Templates and tracking",
+    "Respectful tone and timing"
+   ],
+   "glossary": [
+    {
+     "term": "Consent",
+     "meaning": "Permission given by a person."
+    },
+    {
+     "term": "Opt-out",
+     "meaning": "A way to stop receiving messages."
+    },
+    {
+     "term": "CRM",
+     "meaning": "A system for tracking customers and leads."
+    },
+    {
+     "term": "Data minimisation",
+     "meaning": "Keeping only the data you need."
+    }
+   ],
+   "homework": "Write the customer consent wording."
+  }
+ },
+ {
+  "number": 10,
+  "week": 2,
+  "week_title": "Automation and Productivity Systems",
+  "week_goal": "Connect tools so repetitive work runs by itself, with AI inside the workflow.",
+  "title": "Lab day: Automation Showcase",
+  "content": {
+   "objectives": [
+    "Finalise three automations with documentation",
+    "Troubleshoot and monitor workflows",
+    "Write a one-page how-to for each automation",
+    "Present your automation showcase"
+   ],
+   "intro": "Lab day for Week 2. You will finish, test and document three automations so that they are ready to hand to a real client or colleague. Documentation is what turns a clever trick into a service people can rely on.",
+   "concepts": [
+    {
+     "heading": "Finishing and hardening",
+     "text": "Go through each automation with a checklist: does it have an owner, a clear trigger, tested data mapping, error handling, a human check where needed, and a log? Replace test accounts with proper ones only when safe. Remove personal data from tests. Turn the automation on only when it passes all checks, and watch the first runs closely.",
+     "points": [
+      "Owner, trigger, mapping, errors, human check, log",
+      "Safe test data",
+      "Watch the first live runs"
+     ]
+    },
+    {
+     "heading": "Troubleshooting method",
+     "text": "When an automation fails, work in order: look at the run history, find the first step that failed, read the error message, check the data that went into that step, and test that step alone with sample data. Change one thing at a time and rerun. Write the cause and fix in a troubleshooting log so that the same problem is solved faster next time.",
+     "points": [
+      "Find the first failed step",
+      "Check its input data",
+      "Change one thing at a time"
+     ]
+    },
+    {
+     "heading": "Documentation people use",
+     "text": "A one-page how-to describes what the automation does, when it runs, what it needs, how to turn it on and off, what to do when it fails and who to call. Use screenshots and plain language. Include a diagram of the steps. A client who understands the automation trusts it, and you spend less time answering the same questions.",
+     "points": [
+      "What, when, needs, on/off, failure plan, contact",
+      "Diagram and screenshots",
+      "Plain language"
+     ]
+    },
+    {
+     "heading": "Handover and showcase",
+     "text": "A good handover has three parts: a short demo, the written how-to and a follow-up check after a week. In the showcase, explain the problem, show the automation running, show one error being handled and state the time saved per week. Numbers make the value real.",
+     "points": [
+      "Demo, how-to, follow-up",
+      "Show an error handled",
+      "State time saved"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose your three best automations and write an owner and success measure for each",
+    "Run the hardening checklist and fix every gap",
+    "Test each with ten sample cases including bad data",
+    "Swap with a partner who tries to break your automations and records results",
+    "Write a one-page how-to with a diagram for each automation",
+    "Present a three-minute showcase with time saved per week"
+   ],
+   "lab": "Finalize 3 automations; swap and test each other's work; write a 1-page how-to for each.",
+   "examples": [
+    {
+     "label": "Hardening checklist",
+     "text": "Owner? Trigger? Mapping tested? Errors handled? Human check? Log? Sample-data tested? Off switch?"
+    },
+    {
+     "label": "Troubleshooting log",
+     "text": "Date | Automation | Problem | Cause | Fix | Time to fix"
+    }
+   ],
+   "code": "ONE-PAGE HOW-TO\nName:             Weekly sales report\nWhat it does:     Reads last 7 days of orders, writes a summary, emails the manager\nWhen it runs:     Mondays 07:00\nNeeds:            Sheet \"Orders\" columns A-H filled; email account connected\nTurn off/on:      Toggle the scenario switch in the automation tool\nIf it fails:      Check run history -> read the error -> see errors sheet -> contact owner\nOwner / contact:  [name, phone]\nLast tested:      [date]",
+   "mistakes": [
+    "Going live without testing bad data",
+    "Changing many things at once when troubleshooting",
+    "Documentation full of jargon",
+    "No owner for the automation"
+   ],
+   "quiz": [
+    {
+     "q": "What is the first step in troubleshooting?",
+     "a": "Find the first failed step in the run history."
+    },
+    {
+     "q": "Why change one thing at a time?",
+     "a": "To know which change fixed the problem."
+    },
+    {
+     "q": "What belongs in a how-to?",
+     "a": "What it does, when it runs, needs, on/off, failure plan, contact."
+    },
+    {
+     "q": "Why include numbers in a showcase?",
+     "a": "They show the real value."
+    },
+    {
+     "q": "Why have an owner?",
+     "a": "Someone must be responsible for it."
+    }
+   ],
+   "takeaways": [
+    "Harden before going live",
+    "Troubleshoot step by step",
+    "Document for the user",
+    "Show the value in numbers"
+   ],
+   "glossary": [
+    {
+     "term": "Hardening",
+     "meaning": "Making something reliable and safe."
+    },
+    {
+     "term": "Run history",
+     "meaning": "A record of past automation runs."
+    },
+    {
+     "term": "Handover",
+     "meaning": "Passing a finished system to its users."
+    },
+    {
+     "term": "Showcase",
+     "meaning": "A presentation of your finished work."
+    }
+   ],
+   "homework": "Prepare a 3-minute demo."
+  }
+ },
+ {
+  "number": 11,
+  "week": 3,
+  "week_title": "AI for Business and Freelancing",
+  "week_goal": "Analyze data, build customer-facing assistants and package services you can sell.",
+  "title": "Data analysis with AI",
+  "content": {
+   "objectives": [
+    "Clean and analyse a business dataset with AI help",
+    "Create charts and plain-language insights",
+    "Verify AI calculations with formulas",
+    "Write three evidence-based recommendations"
+   ],
+   "intro": "Businesses sit on data they never look at: sales records, orders, expenses, customer lists. AI makes analysis much more accessible, but it can also make confident arithmetic mistakes. Today you analyse a real dataset the right way: AI to explore, spreadsheets to calculate, and you to decide.",
+   "concepts": [
+    {
+     "heading": "Cleaning data first",
+     "text": "Most analysis time goes on cleaning. Look for blank cells, duplicates, inconsistent spellings (Nairobi, nairobi, NBO), dates in different formats and numbers stored as text. Ask AI how to fix each problem in your spreadsheet tool and work on a copy of the original. Record every cleaning step so the analysis can be repeated and explained to someone else.",
+     "points": [
+      "Blanks, duplicates, spellings, dates, number formats",
+      "Work on a copy",
+      "Record every cleaning step"
+     ]
+    },
+    {
+     "heading": "Asking good analysis questions",
+     "text": "Begin with business questions: which products sell best, which days are busiest, which customers return, where do costs rise? Describe the columns to the AI and ask it to suggest analyses, then ask for the spreadsheet formulas or pivot table steps to produce them. This keeps the arithmetic inside the spreadsheet where it is exact and visible, and uses AI for guidance and explanation.",
+     "points": [
+      "Start from business questions",
+      "AI suggests; spreadsheet calculates",
+      "Use pivot tables and formulas"
+     ]
+    },
+    {
+     "heading": "Charts and insights",
+     "text": "Choose the chart to match the message: a line for change over time, bars for comparing groups, a pie only for a few parts of a whole. Give every chart a clear title that states the insight, such as 'Saturday sales are 40% higher than weekdays'. Ask AI to describe what a chart shows in plain language and then check the description against the numbers.",
+     "points": [
+      "Line for time, bars for groups",
+      "Title states the insight",
+      "Check AI descriptions against numbers"
+     ]
+    },
+    {
+     "heading": "From insight to recommendation",
+     "text": "An insight is only useful if it leads to an action. For each finding ask: so what, and what should we do? Write three recommendations, each with the evidence, the expected benefit and a simple way to test it. Be honest about limits: a small dataset or a short time period may not show the whole truth. Correlation does not prove cause.",
+     "points": [
+      "Insight, evidence, action, test",
+      "State limits honestly",
+      "Correlation is not cause"
+     ]
+    }
+   ],
+   "steps": [
+    "Obtain a sample sales dataset of at least 200 rows (provided or from a willing business with personal data removed)",
+    "List every data quality problem you find and clean them on a copy, recording each step",
+    "Write five business questions and use AI to suggest how to answer each in the sheet",
+    "Build pivot tables or formulas for each question and check three results by hand",
+    "Create three charts with insight titles",
+    "Write three recommendations with evidence, expected benefit and a test"
+   ],
+   "lab": "Analyze a sample sales dataset: find top products, trends, and 3 recommendations with charts.",
+   "examples": [
+    {
+     "label": "Analysis prompt",
+     "text": "My sheet has columns date, product, quantity, price, customer. Suggest 5 useful business questions and tell me how to answer each with a pivot table or formula."
+    },
+    {
+     "label": "Insight prompt",
+     "text": "Here are the totals by product: {{table}}. Describe in 4 sentences what this shows and what might explain it. Do not invent numbers."
+    }
+   ],
+   "code": "ANALYSIS LOG\nDataset:       sales_2026.csv (212 rows)    Copy made: yes\nCleaning:      1 removed 6 duplicate rows   2 standardised town names\n               3 converted dates to YYYY-MM-DD   4 fixed 9 prices stored as text\nQuestion 1:    Best-selling product by revenue?  Method: pivot (product x sum revenue)\nCheck:         Manual sum for top product = 48,200  matches pivot = YES\nInsight:       Product B earns 32% of revenue from 12% of orders\nRecommendation: Bundle B with slow product D; test for 2 weeks",
+   "mistakes": [
+    "Letting AI calculate totals in its head",
+    "Analysing the only copy of the data",
+    "Charts with unclear titles",
+    "Treating a pattern as proof of cause"
+   ],
+   "quiz": [
+    {
+     "q": "Why work on a copy of the data?",
+     "a": "To protect the original."
+    },
+    {
+     "q": "Who should do the arithmetic?",
+     "a": "The spreadsheet formulas and pivots."
+    },
+    {
+     "q": "What should a chart title say?",
+     "a": "The insight."
+    },
+    {
+     "q": "Name two data problems to clean.",
+     "a": "For example duplicates, blanks, inconsistent spelling, wrong formats."
+    },
+    {
+     "q": "Why state limits?",
+     "a": "Small or short datasets may mislead."
+    }
+   ],
+   "takeaways": [
+    "Clean and record",
+    "Spreadsheet calculates, AI guides",
+    "Insight titles",
+    "Recommend and test"
+   ],
+   "glossary": [
+    {
+     "term": "Dataset",
+     "meaning": "A collection of data in rows and columns."
+    },
+    {
+     "term": "Pivot table",
+     "meaning": "A tool for summarising data by groups."
+    },
+    {
+     "term": "Insight",
+     "meaning": "A useful finding from data."
+    },
+    {
+     "term": "Correlation",
+     "meaning": "Two things moving together, not necessarily causing each other."
+    }
+   ],
+   "homework": "Find a dataset in your own work or community and analyze."
+  }
+ },
+ {
+  "number": 12,
+  "week": 3,
+  "week_title": "AI for Business and Freelancing",
+  "week_goal": "Analyze data, build customer-facing assistants and package services you can sell.",
+  "title": "Dashboards and reporting",
+  "content": {
+   "objectives": [
+    "Build a live dashboard from a Google Sheet",
+    "Choose KPIs that matter for a small business",
+    "Write an executive summary a manager will read",
+    "Share a report safely"
+   ],
+   "intro": "A dashboard is a one-page view of how a business is doing. Done well, it replaces long meetings and guesswork. Today you build one with Looker Studio or similar, choose measures that actually drive decisions, and write the short summary that tells people what to do.",
+   "concepts": [
+    {
+     "heading": "Choosing KPIs",
+     "text": "A KPI, or key performance indicator, is a number that shows progress toward a goal. Choose few and make them meaningful: for a shop perhaps weekly revenue, number of orders, repeat customers, and gross margin; for a service business enquiries, conversion rate and average response time. Avoid vanity numbers that look impressive but change no decision. For each KPI write its definition, source and target.",
+     "points": [
+      "Few, meaningful measures",
+      "Define, source, target",
+      "Avoid vanity numbers"
+     ]
+    },
+    {
+     "heading": "Building the dashboard",
+     "text": "Connect the sheet as a data source, then add scorecards for the main KPIs, a trend chart over time, a breakdown by product or channel and a table of recent rows. Add date filters so users can change the period. Keep the layout clean with the most important number at the top left, consistent colours and readable labels. Test it on a phone because many owners view it there.",
+     "points": [
+      "Scorecards, trend, breakdown, table",
+      "Date filter",
+      "Check on a phone"
+     ]
+    },
+    {
+     "heading": "The executive summary",
+     "text": "Managers rarely read details. Write five or six sentences: what happened, why it probably happened, what it means and what you recommend. Lead with the most important point. Use AI to tighten your draft, but supply the numbers yourself and check that every figure matches the dashboard. A summary that is clear and honest earns trust.",
+     "points": [
+      "Happened, why, meaning, recommendation",
+      "Lead with the key point",
+      "Every number must match"
+     ]
+    },
+    {
+     "heading": "Sharing safely",
+     "text": "Dashboards can reveal sensitive business or customer data. Share with named people, not with anyone who has the link, remove personal information such as phone numbers, and give view-only access unless someone needs to edit. Review who has access regularly and remove people who have left. Keep the source sheet more restricted than the dashboard.",
+     "points": [
+      "Share with named people",
+      "Remove personal data",
+      "View-only by default"
+     ]
+    }
+   ],
+   "steps": [
+    "Define five KPIs with definition, source and target in a KPI table",
+    "Prepare the Sheet as a clean data source with consistent columns",
+    "Create the dashboard with scorecards, a trend chart, a breakdown and a date filter",
+    "Review layout and test on a phone",
+    "Write the six-sentence executive summary and check every figure",
+    "Set sharing to named viewers only and test what a viewer can and cannot see"
+   ],
+   "lab": "Create a live dashboard and a one-page management report from one dataset.",
+   "examples": [
+    {
+     "label": "KPI table",
+     "text": "KPI | Definition | Source column | Target | Why it matters"
+    },
+    {
+     "label": "Summary prompt",
+     "text": "Here are this month's KPIs: {{numbers}}. Write a six-sentence summary: what happened, a likely reason, what it means, and one recommendation. Use only these numbers."
+    }
+   ],
+   "code": "EXECUTIVE SUMMARY (example structure)\n1 Headline:        Sales rose 12% to KES 412,000 in September.\n2 Main driver:     Most of the rise came from the weekend bundle offer.\n3 Concern:         Repeat customers fell from 38% to 31%.\n4 Meaning:         New customers are arriving but not returning.\n5 Recommendation:  Start a follow-up message 7 days after purchase and test for 4 weeks.\n6 Next review:     First Monday of next month.",
+   "mistakes": [
+    "Too many KPIs",
+    "Dashboards nobody can read on a phone",
+    "Summaries with numbers that do not match",
+    "Public links to private data"
+   ],
+   "quiz": [
+    {
+     "q": "What is a KPI?",
+     "a": "A key number that shows progress toward a goal."
+    },
+    {
+     "q": "What belongs in a KPI definition?",
+     "a": "Meaning, data source and target."
+    },
+    {
+     "q": "Where should the most important number go?",
+     "a": "Top left."
+    },
+    {
+     "q": "What does an executive summary contain?",
+     "a": "What happened, why, what it means and a recommendation."
+    },
+    {
+     "q": "How should you share a dashboard?",
+     "a": "With named viewers, with personal data removed."
+    }
+   ],
+   "takeaways": [
+    "Few meaningful KPIs",
+    "Clean simple layout",
+    "Lead the summary with the key point",
+    "Share carefully"
+   ],
+   "glossary": [
+    {
+     "term": "KPI",
+     "meaning": "Key performance indicator."
+    },
+    {
+     "term": "Scorecard",
+     "meaning": "A dashboard tile showing one number."
+    },
+    {
+     "term": "Data source",
+     "meaning": "Where a dashboard gets its data."
+    },
+    {
+     "term": "Executive summary",
+     "meaning": "A short summary for decision makers."
+    }
+   ],
+   "homework": "Share it with a real business owner for feedback."
+  }
+ },
+ {
+  "number": 13,
+  "week": 3,
+  "week_title": "AI for Business and Freelancing",
+  "week_goal": "Analyze data, build customer-facing assistants and package services you can sell.",
+  "title": "Customer support and sales assistants",
+  "content": {
+   "objectives": [
+    "Build an FAQ and support assistant from a business's own documents",
+    "Write tone, escalation and 'I do not know' rules",
+    "Test with tricky and adversarial questions",
+    "Plan handover to a human"
+   ],
+   "intro": "Customers ask the same questions over and over: prices, opening hours, delivery, returns. An AI assistant trained on the business's own information can answer instantly at any hour. The danger is a helpful-sounding assistant that invents policies. Today you build one that is useful, honest and safe.",
+   "concepts": [
+    {
+     "heading": "Collecting the knowledge",
+     "text": "A support assistant is only as good as the information you give it. Gather the real FAQs, price list, opening hours, delivery rules, return policy and contact details into one clean document. Ask the business owner to review it for accuracy. Remove outdated items. Put a date at the top and decide who will update it, because wrong prices cause real customer problems.",
+     "points": [
+      "One clean, approved document",
+      "Owner reviews for accuracy",
+      "Date it and assign an updater"
+     ]
+    },
+    {
+     "heading": "Writing the instructions",
+     "text": "Instructions should state: the assistant's purpose and the business name, the tone, what it can do, what it must never do (for example promise discounts, give medical or legal advice, or share other customers' data), to answer only from the provided information, and what to say when it does not know. Add two or three sample exchanges showing the ideal style. Keep it short and clear.",
+     "points": [
+      "Purpose, tone, can do, must never do",
+      "Answer only from the document",
+      "Sample exchanges"
+     ]
+    },
+    {
+     "heading": "Escalation to humans",
+     "text": "Some situations must go to a person: complaints, refunds, angry customers, safety issues, anything the assistant cannot answer. Define these triggers clearly and tell the assistant to collect the customer's name, contact and a short description and then say a human will reply by a certain time. Make sure someone really does. An assistant that promises human help and delivers none damages trust.",
+     "points": [
+      "Clear triggers for human help",
+      "Collect contact and summary",
+      "Make sure humans respond"
+     ]
+    },
+    {
+     "heading": "Testing hard",
+     "text": "Test with twenty-five questions: common ones, rare ones, questions outside the document, rude messages, requests for discounts, attempts to change the assistant's rules and messages in mixed English and local language. Record each answer and mark pass or fail. Fix the instructions and the document, then retest. Ask the business owner to try to break it.",
+     "points": [
+      "Common, rare, outside, rude, tricky",
+      "Record pass or fail",
+      "Owner tries to break it"
+     ]
+    }
+   ],
+   "steps": [
+    "Interview a business owner (or use the trainer's case) and collect ten FAQs, the price list, hours, delivery and returns policy",
+    "Create the clean knowledge document with a date and owner",
+    "Write the assistant's instructions including must-never rules and escalation triggers",
+    "Create the assistant in your chosen tool and add the knowledge document",
+    "Test it with 25 questions and record pass or fail for each",
+    "Improve instructions and knowledge until at least 22 pass and show the owner"
+   ],
+   "lab": "Build a support assistant for a shop, school or clinic booking use case; run 20 test questions.",
+   "examples": [
+    {
+     "label": "Instruction excerpt",
+     "text": "Answer only from the provided business information. If the answer is not there, say: 'I am not sure, let me connect you with our team' and ask for the customer's name and phone number. Never promise discounts or refunds."
+    },
+    {
+     "label": "Challenge",
+     "text": "Try five ways to make the assistant break its own rules and fix each one."
+    }
+   ],
+   "code": "SUPPORT ASSISTANT SPEC\nBusiness:       [name]   Hours: [..]   Contact: [..]\nPurpose:        Answer customer questions about products, prices, delivery and returns\nTone:           Warm, brief, respectful; short sentences\nKnowledge:      knowledge_v3.docx (updated [date], owner [name])\nMust never:     promise discounts, give medical/legal advice, share customer data, guess prices\nUnsure:         Say so, collect name + phone, tell customer a person will reply within [time]\nEscalate:       complaints, refunds, safety issues, angry customers\nTest set:       25 questions, pass mark 22",
+   "mistakes": [
+    "Letting the assistant answer from general knowledge",
+    "Outdated prices in the knowledge file",
+    "No human follow-up for escalations",
+    "Testing only polite questions"
+   ],
+   "quiz": [
+    {
+     "q": "What should the knowledge document be?",
+     "a": "Accurate, approved, dated and owned."
+    },
+    {
+     "q": "What must the assistant do when it does not know?",
+     "a": "Say so and offer human help."
+    },
+    {
+     "q": "Name two things it must never do.",
+     "a": "For example promise discounts or give legal or medical advice."
+    },
+    {
+     "q": "What should trigger escalation?",
+     "a": "Complaints, refunds, safety issues, angry customers."
+    },
+    {
+     "q": "Why does the owner test it?",
+     "a": "They know the business and find real problems."
+    }
+   ],
+   "takeaways": [
+    "Good knowledge, good assistant",
+    "Clear rules and escalation",
+    "Humans must follow up",
+    "Test hard"
+   ],
+   "glossary": [
+    {
+     "term": "FAQ",
+     "meaning": "Frequently asked questions."
+    },
+    {
+     "term": "Escalation",
+     "meaning": "Passing a case to a human."
+    },
+    {
+     "term": "Knowledge file",
+     "meaning": "Information the assistant relies on."
+    },
+    {
+     "term": "Guardrail",
+     "meaning": "A rule that limits what a system may do."
+    }
+   ],
+   "homework": "Collect 10 real FAQs from a local business."
+  }
+ },
+ {
+  "number": 14,
+  "week": 3,
+  "week_title": "AI for Business and Freelancing",
+  "week_goal": "Analyze data, build customer-facing assistants and package services you can sell.",
+  "title": "Freelancing and service packaging",
+  "content": {
+   "objectives": [
+    "Choose a niche and package AI services for local and online clients",
+    "Price services in KES and USD using value and effort",
+    "Write a proposal and a portfolio page",
+    "Reach first prospects respectfully"
+   ],
+   "intro": "Skills become income when you can explain, price and deliver them. Today you decide what you will sell, to whom and for how much, and you prepare the documents that make clients say yes. You will also learn how to approach businesses without being annoying.",
+   "concepts": [
+    {
+     "heading": "Choosing a niche",
+     "text": "Beginners try to serve everyone and convince no one. Choose a specific group and a specific problem: for example 'WhatsApp customer reply systems for small salons' or 'monthly social content for restaurants'. A niche makes your message clear, lets you reuse templates and builds your reputation. Pick one where you understand the customers or can learn quickly, and where people already spend money.",
+     "points": [
+      "Specific customer, specific problem",
+      "Reuse templates",
+      "Pick where people already spend"
+     ]
+    },
+    {
+     "heading": "Packages and pricing",
+     "text": "Package your work into three clear offers: a starter, a standard and a premium, each with defined deliverables, timeline and revisions. Price by the value you create and the effort and risk involved, not only hours. Research local rates and global platform rates; remember to include maintenance and your own costs. Price in the currency your client uses and be clear about payment terms, such as half upfront.",
+     "points": [
+      "Three packages with clear deliverables",
+      "Value, effort, risk",
+      "Clear payment terms"
+     ]
+    },
+    {
+     "heading": "Proposals and portfolio",
+     "text": "A proposal answers: what is the problem, what will you deliver, how long will it take, what will it cost and why should they trust you. Keep it to one or two pages. A portfolio page shows two or three case studies with the problem, what you did and the result, ideally with a short quote from a client. If you have no clients yet, do a small free pilot for a friendly business and document it honestly.",
+     "points": [
+      "Problem, deliverables, timeline, price, proof",
+      "Case studies with results",
+      "Small pilots build proof"
+     ]
+    },
+    {
+     "heading": "Finding clients respectfully",
+     "text": "Start with people you know and local businesses you can visit. Offer to solve one small visible problem. On platforms such as Upwork, Fiverr and LinkedIn write a clear profile and send personalised proposals that quote the client's own words from the job post; copy-paste proposals are ignored. Follow up once or twice, politely. Never send unsolicited bulk messages: it is rude and often illegal.",
+     "points": [
+      "Start with your network",
+      "Personalise every proposal",
+      "No unsolicited bulk messages"
+     ]
+    }
+   ],
+   "steps": [
+    "Write your niche sentence: I help [who] to [achieve what] by [how]",
+    "Design three packages with deliverables, timeline, revisions and price in KES and USD",
+    "Write a one-page proposal template with a pricing table and terms",
+    "Create a portfolio page or Canva presentation with one case study from your work this course",
+    "Write a platform profile and two personalised proposals for real job posts or local businesses",
+    "Role-play a five-minute client conversation with a partner and record the questions you could not answer"
+   ],
+   "lab": "Create 3 service packages, a portfolio page, a profile and 2 proposals for real job posts.",
+   "examples": [
+    {
+     "label": "Niche sentence",
+     "text": "I help small salons in Ruiru answer customers faster by setting up a WhatsApp reply system with approved templates."
+    },
+    {
+     "label": "Proposal outline",
+     "text": "Problem | What I will deliver | Timeline | Price and payment terms | Why me | Next step"
+    }
+   ],
+   "code": "SERVICE PACKAGES (example)\nStarter   | Brand voice guide + 10 posts + 5 reply templates | 5 days  | KES 8,000  | 1 revision\nStandard  | Starter + 30-day content calendar + graphics     | 10 days | KES 20,000 | 2 revisions\nPremium   | Standard + 1 automation + how-to + 2 weeks support | 20 days | KES 45,000 | 3 revisions\nPayment:  50% upfront, 50% on delivery.   Not included: paid advertising spend.\n(Prices are illustrative. Check local market rates and your own costs.)",
+   "mistakes": [
+    "Trying to serve everyone",
+    "Pricing only by hours",
+    "Copy-pasting proposals",
+    "Sending bulk unsolicited messages"
+   ],
+   "quiz": [
+    {
+     "q": "Why choose a niche?",
+     "a": "A clear message and reusable work."
+    },
+    {
+     "q": "How many packages should you offer?",
+     "a": "Three: starter, standard, premium."
+    },
+    {
+     "q": "What belongs in a proposal?",
+     "a": "Problem, deliverables, timeline, price, proof and next step."
+    },
+    {
+     "q": "How do you build proof with no clients?",
+     "a": "Do a small pilot and document it."
+    },
+    {
+     "q": "Why personalise proposals?",
+     "a": "Generic ones are ignored."
+    }
+   ],
+   "takeaways": [
+    "Niche down",
+    "Package and price on value",
+    "Prove with case studies",
+    "Approach respectfully"
+   ],
+   "glossary": [
+    {
+     "term": "Niche",
+     "meaning": "A specific market segment."
+    },
+    {
+     "term": "Package",
+     "meaning": "A defined bundle of work at a set price."
+    },
+    {
+     "term": "Proposal",
+     "meaning": "A document offering a solution and price."
+    },
+    {
+     "term": "Pilot",
+     "meaning": "A small trial project."
+    }
+   ],
+   "homework": "Send 3 real proposals or outreach messages."
+  }
+ },
+ {
+  "number": 15,
+  "week": 3,
+  "week_title": "AI for Business and Freelancing",
+  "week_goal": "Analyze data, build customer-facing assistants and package services you can sell.",
+  "title": "Lab day: Pitch and Proposal",
+  "content": {
+   "objectives": [
+    "Handle a discovery call and objections",
+    "Present an offer clearly and confidently",
+    "Deliver and invoice professionally",
+    "Record a 90-second pitch"
+   ],
+   "intro": "Lab day for Week 3. You will practise the human side of client work: asking good questions, explaining value, handling doubts and delivering a professional experience. Technical skill gets you the work; communication keeps the client.",
+   "concepts": [
+    {
+     "heading": "The discovery call",
+     "text": "Before offering anything, learn the client's situation. Ask what they do now, what frustrates them, how much time or money the problem costs, what they have tried and what a good result would look like. Listen more than you talk and write down their exact words. At the end, summarise what you heard and ask permission to send a proposal. Clients buy when they feel understood.",
+     "points": [
+      "Ask about situation, pain, cost, goal",
+      "Listen and note exact words",
+      "Summarise and ask permission"
+     ]
+    },
+    {
+     "heading": "Handling objections",
+     "text": "Common objections are 'it is too expensive', 'I will think about it', 'we tried that before' and 'my customers will not like AI'. Treat each as a request for more information. Ask what concerns them, answer honestly, offer a smaller start such as a pilot, and never pressure. Sometimes the right answer is 'this is not the right time', and that is fine.",
+     "points": [
+      "Objection = need for information",
+      "Offer a smaller start",
+      "Never pressure"
+     ]
+    },
+    {
+     "heading": "Delivering professionally",
+     "text": "Agree scope, price, timeline and revisions in writing before starting. Keep the client updated with short progress messages. Deliver on time with a clear handover: files, how-to and a short training. Send a clear invoice with payment details and due date. Ask for feedback and a testimonial after delivery, and offer a simple follow-up plan.",
+     "points": [
+      "Written scope and terms",
+      "Short regular updates",
+      "Handover, invoice, testimonial"
+     ]
+    },
+    {
+     "heading": "The 90-second pitch",
+     "text": "A pitch has four parts: the problem your client has, your solution in one sentence, proof that you can deliver and a clear next step. Practise aloud until you can say it naturally without reading. Adjust it for each audience: a restaurant owner cares about customers and time, a manager about cost and risk. Simple words and calm confidence win.",
+     "points": [
+      "Problem, solution, proof, next step",
+      "Practise aloud",
+      "Adapt to the listener"
+     ]
+    }
+   ],
+   "steps": [
+    "Prepare ten discovery questions and a note-taking template",
+    "Role-play a discovery call in pairs for ten minutes each and swap",
+    "Write answers to the four common objections in your own words",
+    "Create your scope-of-work and invoice templates",
+    "Rehearse and record a 90-second pitch and watch it back",
+    "Give your partner feedback using strength, question, idea and choose one local business to contact this week"
+   ],
+   "lab": "Mock client calls in pairs; refine your offer; record a 90-second pitch.",
+   "examples": [
+    {
+     "label": "Discovery questions",
+     "text": "What do you do now? What is hardest? How much time or money does it cost? What have you tried? What would success look like?"
+    },
+    {
+     "label": "Pitch frame",
+     "text": "[Client type] often struggle with [problem]. I set up [solution] so that [result]. For example, [proof]. Could we start with [small first step]?"
+    }
+   ],
+   "code": "SCOPE OF WORK (template)\nClient:            [name]       Date: [..]\nProblem:           [one sentence in the client's words]\nDeliverables:      1 ..  2 ..  3 ..\nNot included:      [ad spend, extra revisions, ...]\nTimeline:          Start [date]  Delivery [date]\nPrice & payment:   KES [..], 50% upfront, balance on delivery\nRevisions:         [number]       Contact: [..]\nSigned (client):   ________   Signed (me): ________",
+   "mistakes": [
+    "Pitching before understanding the problem",
+    "Arguing with objections",
+    "Starting work without written scope",
+    "Forgetting to ask for a testimonial"
+   ],
+   "quiz": [
+    {
+     "q": "What do you do first on a discovery call?",
+     "a": "Ask questions and listen."
+    },
+    {
+     "q": "How should you treat objections?",
+     "a": "As requests for more information."
+    },
+    {
+     "q": "What must be agreed before starting?",
+     "a": "Scope, price, timeline and revisions in writing."
+    },
+    {
+     "q": "What are the four parts of a pitch?",
+     "a": "Problem, solution, proof, next step."
+    },
+    {
+     "q": "Why ask for a testimonial?",
+     "a": "It builds proof for future clients."
+    }
+   ],
+   "takeaways": [
+    "Understand before offering",
+    "Objections are information",
+    "Write down the scope",
+    "Practise your pitch"
+   ],
+   "glossary": [
+    {
+     "term": "Discovery call",
+     "meaning": "A first conversation to understand a client's needs."
+    },
+    {
+     "term": "Objection",
+     "meaning": "A client's concern about buying."
+    },
+    {
+     "term": "Scope of work",
+     "meaning": "A written description of what will be delivered."
+    },
+    {
+     "term": "Testimonial",
+     "meaning": "A client's positive statement about your work."
+    }
+   ],
+   "homework": "Contact one local business."
+  }
+ },
+ {
+  "number": 16,
+  "week": 4,
+  "week_title": "Capstone: Client Project Sprint",
+  "week_goal": "Deliver a complete, professional AI solution for a real or simulated client.",
+  "title": "Discovery and project plan",
+  "content": {
+   "objectives": [
+    "Choose a client and agree a clear project brief",
+    "Write a two-page project plan with scope, timeline and measures",
+    "Identify risks and data protection requirements",
+    "Confirm the plan with the client"
+   ],
+   "intro": "The capstone is your professional debut: you deliver a complete AI solution for a real or simulated client. Today you do what every good project starts with, which is understanding the client and agreeing exactly what will be delivered. Careful planning now prevents confusion later.",
+   "concepts": [
+    {
+     "heading": "Choosing the right client and project",
+     "text": "Choose a client you can reach during the week and a problem that fits ten working days: a content system, an automation, or a customer assistant. A small shop, a school office, a church group or a friend's online business all work. If you cannot find a client, your trainer will provide a simulated brief with sample documents. Agree who will give feedback and when, because a client who disappears can sink a project.",
+     "points": [
+      "Reachable client, ten-day problem",
+      "Content system, automation or assistant",
+      "Agree feedback times"
+     ]
+    },
+    {
+     "heading": "The project brief",
+     "text": "Write the brief with the client: the problem in their own words, who the users are, what a successful result looks like, what you will deliver and what is out of scope. Add the tools that will be used and what information or access you need from the client. Ask them to read it and say 'yes, this is what I want'. Changes later should be agreed in writing.",
+     "points": [
+      "Problem, users, success, deliverables, out of scope",
+      "Needs from the client",
+      "Client confirms in writing"
+     ]
+    },
+    {
+     "heading": "Plan, timeline and measures",
+     "text": "Break the work into milestones: discovery done, first version, testing, handover. Give each a date and a measurable result, such as 'assistant answers 22 of 25 test questions correctly' or 'weekly report arrives automatically every Monday'. Allow time for testing and for the client's feedback. Add a buffer of one or two days because something always takes longer.",
+     "points": [
+      "Milestones with dates",
+      "Measurable results",
+      "Include a buffer"
+     ]
+    },
+    {
+     "heading": "Risks and data protection",
+     "text": "List what could go wrong: the client is slow to respond, the data is messy, the AI makes mistakes, a tool changes or fails. For each risk write how you will reduce it. Check the data: use only what the client is allowed to share, remove personal details where possible, tell the client how information will be stored and who will see it, and delete test data at the end.",
+     "points": [
+      "List risks with a response each",
+      "Use only permitted data",
+      "Delete test data at the end"
+     ]
+    }
+   ],
+   "steps": [
+    "Choose your client and project type and arrange a discovery meeting",
+    "Hold the discovery meeting using your question list and write the brief in the client's words",
+    "Define success measures, deliverables and what is out of scope",
+    "Create a milestone plan with dates and a buffer",
+    "Write a risk list with a response for each and a data protection note",
+    "Send the two-page plan to the client and record their confirmation"
+   ],
+   "lab": "Choose a client, interview them, produce a 2-page project plan.",
+   "examples": [
+    {
+     "label": "Brief template",
+     "text": "Client | Problem | Users | Success looks like | Deliverables | Out of scope | What I need from the client | Dates"
+    },
+    {
+     "label": "Risk table",
+     "text": "Risk | Likelihood | Impact | What I will do"
+    }
+   ],
+   "code": "PROJECT PLAN (2 pages)\nClient / contact:   [name, phone]            Project type: [content / automation / assistant]\nProblem:            \"[client's own words]\"\nSuccess measures:   1 [measurable]   2 [measurable]\nDeliverables:       1 ..   2 ..   3 ..        Out of scope: ..\nMilestones:         D2 first version | D3 testing | D4 polish | D5 demo and handover\nRisks:              Client slow to reply -> fix times agreed | Messy data -> sample first\nData & privacy:     Data used: [..]  Stored: [..]  Deleted on: [date]\nClient confirmation: \"Yes, this is what I need\" (message saved)",
+   "mistakes": [
+    "Starting without a written brief",
+    "Success measures that cannot be measured",
+    "Forgetting about data protection",
+    "No buffer time"
+   ],
+   "quiz": [
+    {
+     "q": "What should a brief include?",
+     "a": "Problem, users, success measures, deliverables and out of scope."
+    },
+    {
+     "q": "Why measurable success?",
+     "a": "So everyone can tell if it worked."
+    },
+    {
+     "q": "What if a client cannot be found?",
+     "a": "Use a simulated brief from the trainer."
+    },
+    {
+     "q": "Why have a buffer?",
+     "a": "Tasks usually take longer than planned."
+    },
+    {
+     "q": "What should happen to test data at the end?",
+     "a": "It should be deleted."
+    }
+   ],
+   "takeaways": [
+    "Agree the brief in writing",
+    "Measurable milestones",
+    "List risks",
+    "Protect data"
+   ],
+   "glossary": [
+    {
+     "term": "Brief",
+     "meaning": "A written description of a project."
+    },
+    {
+     "term": "Milestone",
+     "meaning": "An important checkpoint in a plan."
+    },
+    {
+     "term": "Out of scope",
+     "meaning": "Not included in the project."
+    },
+    {
+     "term": "Risk",
+     "meaning": "Something that could go wrong."
+    }
+   ],
+   "homework": "Confirm plan with client."
+  }
+ },
+ {
+  "number": 17,
+  "week": 4,
+  "week_title": "Capstone: Client Project Sprint",
+  "week_goal": "Deliver a complete, professional AI solution for a real or simulated client.",
+  "title": "Build sprint 1",
+  "content": {
+   "objectives": [
+    "Prioritise a minimum viable solution",
+    "Build the core workflow or content system",
+    "Use daily stand-ups and mentor checkpoints",
+    "Document as you build"
+   ],
+   "intro": "Building day. Your job is to get the core of the solution working end to end, even if it is plain. A working simple version lets the client react to something real, which is far more valuable than a perfect plan. Keep communicating, keep notes and keep your scope under control.",
+   "concepts": [
+    {
+     "heading": "Minimum viable solution",
+     "text": "List everything the client might want, then mark what is essential for the problem to be solved. Build only that first. For a content project it might be the brand voice guide, one tested chain and the first week of content. For an automation, the trigger, the main action and an error alert. For an assistant, the knowledge document, instructions and a first round of tests. Add extras only after the core works.",
+     "points": [
+      "Separate essential from nice-to-have",
+      "Build the core first",
+      "Extras later"
+     ]
+    },
+    {
+     "heading": "Working in short cycles",
+     "text": "Work in cycles of ninety minutes: build, test, note what changed. After each cycle take a short break and decide the next step. Use a simple board with three columns, to do, doing and done, and move cards as you go. If a task is stuck for more than fifteen minutes ask a classmate or mentor; this is normal and not a weakness.",
+     "points": [
+      "90-minute build and test cycles",
+      "To do / doing / done board",
+      "Ask for help after fifteen minutes"
+     ]
+    },
+    {
+     "heading": "Stand-ups and mentor checkpoints",
+     "text": "Start the day with a five-minute stand-up with your partner or mentor: what I finished, what I am doing today, what is blocking me. At mid-day show your work in progress to a mentor and invite honest questions. Short regular check-ins reveal problems early, when they are cheap to fix.",
+     "points": [
+      "Finished, doing, blocked",
+      "Mid-day mentor check",
+      "Problems early are cheap"
+     ]
+    },
+    {
+     "heading": "Documenting as you go",
+     "text": "Do not leave documentation until the end. Keep a build log with what you did, which prompts and settings you used, what failed and why. Save every important prompt, template and automation setting in a folder. This log becomes your how-to and your case study, and it saves you if something breaks or if you need to explain your choices.",
+     "points": [
+      "Keep a build log daily",
+      "Save prompts, templates, settings",
+      "Log becomes how-to and case study"
+     ]
+    }
+   ],
+   "steps": [
+    "Write the essential list and the nice-to-have list and agree the essential list with your mentor",
+    "Set up your board and the folder structure for the project",
+    "Build the core of the solution in two 90-minute cycles with a test after each",
+    "Hold the stand-up and mid-day mentor check and record the feedback",
+    "Fix the top three issues found",
+    "Update the build log and send the client a short progress message with a screenshot or sample"
+   ],
+   "lab": "Build core workflow or content system; hold a mid-day checkpoint.",
+   "examples": [
+    {
+     "label": "Stand-up",
+     "text": "Done yesterday: ... Doing today: ... Blocked by: ... Risk: ..."
+    },
+    {
+     "label": "Progress message",
+     "text": "Hello [client], here is a first version of [..]. Could you look at it and tell me one thing that works and one thing to change by [day]?"
+    }
+   ],
+   "code": "BUILD LOG\nDate:         [..]\nGoal today:   Core workflow works for 5 sample inputs\nDid:          Built trigger + AI classify + sheet row (prompt v2 saved: prompts/classify_v2.txt)\nFailed:       Empty phone field broke the mapping -> added default value\nTested:       5 of 5 samples OK; 2 messy samples need review\nDecisions:    Drop WhatsApp API step (out of scope); use email approval\nTomorrow:     Add error alert + approval step",
+   "mistakes": [
+    "Building extras before the core works",
+    "Working alone silently for hours",
+    "Not saving prompts and settings",
+    "Skipping the client progress message"
+   ],
+   "quiz": [
+    {
+     "q": "What is a minimum viable solution?",
+     "a": "The smallest version that solves the core problem."
+    },
+    {
+     "q": "How long should you struggle before asking for help?",
+     "a": "About fifteen minutes."
+    },
+    {
+     "q": "What goes in a stand-up?",
+     "a": "Done, doing, blocked."
+    },
+    {
+     "q": "Why keep a build log?",
+     "a": "It becomes documentation and a case study."
+    },
+    {
+     "q": "Why show the client early?",
+     "a": "To get feedback while changes are cheap."
+    }
+   ],
+   "takeaways": [
+    "Core first",
+    "Short build-test cycles",
+    "Regular check-ins",
+    "Document daily"
+   ],
+   "glossary": [
+    {
+     "term": "MVP",
+     "meaning": "Minimum viable product."
+    },
+    {
+     "term": "Stand-up",
+     "meaning": "A short daily progress meeting."
+    },
+    {
+     "term": "Build log",
+     "meaning": "A daily record of work."
+    },
+    {
+     "term": "Cycle",
+     "meaning": "A repeated round of work and review."
+    }
+   ],
+   "homework": "Prepare questions for mentor."
+  }
+ },
+ {
+  "number": 18,
+  "week": 4,
+  "week_title": "Capstone: Client Project Sprint",
+  "week_goal": "Deliver a complete, professional AI solution for a real or simulated client.",
+  "title": "Build sprint 2",
+  "content": {
+   "objectives": [
+    "Test with realistic inputs and edge cases",
+    "Handle errors and write clear user instructions",
+    "Complete the solution and get client feedback",
+    "Run a safety and privacy check"
+   ],
+   "intro": "Today you move from 'it works on my examples' to 'it works for real people'. You will test harder, fix weaknesses, write instructions that a non-expert can follow and collect honest client feedback.",
+   "concepts": [
+    {
+     "heading": "Testing with real inputs",
+     "text": "Use real or realistic inputs from the client: typical, unusual, wrong and rude ones. Write down every test and result in a table. Look for patterns in failures rather than fixing each one blindly. Re-test everything after any change to a prompt or setting because small edits can change behaviour. Aim for a pass mark you agreed with the client in the plan.",
+     "points": [
+      "Typical, unusual, wrong, rude inputs",
+      "Record every test",
+      "Retest after every change"
+     ]
+    },
+    {
+     "heading": "Edge cases and error handling",
+     "text": "Edge cases are the odd situations: empty fields, very long messages, unexpected languages, duplicate requests, and times when a service is unavailable. Decide what should happen in each: a polite message, a default value, a notification to a human or a safe stop. A solution that fails gracefully is more valuable than one that is perfect only when everything goes right.",
+     "points": [
+      "Empty, long, odd, duplicate, service down",
+      "Decide behaviour for each",
+      "Fail gracefully"
+     ]
+    },
+    {
+     "heading": "User instructions",
+     "text": "Write for the person who will use the solution without you. Use short numbered steps and screenshots, plain words and a section called 'If something goes wrong'. Test the instructions by asking someone who has never seen the project to follow them. Wherever they hesitate, rewrite. Good instructions reduce support calls.",
+     "points": [
+      "Short steps, screenshots, plain words",
+      "If something goes wrong section",
+      "Test with a newcomer"
+     ]
+    },
+    {
+     "heading": "Safety and privacy check",
+     "text": "Before handover review: is personal data minimised and protected, are keys and passwords stored safely, are customers told when they talk to AI where appropriate, does a human check risky outputs, and could the system say something harmful or false? Fix gaps. Delete test data. Write down what the system cannot do so the client does not assume more than is true.",
+     "points": [
+      "Personal data and keys protected",
+      "Human checks on risky outputs",
+      "State limits to the client"
+     ]
+    }
+   ],
+   "steps": [
+    "Create a test table with at least 25 realistic inputs including five edge cases",
+    "Run all tests and mark pass or fail; fix the top issues and retest",
+    "Add error handling for at least three edge cases",
+    "Write the user instructions and test them with a person who has never seen the project",
+    "Run the safety and privacy checklist and fix gaps",
+    "Send the client the current version for feedback with two specific questions"
+   ],
+   "lab": "Complete the solution; test with real inputs; write a how-to guide.",
+   "examples": [
+    {
+     "label": "Test table",
+     "text": "# | Input | Expected | Actual | Pass? | Notes"
+    },
+    {
+     "label": "Safety checklist",
+     "text": "Data minimised? Keys safe? Human check? Limits stated? Test data deleted?"
+    }
+   ],
+   "code": "TEST TABLE\n#  | Input type  | Input                        | Expected              | Result | Pass\n1  | Typical     | \"Do you deliver to Juja?\"    | Delivery info         | OK     | Y\n2  | Edge        | (empty message)              | Ask customer to retry | Error  | N -> fixed\n3  | Rude        | \"Your service is useless\"    | Apology + escalate    | OK     | Y\n4  | Outside doc | \"Can I pay in bitcoin?\"      | \"I do not know\" + human | OK   | Y\nPass rate: 24/27 = 89% (target 85%)",
+   "mistakes": [
+    "Testing only with your own examples",
+    "Ignoring failures that happen rarely",
+    "Instructions written for experts",
+    "Forgetting to delete test data"
+   ],
+   "quiz": [
+    {
+     "q": "Name four kinds of test input.",
+     "a": "Typical, unusual, wrong and rude."
+    },
+    {
+     "q": "What is an edge case?",
+     "a": "An unusual situation that can break a system."
+    },
+    {
+     "q": "How do you test user instructions?",
+     "a": "Ask a newcomer to follow them."
+    },
+    {
+     "q": "What should you check for privacy?",
+     "a": "Minimised data, safe keys, deleted test data."
+    },
+    {
+     "q": "Why state limits to the client?",
+     "a": "So they do not assume the system can do more."
+    }
+   ],
+   "takeaways": [
+    "Test widely",
+    "Fail gracefully",
+    "Instructions for newcomers",
+    "Check safety and privacy"
+   ],
+   "glossary": [
+    {
+     "term": "Edge case",
+     "meaning": "An unusual situation that tests a system."
+    },
+    {
+     "term": "Graceful failure",
+     "meaning": "Handling a problem without crashing or harm."
+    },
+    {
+     "term": "Pass rate",
+     "meaning": "Percentage of tests passed."
+    },
+    {
+     "term": "User guide",
+     "meaning": "Instructions for the person who uses the system."
+    }
+   ],
+   "homework": "Collect client feedback."
+  }
+ },
+ {
+  "number": 19,
+  "week": 4,
+  "week_title": "Capstone: Client Project Sprint",
+  "week_goal": "Deliver a complete, professional AI solution for a real or simulated client.",
+  "title": "Polish and portfolio",
+  "content": {
+   "objectives": [
+    "Write a case study with problem, solution and measurable results",
+    "Build a portfolio page",
+    "Prepare your demo and handover pack",
+    "Collect a testimonial and next-steps agreement"
+   ],
+   "intro": "Your capstone is only valuable if people can see it and understand it. Today you turn your work into evidence: a case study, a portfolio page and a professional handover. This is what you will show future clients and employers.",
+   "concepts": [
+    {
+     "heading": "Writing a case study",
+     "text": "A case study tells the story of one project in four parts: the client and their problem, what you did, the results with numbers, and what you learned. Use the client's own words when you can. Include a screenshot or sample. Keep it to one page. Numbers such as hours saved, response time or pass rate convince far more than adjectives. Ask the client's permission before publishing and remove confidential details.",
+     "points": [
+      "Problem, solution, results, lessons",
+      "Numbers over adjectives",
+      "Permission and privacy"
+     ]
+    },
+    {
+     "heading": "Building a portfolio page",
+     "text": "A portfolio page can be a simple Canva presentation, a Google Site or a single page document. Include a short introduction about who you help, two or three case studies, your service packages and how to contact you. Make it easy to read on a phone. Keep it honest: only include work you did, and label pilots and practice projects as such.",
+     "points": [
+      "Intro, case studies, services, contact",
+      "Mobile friendly",
+      "Honest labelling"
+     ]
+    },
+    {
+     "heading": "The handover pack",
+     "text": "Give the client a folder with: the finished solution, the user guide, the how-to for any automation, a list of accounts and settings (without passwords in plain text), the test results and a short training session. Agree who owns what and what support you provide afterwards, for example two weeks of free fixes and optional paid support. Clear handover prevents misunderstandings.",
+     "points": [
+      "Solution, guides, test results, training",
+      "Ownership and support agreed",
+      "No plain-text passwords"
+     ]
+    },
+    {
+     "heading": "Testimonials and next steps",
+     "text": "Ask the client for a short testimonial: what problem you solved and what changed. Offer examples of what to include so it is easy to write, but never write it for them. Ask whether they know anyone else who could benefit. Offer a simple next step such as a monthly support plan or an improvement project. Thank them sincerely.",
+     "points": [
+      "Ask for what changed",
+      "Ask for referrals",
+      "Offer a clear next step"
+     ]
+    }
+   ],
+   "steps": [
+    "Write the one-page case study with three measurable results",
+    "Create the portfolio page with introduction, case studies, packages and contact",
+    "Assemble the handover folder and check that no secrets are included",
+    "Run the demo twice with a timer and prepare a backup recording",
+    "Hold a handover session with the client and agree the support terms",
+    "Ask for a testimonial and a referral and record the response"
+   ],
+   "lab": "Write your case study with screenshots and results; build your portfolio page.",
+   "examples": [
+    {
+     "label": "Case study frame",
+     "text": "Client and problem | What I did | Results (numbers) | What I learned | Quote"
+    },
+    {
+     "label": "Testimonial request",
+     "text": "Hello [client], could you write two or three sentences about the problem we solved and what changed for you? A photo or logo is optional."
+    }
+   ],
+   "code": "CASE STUDY (one page)\nTitle:     Faster replies for [Business] with a WhatsApp enquiry workflow\nClient:    [Business], [place]  (permission to publish: yes)\nProblem:   \"We lose customers because we reply too late.\"\nWhat I did: Built a workflow that classifies messages, drafts replies in the brand voice and\n            sends them after manager approval; created a weekly report.\nResults:   Reply time 3 hours -> 10 minutes | 27 of 30 test cases passed (90%) |\n           Saves about 6 hours per week\nLesson:    Clear categories and an approval step made the AI safe to use.\nQuote:     \"...\"  - [name]",
+   "mistakes": [
+    "Case studies without numbers",
+    "Publishing client details without permission",
+    "Handing over passwords in plain text",
+    "Forgetting to agree support terms"
+   ],
+   "quiz": [
+    {
+     "q": "What are the four parts of a case study?",
+     "a": "Problem, solution, results and lessons."
+    },
+    {
+     "q": "Why use numbers?",
+     "a": "They prove the value."
+    },
+    {
+     "q": "What goes in a handover pack?",
+     "a": "Solution, guides, test results, training and support terms."
+    },
+    {
+     "q": "Why ask permission to publish?",
+     "a": "Clients' information is confidential."
+    },
+    {
+     "q": "What should you offer after delivery?",
+     "a": "A clear next step or support plan."
+    }
+   ],
+   "takeaways": [
+    "Show results in numbers",
+    "Portfolio: honest and simple",
+    "Professional handover",
+    "Ask for a testimonial"
+   ],
+   "glossary": [
+    {
+     "term": "Case study",
+     "meaning": "A story of a project and its results."
+    },
+    {
+     "term": "Portfolio",
+     "meaning": "A collection of your best work."
+    },
+    {
+     "term": "Handover pack",
+     "meaning": "The materials given to a client at delivery."
+    },
+    {
+     "term": "Referral",
+     "meaning": "A recommendation to another potential client."
+    }
+   ],
+   "homework": "Rehearse demo."
+  }
+ },
+ {
+  "number": 20,
+  "week": 4,
+  "week_title": "Capstone: Client Project Sprint",
+  "week_goal": "Deliver a complete, professional AI solution for a real or simulated client.",
+  "title": "Demo Day and graduation",
+  "content": {
+   "objectives": [
+    "Deliver a ten-minute demo with confidence",
+    "Answer questions from business guests honestly",
+    "Give and receive feedback with a scorecard",
+    "Plan your first 90 days after graduation"
+   ],
+   "intro": "Demo Day brings together learners, families and local business owners. You will show a real solution you built for a real problem. Be proud of what you made, honest about its limits and curious about the questions. Many careers and clients start from a good demo.",
+   "concepts": [
+    {
+     "heading": "Delivering the demo",
+     "text": "Check your equipment early and have your backup ready. Structure ten minutes like this: two minutes on the client and the problem, four minutes showing the solution working, two minutes on results with numbers, and two minutes on lessons and next steps. Speak slowly, face the audience and show the real thing. If something fails, switch to the backup calmly and explain what should have happened.",
+     "points": [
+      "2-4-2-2 minute structure",
+      "Show the real solution",
+      "Backup ready; stay calm"
+     ]
+    },
+    {
+     "heading": "Answering questions",
+     "text": "Listen to the whole question, pause and answer briefly and honestly. Expect questions about cost, accuracy, safety, data privacy and 'will it replace my staff?'. Prepare short truthful answers. If you do not know, say 'I do not know yet, and here is how I would find out'. Never invent facts to sound clever. Thank the person for asking.",
+     "points": [
+      "Pause, answer briefly",
+      "Expect cost, accuracy, privacy, jobs",
+      "Honest 'I do not know yet'"
+     ]
+    },
+    {
+     "heading": "Scorecards and feedback",
+     "text": "Use a simple scorecard to rate each demo from one to five on: problem clarity, quality of solution, evidence and results, safety and responsibility, and communication, with one comment each. Give feedback as strength, question and suggestion. When receiving feedback, listen, write it down and decide later what to change. Feedback is how professionals improve.",
+     "points": [
+      "Five criteria, score and comment",
+      "Strength, question, suggestion",
+      "Receive first, decide later"
+     ]
+    },
+    {
+     "heading": "Your next 90 days",
+     "text": "Decide what you will do next: find your first paying client, join a team, continue to the Advanced path, or start your own small service. Write three goals and one weekly habit, such as one outreach message per day or one new case study per month. Tell someone your plan and meet them in a month to review. Keep a record of your results.",
+     "points": [
+      "Three goals and one weekly habit",
+      "Tell someone and review monthly",
+      "Consider the Advanced path"
+     ]
+    }
+   ],
+   "steps": [
+    "Do a technical check and rehearse the demo with the timer",
+    "Deliver your ten-minute demo to the audience",
+    "Answer at least two questions from the guests",
+    "Score two other demos using the five-criteria scorecard and give spoken feedback",
+    "Complete your reflection and the course feedback form",
+    "Write your 90-day plan and share it with an accountability partner"
+   ],
+   "lab": "Present, receive feedback, and sign up for the next cohort or client opportunities.",
+   "examples": [
+    {
+     "label": "Scorecard",
+     "text": "Problem clarity | Solution quality | Evidence and results | Safety and responsibility | Communication"
+    },
+    {
+     "label": "90-day plan",
+     "text": "Goal 1 earn | Goal 2 learn | Goal 3 share | Weekly habit | Partner | First step this week"
+    }
+   ],
+   "code": "90-DAY PLAN\nGoal 1 (earn):   Win 1 paying client by day 45  (outreach: 1 message per day)\nGoal 2 (learn):  Build 1 new automation or assistant per month\nGoal 3 (share):  Publish 2 case studies and ask for 2 testimonials\nWeekly habit:    Friday review: what I sold, built and learned\nPartner:         [name]      Review dates: day 30, 60, 90\nFirst step this week: Send my package list to 5 local businesses",
+   "mistakes": [
+    "Reading from slides instead of showing the solution",
+    "Inventing answers to questions",
+    "Taking feedback personally",
+    "Leaving without a plan"
+   ],
+   "quiz": [
+    {
+     "q": "How should a ten-minute demo be split?",
+     "a": "About 2 minutes problem, 4 solution, 2 results, 2 lessons."
+    },
+    {
+     "q": "What do you say if you do not know?",
+     "a": "That you do not know yet and how you would find out."
+    },
+    {
+     "q": "Name two scorecard criteria.",
+     "a": "For example problem clarity or safety and responsibility."
+    },
+    {
+     "q": "How should you give feedback?",
+     "a": "Strength, question, suggestion."
+    },
+    {
+     "q": "What should your 90-day plan include?",
+     "a": "Three goals, a weekly habit and an accountability partner."
+    }
+   ],
+   "takeaways": [
+    "Show the real thing",
+    "Be honest",
+    "Give kind feedback",
+    "Plan your next 90 days"
+   ],
+   "glossary": [
+    {
+     "term": "Demo Day",
+     "meaning": "A public presentation of finished projects."
+    },
+    {
+     "term": "Scorecard",
+     "meaning": "A form for rating work."
+    },
+    {
+     "term": "Accountability",
+     "meaning": "Being answerable for your goals."
+    },
+    {
+     "term": "Referral",
+     "meaning": "A recommendation to a new client."
+    }
+   ],
+   "homework": "Deliver the project to your client."
+  }
+ }
+]

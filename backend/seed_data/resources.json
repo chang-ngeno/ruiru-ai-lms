@@ -1,0 +1,92 @@
+{
+ "beginner": [
+  {
+   "key": "notes",
+   "title": "Learner Notes Handbook",
+   "desc": "Full written notes for every day, with examples, practice and answers.",
+   "file": "Beginner_Learner_Notes_Handbook.pdf",
+   "kind": "PDF"
+  },
+  {
+   "key": "workbook",
+   "title": "Printable Workbook",
+   "desc": "Lab pages, logs and reflections to print and write in.",
+   "file": "Beginner_Learner_Workbook.pdf",
+   "kind": "PDF"
+  },
+  {
+   "key": "decks",
+   "title": "Daily Slide Decks (20)",
+   "desc": "One PowerPoint per training day, with speaker notes.",
+   "file": "Beginner_Daily_Slide_Decks_20.zip",
+   "kind": "ZIP"
+  },
+  {
+   "key": "outline",
+   "title": "Course Outline",
+   "desc": "The four-week outline, tools and assessment.",
+   "file": "AI_Training_Beginner_Path.pdf",
+   "kind": "PDF"
+  }
+ ],
+ "intermediate": [
+  {
+   "key": "notes",
+   "title": "Learner Notes Handbook",
+   "desc": "Full written notes for every day, with examples, practice and answers.",
+   "file": "Intermediate_Learner_Notes_Handbook.pdf",
+   "kind": "PDF"
+  },
+  {
+   "key": "workbook",
+   "title": "Printable Workbook",
+   "desc": "Lab pages, logs and reflections to print and write in.",
+   "file": "Intermediate_Learner_Workbook.pdf",
+   "kind": "PDF"
+  },
+  {
+   "key": "decks",
+   "title": "Daily Slide Decks (20)",
+   "desc": "One PowerPoint per training day, with speaker notes.",
+   "file": "Intermediate_Daily_Slide_Decks_20.zip",
+   "kind": "ZIP"
+  },
+  {
+   "key": "outline",
+   "title": "Course Outline",
+   "desc": "The four-week outline, tools and assessment.",
+   "file": "AI_Training_Intermediate_Path.pdf",
+   "kind": "PDF"
+  }
+ ],
+ "advanced": [
+  {
+   "key": "notes",
+   "title": "Learner Notes Handbook",
+   "desc": "Full written notes for every day, with examples, practice and answers.",
+   "file": "Advanced_Learner_Notes_Handbook.pdf",
+   "kind": "PDF"
+  },
+  {
+   "key": "workbook",
+   "title": "Printable Workbook",
+   "desc": "Lab pages, logs and reflections to print and write in.",
+   "file": "Advanced_Learner_Workbook.pdf",
+   "kind": "PDF"
+  },
+  {
+   "key": "decks",
+   "title": "Daily Slide Decks (20)",
+   "desc": "One PowerPoint per training day, with speaker notes.",
+   "file": "Advanced_Daily_Slide_Decks_20.zip",
+   "kind": "ZIP"
+  },
+  {
+   "key": "outline",
+   "title": "Course Outline",
+   "desc": "The four-week outline, tools and assessment.",
+   "file": "AI_Training_Advanced_Path.pdf",
+   "kind": "PDF"
+  }
+ ]
+}
