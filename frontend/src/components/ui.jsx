@@ -1,6 +1,7 @@
 import { FaCode, FaCog, FaLightbulb } from "react-icons/fa";
 import * as Fi from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { kes } from "../lib/format";
 
 export function Logo({ dark = false, to = "/" }) {
   return (
@@ -71,8 +72,9 @@ export function PathCard({ path, selected = false, onSelect, footer }) {
           ))}
         </ul>
       )}
-      <div className="mt-auto pt-5 text-sm font-semibold text-slate-500">
-        {path.lessons || 20} lessons &middot; 4 weeks &middot; 3 hours a day
+      <div className="mt-auto pt-5">
+        {path.price_kes > 0 && <p className="font-display text-2xl font-extrabold" style={{ color: path.color }}>{kes(path.price_kes)}</p>}
+        <p className="text-sm font-semibold text-slate-500">{path.lessons || 20} lessons &middot; 4 weeks &middot; 3 hours a day</p>
       </div>
       {footer}
     </Wrapper>

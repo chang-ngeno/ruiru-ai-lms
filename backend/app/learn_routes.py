@@ -5,6 +5,7 @@ import os
 
 from flask import Blueprint, current_app, g, jsonify, request, send_from_directory
 
+from . import billing
 from .extensions import db
 from .models import Lesson, Path, Progress, utcnow
 from .security import login_required, path_required
@@ -38,16 +39,37 @@ def _lesson_or_404(number):
     return Lesson.query.filter_by(path_id=g.user.path_id, number=number).first_or_404()
 
 
+def _locked_response(lesson, state=None):
+    """None if the lesson is open, otherwise a 402 response telling the learner what to pay."""
+    state = state or billing.billing_state(g.user)
+    if billing.lesson_is_open(lesson, state):
+        return None
+    needed = billing.week_price_needed(lesson.week, state)
+    return (
+        jsonify(
+            error=f"Week {lesson.week} is locked. Pay KES {max(0, needed - state['paid']):,} more to unlock it.",
+            code="payment_required",
+            week=lesson.week,
+            lesson=lesson.number,
+            balance=state["balance"],
+            to_unlock=max(0, needed - state["paid"]),
+        ),
+        402,
+    )
+
+
 @bp.get("/lessons")
 @path_required
 def my_lessons():
     lessons = Lesson.query.filter_by(path_id=g.user.path_id).order_by(Lesson.number).all()
     rows = {r.lesson_id: r for r in Progress.query.filter_by(user_id=g.user.id).all()}
+    state = billing.billing_state(g.user)
     out = []
     for l in lessons:
         r = rows.get(l.id)
         out.append(
             {
+                "locked": not billing.lesson_is_open(l, state),
                 "number": l.number,
                 "week": l.week,
                 "week_title": l.week_title,
@@ -58,13 +80,16 @@ def my_lessons():
                 "quiz_total": r.quiz_total if r else None,
             }
         )
-    return jsonify(lessons=out, path=g.user.path.detail())
+    return jsonify(lessons=out, path=g.user.path.detail(), billing=state)
 
 
 @bp.get("/lessons/<int:number>")
 @path_required
 def lesson_detail(number):
     l = _lesson_or_404(number)
+    blocked = _locked_response(l)
+    if blocked:
+        return blocked
     r = Progress.query.filter_by(user_id=g.user.id, lesson_id=l.id).first()
     total = Lesson.query.filter_by(path_id=l.path_id).count()
     return jsonify(
@@ -90,6 +115,9 @@ def lesson_detail(number):
 @path_required
 def save_progress(number):
     l = _lesson_or_404(number)
+    blocked = _locked_response(l)
+    if blocked:
+        return blocked
     body = request.get_json(silent=True) or {}
     row = get_or_create_progress(g.user, l)
     if "steps_done" in body:
@@ -111,6 +139,9 @@ def save_progress(number):
 @path_required
 def complete(number):
     l = _lesson_or_404(number)
+    blocked = _locked_response(l)
+    if blocked:
+        return blocked
     row = get_or_create_progress(g.user, l)
     if row.completed_at is None:
         row.completed_at = utcnow()
@@ -122,6 +153,9 @@ def complete(number):
 @path_required
 def uncomplete(number):
     l = _lesson_or_404(number)
+    blocked = _locked_response(l)
+    if blocked:
+        return blocked
     row = Progress.query.filter_by(user_id=g.user.id, lesson_id=l.id).first()
     if row:
         row.completed_at = None
@@ -133,6 +167,9 @@ def uncomplete(number):
 @path_required
 def save_quiz(number):
     l = _lesson_or_404(number)
+    blocked = _locked_response(l)
+    if blocked:
+        return blocked
     body = request.get_json(silent=True) or {}
     total = len((l.content or {}).get("quiz", []))
     score = body.get("score")
@@ -154,8 +191,11 @@ def progress_summary():
 @path_required
 def glossary():
     lessons = Lesson.query.filter_by(path_id=g.user.path_id).order_by(Lesson.number).all()
+    state = billing.billing_state(g.user)
     seen, terms = set(), []
     for l in lessons:
+        if not billing.lesson_is_open(l, state):
+            continue
         for g_item in (l.content or {}).get("glossary", []):
             key = g_item["term"].lower()
             if key in seen:
@@ -174,6 +214,8 @@ def _resource_index():
 @bp.get("/resources")
 @path_required
 def resources():
+    if billing.billing_state(g.user)["unlocked_weeks"] < 1:
+        return jsonify(error="Resources unlock with your first payment.", code="payment_required"), 402
     items = _resource_index().get(g.user.path.slug, [])
     return jsonify(resources=[{k: v for k, v in i.items() if k != "file"} for i in items])
 
@@ -181,6 +223,8 @@ def resources():
 @bp.get("/resources/<key>")
 @path_required
 def download_resource(key):
+    if billing.billing_state(g.user)["unlocked_weeks"] < 1:
+        return jsonify(error="Resources unlock with your first payment.", code="payment_required"), 402
     items = {i["key"]: i for i in _resource_index().get(g.user.path.slug, [])}
     item = items.get(key)
     if not item:

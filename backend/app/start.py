@@ -22,13 +22,27 @@ def main() -> None:
 
     from . import create_app
     from .extensions import db
+    from . import migrate
     from .seed import seed_all
 
     app = create_app()
     with app.app_context():
         db.create_all()
+        migrate.run(db)
         paths, lessons = seed_all(app.config["SEED_DIR"])
     print(f"Tables ready. Seeded {paths} paths and {lessons} lessons.", flush=True)
+
+    cfg = app.config
+    print(
+        "Config: paywall={} | mpesa env={} simulate={} configured={} | refunds={} | workspace {} days @ {}%".format(
+            cfg["PAYWALL_ENABLED"], cfg["MPESA_ENV"], cfg["MPESA_SIMULATE"],
+            all(cfg[k] for k in ("MPESA_CONSUMER_KEY", "MPESA_CONSUMER_SECRET", "MPESA_SHORTCODE", "MPESA_PASSKEY", "MPESA_CALLBACK_BASE", "MPESA_CALLBACK_SECRET")),
+            cfg["REFUND_ENABLED"], cfg["WORKSPACE_DAYS"], cfg["WORKSPACE_MIN_PERCENT"],
+        ),
+        flush=True,
+    )
+    if cfg["PAYWALL_ENABLED"] and not cfg["MPESA_SIMULATE"] and not cfg["MPESA_CALLBACK_BASE"].startswith("https://"):
+        print("WARNING: MPESA_CALLBACK_BASE is not an https address, so Safaricom cannot confirm payments.", flush=True)
 
     port = os.environ.get("PORT", "5000")
     workers = os.environ.get("WEB_CONCURRENCY", "2")
@@ -46,4 +60,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-  

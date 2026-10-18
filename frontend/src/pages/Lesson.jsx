@@ -4,9 +4,11 @@ import {
   FiAlertTriangle, FiArrowLeft, FiArrowRight, FiAward, FiBookOpen, FiCheck, FiCheckCircle, FiCopy, FiEdit3,
   FiFlag, FiList, FiMessageCircle, FiSend, FiTarget, FiTerminal, FiX, FiZap,
 } from "react-icons/fi";
+import Paywall from "../components/Paywall";
 import { ErrorBox, Spinner } from "../components/ui";
 import { api } from "../lib/api";
 import { useAuth } from "../lib/auth";
+import { usePageTitle } from "../lib/usePageTitle";
 import { useFetch } from "../lib/hooks";
 
 function Section({ id, title, icon: I, color, children }) {
@@ -170,7 +172,8 @@ export default function Lesson() {
   const n = Number(number);
   const nav = useNavigate();
   const { user } = useAuth();
-  const { data, error, loading, reload } = useFetch(() => api.get(`/lessons/${n}`), [n]);
+  const { data, error, status, errorData, loading, reload } = useFetch(() => api.get(`/lessons/${n}`), [n]);
+  usePageTitle(data ? `Day ${data.lesson.number}: ${data.lesson.title}` : "Lesson");
   const [completed, setCompleted] = useState(false);
   const [steps, setSteps] = useState([]);
   const [quizSaved, setQuizSaved] = useState(null);
@@ -190,6 +193,7 @@ export default function Lesson() {
   const toc = useMemo(() => [["objectives", "Objectives"], ["learn", "Learn"], ["template", "Template"], ["lab", "Lab"], ["practice", "Practice"], ["selfcheck", "Self-check"], ["recap", "Recap"], ["action", "Homework"], ["notes", "Notes"]], []);
 
   if (loading) return <Spinner />;
+  if (status === 402) return <Paywall info={errorData} title={`Lesson ${n} is locked`} />;
   if (error) return <ErrorBox message={error} onRetry={reload} />;
   const { lesson } = data;
   const c = lesson.content;

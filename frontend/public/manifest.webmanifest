@@ -1,0 +1,15 @@
+{
+  "name": "AI Training for Everyone",
+  "short_name": "AI Training",
+  "description": "Learn, build and grow with hands-on AI training in Ruiru, Kenya.",
+  "start_url": "/app",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B2A6F",
+  "theme_color": "#0B2A6F",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

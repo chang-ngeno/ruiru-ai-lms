@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink, Navigate, Outlet, useLocation } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
-import { FiBook, FiBookOpen, FiDownload, FiGrid, FiLogOut, FiMapPin, FiMenu, FiPhone, FiSettings, FiUser, FiX } from "react-icons/fi";
+import { FiBook, FiBookOpen, FiCreditCard, FiDownload, FiGrid, FiLogOut, FiMapPin, FiMenu, FiPhone, FiSettings, FiUser, FiX } from "react-icons/fi";
 import { useAuth } from "../lib/auth";
 import { site } from "../siteConfig";
 import { Logo, Spinner } from "./ui";
@@ -16,6 +16,8 @@ export function PublicNav() {
     ["Workspace", "/#workspace"],
   ];
   return (
+    <>
+    <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:font-bold focus:text-navy">Skip to content</a>
     <header className="sticky top-0 z-40 border-b border-white/10 bg-navy-900/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Logo />
@@ -50,6 +52,7 @@ export function PublicNav() {
         </div>
       )}
     </header>
+    </>
   );
 }
 
@@ -99,8 +102,10 @@ export function RequireAuth({ children, admin = false }) {
 const nav = [
   { to: "/app", label: "Dashboard", icon: FiGrid, end: true },
   { to: "/app/curriculum", label: "Course", icon: FiBookOpen },
-  { to: "/app/resources", label: "Resources", icon: FiDownload },
-  { to: "/app/glossary", label: "Glossary", icon: FiBook },
+  { to: "/app/billing", label: "Payments", icon: FiCreditCard },
+  { to: "/app/workspace", label: "Workspace", icon: FiMapPin },
+  { to: "/app/resources", label: "Resources", icon: FiDownload, mobile: false },
+  { to: "/app/glossary", label: "Glossary", icon: FiBook, mobile: false },
   { to: "/app/profile", label: "Profile", icon: FiUser },
 ];
 
@@ -111,6 +116,7 @@ export function AppShell() {
     `flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition ${isActive ? "bg-brand text-navy" : "text-white/80 hover:bg-white/10 hover:text-white"}`;
   return (
     <div className="min-h-screen pb-20 md:pb-0">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:font-bold focus:text-navy">Skip to content</a>
       <header className="no-print sticky top-0 z-40 bg-navy-900 shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
           <Logo to="/app" />
@@ -129,9 +135,9 @@ export function AppShell() {
           </div>
         </div>
       </header>
-      <main className="mx-auto max-w-7xl px-4 py-6 md:py-8"><Outlet /></main>
+      <main id="main" tabIndex={-1} className="mx-auto max-w-7xl px-4 py-6 outline-none md:py-8"><Outlet /></main>
       <nav className="no-print fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-slate-200 bg-white md:hidden" aria-label="App">
-        {items.slice(0, 5).map(({ to, label, icon: I, end }) => (
+        {items.filter((i) => i.mobile !== false).slice(0, 5).map(({ to, label, icon: I, end }) => (
           <NavLink key={to} to={to} end={end} className={({ isActive }) => `flex flex-col items-center gap-0.5 py-2 text-[11px] font-bold ${isActive ? "text-navy" : "text-slate-500"}`}>
             {({ isActive }) => (<><I className={`h-5 w-5 ${isActive ? "text-navy" : ""}`} aria-hidden="true" />{label}</>)}
           </NavLink>

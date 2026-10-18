@@ -425,7 +425,7 @@
     },
     {
      "heading": "Editing and proofreading",
-     "text": "Besides drafting, AI is a patient proofreader. Paste your text and ask it to correct spelling and grammar, explain the changes, and keep your meaning. For important documents, ask it to highlight anything unclear, anything that sounds rude, and anything missing such as a date, contact or amount. Then make the final decisions yourself. For English or Swahili, ask for corrections and a short list of the mistakes you often make so you can improve.",
+     "text": "Besides drafting, AI is a patient proofreader. Paste your text and ask it to correct spelling and grammar, explain the changes, and keep your meaning. For important documents, ask it to highlight anything unclear, anything that sounds rude, and anything missing such as a date, contact or amount. Then make the final decisions yourself.",
      "points": [
       "Ask for changes to be listed",
       "Ask for unclear or rude parts to be flagged",
@@ -767,126 +767,126 @@
   "week": 2,
   "week_title": "AI for Everyday Productivity",
   "week_goal": "Use AI to research, summarize, plan, learn and work faster in real life.",
-  "title": "Translation and language",
+  "title": "Voice, photos and AI on your phone",
   "content": {
    "objectives": [
-    "Translate between English and Swahili and check the quality",
-    "Spot common AI translation mistakes",
-    "Create a bilingual customer message pack",
-    "Use AI as a conversation partner to practise a language"
+    "Dictate notes and messages by voice and tidy them up with AI",
+    "Use the phone camera so AI can read, describe and explain what you photograph",
+    "Set up voice and read-aloud tools that make AI easier to use",
+    "Know what not to photograph or say aloud to an AI tool"
    ],
-   "intro": "Kenya is a multilingual country. People move between English, Swahili, Sheng and mother-tongue languages many times a day. AI can translate quickly and help you practise, but it makes mistakes, especially with local expressions, tone and less widely used languages. Today you will learn to use translation tools wisely.",
+   "intro": "Typing on a phone is slow for many people, and a lot of useful information is in front of you on paper, signs and screens rather than in text. Today you will talk to AI instead of typing, and show it photographs instead of describing things. These skills help everyone, and they are especially helpful for people who find typing hard, including many parents and seniors.",
    "concepts": [
     {
-     "heading": "What AI does well and badly in language",
-     "text": "AI is usually strong in English and good in standard Swahili for everyday text. It is weaker with Sheng, slang, proverbs, humour and many Kenyan mother-tongue languages because there is less written data for it to learn from. Names, places and religious or cultural terms can also be mistranslated. For important text such as contracts, medical notices or legal papers, always have a fluent human check the translation.",
+     "heading": "Talking instead of typing",
+     "text": "Most phones have a microphone button on the keyboard that turns speech into text, and many AI apps have a voice mode where you speak and hear the answer. Speak in short, clear sentences and say punctuation words such as 'full stop' if you want them. Voice is excellent for first drafts, shopping lists, meeting notes and quick questions. Always read the text before you send it: speech recognition makes mistakes, especially with names, numbers and noisy places.",
      "points": [
-      "Strong: standard English and Swahili",
-      "Weak: Sheng, idioms, small languages, names",
-      "Humans must check important documents"
+      "Use the keyboard microphone for dictation",
+      "Voice mode: speak, listen, ask follow-ups",
+      "Read the text before sending: check names and numbers"
      ]
     },
     {
-     "heading": "Translate, then back-translate",
-     "text": "A simple way to test a translation is to ask the AI to translate your text and then translate the result back into the original language without looking. If the meaning changed, something went wrong. Ask the AI to give two versions, a formal one and a casual one, and to explain any word it was unsure about. You can also ask for alternative words and the situations in which each is appropriate.",
+     "heading": "Turning rough speech into clear writing",
+     "text": "Spoken thoughts are messy: they repeat, jump around and include 'um'. Paste or dictate your rough words into an AI assistant and ask it to tidy them: 'Turn this into a clear message under 80 words in my own voice', or 'Turn these notes into a to-do list with deadlines'. This is a very fast way to produce emails, reports and plans. Keep the facts that matter, such as dates, amounts and names, and verify them yourself, because the AI may smooth over details.",
      "points": [
-      "Translate, then back-translate",
-      "Ask for formal and casual versions",
-      "Ask which words were uncertain"
+      "Dictate first, edit with AI second",
+      "Ask for a format: message, list, summary",
+      "Verify dates, amounts and names"
      ]
     },
     {
-     "heading": "Translating for work and business",
-     "text": "Many small businesses serve customers in both English and Swahili. AI can help write price lists, notices, WhatsApp replies and social media posts in both languages. State the audience, the tone and the context, for example a polite message to a new customer in Nairobi. Keep the sentences short, because short sentences translate more reliably. Save the approved messages so that your business sounds consistent.",
+     "heading": "Showing AI a photo",
+     "text": "Many assistants can look at a picture. You can photograph a notice, a product label, a handwritten note, a menu, a medicine leaflet or a form and ask: 'What does this say?', 'Explain this in simple words', or 'List the deadlines and costs on this page'. You can also photograph a plant, a broken appliance or a spreadsheet chart and ask what it is or how to fix it. AI can misread blurry or handwritten text and can be wrong about what is in a picture, so treat the answer as a helpful guess and check anything important.",
      "points": [
-      "Short sentences translate better",
-      "Specify audience and tone",
-      "Save approved bilingual messages"
+      "Photograph in good light, flat and steady",
+      "Ask a specific question about the photo",
+      "Treat answers as guesses: verify important ones"
      ]
     },
     {
-     "heading": "Practising a language with AI",
-     "text": "An assistant can act as a patient conversation partner. Tell it your level and the language you want to practise, ask it to speak slowly with simple words, correct your mistakes gently and explain them. Voice mode, if your tool has it, helps with pronunciation. Practise for ten minutes daily: small regular sessions work better than one long session. Remember to also practise with real people.",
+     "heading": "Privacy, safety and accessibility",
+     "text": "A photo can contain much more than you intend: faces, ID numbers, account numbers, addresses and other people's information. Do not photograph IDs, cards, bank or M-Pesa messages with codes, or private documents, and do not record other people without permission. Check what is visible in the background. For accessibility, phones can enlarge text, read screens aloud and let you control apps by voice, which helps people with weak eyesight or who find small keyboards difficult. Ask your trainer to help you switch these on.",
      "points": [
-      "Tell the AI your level",
-      "Ask for gentle corrections and explanations",
-      "Short daily sessions are best"
+      "Never photograph IDs, cards, PINs or codes",
+      "Check the background of every photo",
+      "Use large text and read-aloud if they help you"
      ]
     }
    ],
    "steps": [
-    "Choose five short texts (a notice, a price list, an apology, an instruction, a greeting) and translate each into Swahili or English",
-    "Back-translate each and mark where the meaning changed",
-    "Ask a classmate who speaks the language to check one translation and note the errors",
-    "Create a bilingual customer pack: welcome message, price list, opening hours, apology, thank-you",
-    "Have a 10-minute practice conversation in a language you are learning and record three corrections",
-    "Share your most useful bilingual message with the class"
+    "Open an AI app or the keyboard microphone and dictate a 30-second message about your day; read the transcript and mark the mistakes",
+    "Ask the AI to turn your rough dictation into a clear message under 80 words, then into a three-item to-do list",
+    "Photograph a safe item (a product label, a poster or a page from a school book) and ask the AI to explain it in simple words",
+    "Ask the AI three follow-up questions about the photo, including one it cannot answer, and note how it responds",
+    "In pairs, review each other's photos and check that nothing private (faces, numbers, addresses) is visible",
+    "Set up one accessibility feature on your phone (larger text, read aloud, or voice control) and use it for the rest of the session"
    ],
-   "lab": "Translate and back-translate 5 texts; mark errors; build a bilingual customer message pack.",
+   "lab": "Dictate a note and clean it up; photograph a safe notice and ask AI to explain it; switch on one accessibility feature.",
    "examples": [
     {
-     "label": "Translate and explain",
-     "text": "Translate this message to polite Swahili for a new customer. Then give me an English back-translation and note any words you were unsure about. [message]"
+     "label": "Dictation clean-up",
+     "text": "Here is what I said out loud: [paste]. Turn it into a clear, friendly message under 80 words. Keep all dates, names and amounts exactly as I said them and list anything you were unsure about."
     },
     {
-     "label": "Practice",
-     "text": "Be my Swahili conversation partner. My level is beginner. Speak in short sentences, correct my mistakes after each reply and explain them briefly."
+     "label": "Photo question",
+     "text": "This is a photo of a notice. Explain it in simple English, list any dates, costs and deadlines, and tell me what you could not read clearly."
     }
    ],
    "code": null,
    "mistakes": [
-    "Trusting translation of legal or medical documents without checking",
-    "Using long, complicated sentences",
-    "Ignoring tone and politeness levels",
-    "Never practising with real speakers"
+    "Sending dictated text without reading it",
+    "Photographing IDs, cards or messages that contain codes",
+    "Trusting a photo answer about health, money or legal matters without checking",
+    "Taking blurry or dark photos and blaming the AI"
    ],
    "quiz": [
     {
-     "q": "Which language types does AI usually translate less well?",
-     "a": "Slang, Sheng, idioms and smaller mother-tongue languages."
+     "q": "Why read dictated text before sending it?",
+     "a": "Speech recognition makes mistakes, especially with names and numbers."
     },
     {
-     "q": "What is back-translation?",
-     "a": "Translating the result back to check if the meaning stayed the same."
+     "q": "Name one good use of voice with AI.",
+     "a": "First drafts, meeting notes, shopping lists or quick questions."
     },
     {
-     "q": "Why keep sentences short?",
-     "a": "Short sentences are translated more accurately."
+     "q": "What makes a photo easier for AI to read?",
+     "a": "Good light, steady and flat, in focus."
     },
     {
-     "q": "Who should check an important translated document?",
-     "a": "A fluent human speaker or professional."
+     "q": "Give two things you must not photograph for an AI tool.",
+     "a": "IDs, cards, PINs, codes or other private documents."
     },
     {
-     "q": "How often should you practise?",
-     "a": "A little each day, around ten minutes."
+     "q": "How can phones help people who find typing hard?",
+     "a": "Voice typing, read aloud, larger text and voice control."
     }
    ],
    "takeaways": [
-    "Check translations, especially important ones",
-    "Back-translate to test meaning",
-    "Short sentences work best",
-    "Practise daily and with people"
+    "Talk first, tidy with AI second",
+    "Photos are a quick way to ask about the world",
+    "Check answers that matter",
+    "Protect private information in photos and recordings"
    ],
    "glossary": [
     {
-     "term": "Translation",
-     "meaning": "Changing text from one language to another."
+     "term": "Dictation",
+     "meaning": "Turning speech into written text."
     },
     {
-     "term": "Back-translation",
-     "meaning": "Translating a translation back to test it."
+     "term": "Voice mode",
+     "meaning": "Talking to an AI and hearing its answer."
     },
     {
-     "term": "Idiom",
-     "meaning": "An expression whose meaning is not literal."
+     "term": "Accessibility",
+     "meaning": "Features that make technology usable for everyone."
     },
     {
-     "term": "Register",
-     "meaning": "The level of formality in language."
+     "term": "Transcript",
+     "meaning": "The written version of what was said."
     }
    ],
-   "homework": "Have a 10-minute practice conversation in a language you are learning."
+   "homework": "Use voice or the camera with AI once a day for three days and note what worked."
   }
  },
  {
@@ -1408,7 +1408,7 @@
     "Generate content ideas, captions and hashtags",
     "Plan a two-week content calendar",
     "Write short video scripts",
-    "Create posts in English and Swahili for local audiences"
+    "Write posts in a friendly voice for local audiences"
    ],
    "intro": "Businesses, churches, schools and groups all need to communicate on social media regularly. The hard part is consistency: knowing what to post and finding time. Today you will build a simple system to plan, write and publish content with AI as your assistant.",
    "concepts": [
@@ -1423,7 +1423,7 @@
     },
     {
      "heading": "Captions, hashtags and calls to action",
-     "text": "A good caption has a hook in the first line, a useful or interesting middle, and one clear call to action such as 'Send us a message to order'. Ask AI for several versions and choose the one that sounds like you. Use a few relevant hashtags, not dozens. Keep the language of your audience in mind: short, friendly English, Swahili, or a mix if that is how your customers speak.",
+     "text": "A good caption has a hook in the first line, a useful or interesting middle, and one clear call to action such as 'Send us a message to order'. Ask AI for several versions and choose the one that sounds like you. Use a few relevant hashtags, not dozens. Keep your audience in mind: short, friendly sentences in the way your customers speak.",
      "points": [
       "Hook, value, one call to action",
       "A few relevant hashtags",
@@ -1452,7 +1452,7 @@
    "steps": [
     "Describe a business or group and choose three content pillars",
     "Generate 20 ideas per pillar and shortlist 10 in total",
-    "Write captions in English and Swahili for six posts with a call to action each",
+    "Write captions for six posts with a call to action each",
     "Build a two-week calendar table with date, pillar, idea, format and caption",
     "Write one 30-second video script and rehearse it",
     "Peer review: check tone, spelling, honesty of claims and contact information"
@@ -1465,7 +1465,7 @@
     },
     {
      "label": "Caption prompt",
-     "text": "Write 3 short captions for this post idea in friendly English and Swahili with one call to action. Idea: [idea]"
+     "text": "Write 3 short captions for this post idea in a friendly voice with one call to action. Idea: [idea]"
     }
    ],
    "code": null,
@@ -1664,7 +1664,7 @@
     "Do simple market and competitor research",
     "Plan a basic promotion"
    ],
-   "intro": "Small businesses are the backbone of Ruiru and Kenya. AI will not run your shop, but it can write, translate, organise and plan so that you spend more time with customers. Today you will set up the basic communication of a small business.",
+   "intro": "Small businesses are the backbone of Ruiru and Kenya. AI will not run your shop, but it can write, organise and plan so that you spend more time with customers. Today you will set up the basic communication of a small business.",
    "concepts": [
     {
      "heading": "Describing what you sell",
@@ -1677,7 +1677,7 @@
     },
     {
      "heading": "WhatsApp Business catalogue and quick replies",
-     "text": "WhatsApp Business lets you create a catalogue with product pictures, prices and descriptions, a business profile, and quick replies that save you from retyping common answers such as prices, location and opening hours. Ask AI to draft a greeting message, an away message and short replies for common questions in English and Swahili. Keep a polite, warm and clear tone, and always confirm orders in writing.",
+     "text": "WhatsApp Business lets you create a catalogue with product pictures, prices and descriptions, a business profile, and quick replies that save you from retyping common answers such as prices, location and opening hours. Ask AI to draft a greeting message, an away message and short replies for common questions. Keep a polite, warm and clear tone, and always confirm orders in writing.",
      "points": [
       "Catalogue, profile, quick replies",
       "Greeting and away messages",
@@ -1706,7 +1706,7 @@
    "steps": [
     "Choose a product or service and write five facts about it",
     "Generate a short honest description for the product and three alternatives",
-    "Draft a WhatsApp Business greeting, away message and five quick replies in English and Swahili",
+    "Draft a WhatsApp Business greeting, away message and five quick replies",
     "Do research: list customer needs and three competitors, then validate one point by asking a real person",
     "Create a weekend promotion message and test it on five contacts",
     "Record the feedback and improve the message"
@@ -1719,7 +1719,7 @@
     },
     {
      "label": "Quick replies prompt",
-     "text": "Create 5 quick replies for a [business]: price, location, hours, delivery, payment. Use friendly English and Swahili."
+     "text": "Create 5 quick replies for a [business]: price, location, hours, delivery, payment. Use a friendly, polite tone."
     }
    ],
    "code": null,
@@ -1949,7 +1949,7 @@
     },
     {
      "heading": "Testing and improving",
-     "text": "Test with the questions real users ask, including difficult and silly ones. Try to break it: ask for things outside its job, ask in Swahili, give incomplete information. Write down each failure and change the instructions to fix it. Test again. An assistant is good only after many rounds of testing with real people.",
+     "text": "Test with the questions real users ask, including difficult and silly ones. Try to break it: ask for things outside its job, ask the same thing in a different way, give incomplete information. Write down each failure and change the instructions to fix it. Test again. An assistant is good only after many rounds of testing with real people.",
      "points": [
       "Test with real and tricky questions",
       "Fix instructions after each failure",

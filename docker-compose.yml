@@ -28,6 +28,22 @@ services:
       DEV_AUTH: ${DEV_AUTH:-false}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       COACH_MODEL: ${COACH_MODEL:-claude-sonnet-5-5}
+      PAYWALL_ENABLED: ${PAYWALL_ENABLED:-true}
+      MPESA_ENV: ${MPESA_ENV:-sandbox}
+      MPESA_SIMULATE: ${MPESA_SIMULATE:-false}
+      MPESA_CONSUMER_KEY: ${MPESA_CONSUMER_KEY:-}
+      MPESA_CONSUMER_SECRET: ${MPESA_CONSUMER_SECRET:-}
+      MPESA_SHORTCODE: ${MPESA_SHORTCODE:-}
+      MPESA_PARTY_B: ${MPESA_PARTY_B:-}
+      MPESA_PASSKEY: ${MPESA_PASSKEY:-}
+      MPESA_TRANSACTION_TYPE: ${MPESA_TRANSACTION_TYPE:-CustomerPayBillOnline}
+      MPESA_CALLBACK_BASE: ${MPESA_CALLBACK_BASE:-}
+      MPESA_CALLBACK_SECRET: ${MPESA_CALLBACK_SECRET:-}
+      REFUND_ENABLED: ${REFUND_ENABLED:-true}
+      REFUND_PARTIAL_DAYS: ${REFUND_PARTIAL_DAYS:-3}
+      REFUND_PARTIAL_PERCENT: ${REFUND_PARTIAL_PERCENT:-50}
+      WORKSPACE_DAYS: ${WORKSPACE_DAYS:-30}
+      WORKSPACE_MIN_PERCENT: ${WORKSPACE_MIN_PERCENT:-25}
 
   frontend:
     build:
@@ -37,6 +53,10 @@ services:
         VITE_DEV_AUTH: ${DEV_AUTH:-false}
     restart: unless-stopped
     depends_on: [backend]
+    environment:
+      BACKEND_URL: http://backend:5000
+      BACKEND_HOST: backend:5000
+      RESOLVER: 127.0.0.11   # Docker's internal DNS
     ports:
       - "8080:80"
 

@@ -1,10 +1,11 @@
 const BASE = import.meta.env.VITE_API_BASE || "";
 
 export class ApiError extends Error {
-  constructor(status, message, code) {
+  constructor(status, message, code, data) {
     super(message);
     this.status = status;
     this.code = code;
+    this.data = data || {};
   }
 }
 
@@ -21,7 +22,7 @@ async function request(method, path, body) {
   } catch {
     /* empty body */
   }
-  if (!res.ok) throw new ApiError(res.status, data?.error || res.statusText || "Request failed", data?.code);
+  if (!res.ok) throw new ApiError(res.status, data?.error || res.statusText || "Request failed", data?.code, data);
   return data;
 }
 

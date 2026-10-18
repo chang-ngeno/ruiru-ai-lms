@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FiAward, FiDownload, FiFileText, FiLock, FiPackage, FiPrinter, FiSearch, FiSettings } from "react-icons/fi";
+import Paywall from "../components/Paywall";
 import { Bar, ErrorBox, Logo, Spinner } from "../components/ui";
 import { api } from "../lib/api";
 import { useAuth } from "../lib/auth";
@@ -8,8 +10,9 @@ import { useFetch } from "../lib/hooks";
 
 export function Resources() {
   const { user } = useAuth();
-  const { data, error, loading, reload } = useFetch(() => api.get("/resources"));
+  const { data, error, status, loading, reload } = useFetch(() => api.get("/resources"));
   if (loading) return <Spinner />;
+  if (status === 402) return <Paywall title="Resources unlock with your first payment" />;
   if (error) return <ErrorBox message={error} onRetry={reload} />;
   return (
     <div>
@@ -61,6 +64,44 @@ export function Glossary() {
   );
 }
 
+function DataControls({ user }) {
+  const { logout } = useAuth();
+  const nav = useNavigate();
+  const [confirm, setConfirm] = useState("");
+  const [err, setErr] = useState("");
+  const [open, setOpen] = useState(false);
+  const remove = async (e) => {
+    e.preventDefault();
+    try {
+      await api.post("/me/delete", { confirm });
+      await logout();
+      nav("/", { replace: true });
+    } catch (ex) {
+      setErr(ex.message);
+    }
+  };
+  return (
+    <div className="card p-6">
+      <h2 className="font-display text-lg font-bold text-navy">Your data</h2>
+      <p className="mt-2 text-sm text-slate-600">You can download everything we hold about you, or ask us to erase your personal details. Payment and refund records (amounts, dates and receipts only) are kept for accounting.</p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <a className="btn-outline btn-sm" href="/api/me/export" download>Download my data</a>
+        {user.role !== "admin" && <button className="btn-outline btn-sm !border-red-600 !text-red-700 hover:!bg-red-600 hover:!text-white" onClick={() => setOpen(!open)}>Delete my account</button>}
+      </div>
+      {open && (
+        <form onSubmit={remove} className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4">
+          <p className="text-sm font-semibold text-red-800">This erases your name, email, notes and progress, and signs you out. It cannot be undone. Type DELETE to confirm.</p>
+          <div className="mt-3 flex gap-2">
+            <input className="field !py-2" value={confirm} onChange={(e) => setConfirm(e.target.value)} aria-label="Type DELETE" />
+            <button className="btn-navy btn-sm" disabled={confirm !== "DELETE"}>Erase</button>
+          </div>
+          {err && <p className="mt-2 text-sm font-semibold text-red-700" role="alert">{err}</p>}
+        </form>
+      )}
+    </div>
+  );
+}
+
 export function Profile() {
   const { user, logout } = useAuth();
   const { data } = useFetch(() => api.get("/progress"));
@@ -85,6 +126,7 @@ export function Profile() {
           {user.role === "admin" && <Link to="/app/admin" className="btn-outline btn-sm"><FiSettings /> Admin</Link>}
         </div>
       </div>
+      <DataControls user={user} />
       <button onClick={logout} className="btn-navy w-full">Sign out</button>
     </div>
   );

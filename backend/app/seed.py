@@ -17,6 +17,8 @@ def seed_all(seed_dir):
         p = Path.query.filter_by(slug=item["slug"]).first() or Path(slug=item["slug"])
         for field in ("level", "title", "tagline", "blurb", "color", "icon", "sort_order", "audience", "outcomes", "tools", "glance", "weeks"):
             setattr(p, field, item[field])
+        if p.price_kes is None:  # never overwrite a price the admin has set
+            p.price_kes = item.get("price_kes", 0)
         db.session.add(p)
         db.session.flush()
         for les in _load(seed_dir, f"lessons_{item['slug']}.json"):

@@ -16,6 +16,7 @@ def client():
             "DEV_AUTH": True,
             "SQLALCHEMY_DATABASE_URI": "sqlite:///:memory:",
             "ADMIN_EMAILS": {"boss@example.com"},
+            "PAYWALL_ENABLED": False,  # payment rules are tested in test_billing.py
         }
     )
     with app.app_context():

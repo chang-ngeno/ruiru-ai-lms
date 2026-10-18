@@ -1,11 +1,15 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { AppShell, RequireAuth } from "./components/Layout";
 import Admin from "./pages/Admin";
+import Billing from "./pages/Billing";
+import Workspace from "./pages/Workspace";
 import { ChoosePath, Login, Signup } from "./pages/Auth";
 import Curriculum from "./pages/Curriculum";
 import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/Landing";
 import Lesson from "./pages/Lesson";
+import Receipt from "./pages/Receipt";
 import { Certificate, Glossary, Profile, Resources } from "./pages/More";
 
 function NotFound() {
@@ -20,8 +24,18 @@ function NotFound() {
   );
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo?.(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/signup" element={<Signup />} />
@@ -31,6 +45,9 @@ export default function App() {
         <Route index element={<Dashboard />} />
         <Route path="curriculum" element={<Curriculum />} />
         <Route path="learn/:number" element={<Lesson />} />
+        <Route path="billing" element={<Billing />} />
+        <Route path="receipt/:id" element={<Receipt />} />
+        <Route path="workspace" element={<Workspace />} />
         <Route path="resources" element={<Resources />} />
         <Route path="glossary" element={<Glossary />} />
         <Route path="profile" element={<Profile />} />
@@ -39,5 +56,6 @@ export default function App() {
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </>
   );
 }

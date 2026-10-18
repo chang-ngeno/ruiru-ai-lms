@@ -3,11 +3,14 @@ import { FaFire } from "react-icons/fa";
 import { FiArrowRight, FiAward, FiClock, FiLock, FiStar, FiTarget } from "react-icons/fi";
 import { Bar, ErrorBox, ProgressRing, Spinner } from "../components/ui";
 import { api } from "../lib/api";
+import { kes } from "../lib/format";
 import { useAuth } from "../lib/auth";
+import { usePageTitle } from "../lib/usePageTitle";
 import { useFetch } from "../lib/hooks";
 
 export default function Dashboard() {
   const { user } = useAuth();
+  usePageTitle("Dashboard");
   const { data, error, loading, reload } = useFetch(() => api.get("/progress"));
   if (loading) return <Spinner />;
   if (error) return <ErrorBox message={error} onRetry={reload} />;
@@ -26,9 +29,13 @@ export default function Dashboard() {
             {s.finished ? (
               <Link to="/app/certificate" className="btn-primary mt-5"><FiAward /> Get your certificate</Link>
             ) : (
-              <Link to={`/app/learn/${s.next_lesson}`} className="btn-primary mt-5">
-                {s.completed ? "Continue" : "Start"} lesson {s.next_lesson} <FiArrowRight />
-              </Link>
+              s.next_locked ? (
+                <Link to="/app/billing" className="btn-primary mt-5"><FiLock /> Unlock lesson {s.next_lesson}</Link>
+              ) : (
+                <Link to={`/app/learn/${s.next_lesson}`} className="btn-primary mt-5">
+                  {s.completed ? "Continue" : "Start"} lesson {s.next_lesson} <FiArrowRight />
+                </Link>
+              )
             )}
           </div>
           <div className="flex items-center gap-6">
@@ -50,11 +57,20 @@ export default function Dashboard() {
             <div className="card border-l-8 p-6" style={{ borderLeftColor: "#F5D90A" }}>
               <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Up next &middot; Lesson {s.next_lesson}</p>
               <h2 className="mt-1 font-display text-xl font-bold text-navy">{s.next_title}</h2>
-              <div className="mt-4 rounded-xl bg-brand/20 p-4">
-                <p className="text-xs font-bold uppercase text-navy-700">Today&rsquo;s action (homework)</p>
-                <p className="mt-1 font-semibold text-navy">{s.next_homework}</p>
-              </div>
-              <Link to={`/app/learn/${s.next_lesson}`} className="btn-navy btn-sm mt-4">Open lesson <FiArrowRight /></Link>
+              {s.next_locked ? (
+                <>
+                  <p className="mt-3 text-slate-600">This lesson opens when you pay for its week. Pay any amount by M-Pesa; every quarter of the price opens another week.</p>
+                  <Link to="/app/billing" className="btn-primary btn-sm mt-4"><FiLock /> Pay with M-Pesa</Link>
+                </>
+              ) : (
+                <>
+                  <div className="mt-4 rounded-xl bg-brand/20 p-4">
+                    <p className="text-xs font-bold uppercase text-navy-700">Today&rsquo;s action (homework)</p>
+                    <p className="mt-1 font-semibold text-navy">{s.next_homework}</p>
+                  </div>
+                  <Link to={`/app/learn/${s.next_lesson}`} className="btn-navy btn-sm mt-4">Open lesson <FiArrowRight /></Link>
+                </>
+              )}
             </div>
           )}
 
@@ -75,6 +91,14 @@ export default function Dashboard() {
         </section>
 
         <aside className="space-y-6">
+          {s.billing && !s.billing.open_all && !s.billing.fully_paid && (
+            <div className="card p-6">
+              <h2 className="font-display text-lg font-bold text-navy">Your payments</h2>
+              <p className="mt-2 text-sm text-slate-600">{kes(s.billing.paid)} paid of {kes(s.billing.net)}. {s.billing.unlocked_weeks} of {s.billing.total_weeks} weeks unlocked.</p>
+              <div className="mt-3"><Bar value={s.billing.paid} total={s.billing.net || 1} color={color} /></div>
+              <Link to="/app/billing" className="btn-navy btn-sm mt-4">Pay with M-Pesa</Link>
+            </div>
+          )}
           <div className="card p-6">
             <h2 className="font-display text-lg font-bold text-navy">Self-check average</h2>
             <p className="mt-2 font-display text-4xl font-extrabold" style={{ color }}>{s.quiz_average === null ? "-" : `${s.quiz_average}%`}</p>

@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import { FiCheckCircle, FiChevronRight, FiCircle } from "react-icons/fi";
+import { FiCheckCircle, FiChevronRight, FiCircle, FiLock } from "react-icons/fi";
 import { Bar, ErrorBox, Spinner } from "../components/ui";
+import { kes } from "../lib/format";
 import { api } from "../lib/api";
 import { useAuth } from "../lib/auth";
+import { usePageTitle } from "../lib/usePageTitle";
 import { useFetch } from "../lib/hooks";
 
 export default function Curriculum() {
   const { user } = useAuth();
+  usePageTitle("Course");
   const { data, error, loading, reload } = useFetch(() => api.get("/lessons"));
   if (loading) return <Spinner />;
   if (error) return <ErrorBox message={error} onRetry={reload} />;
@@ -22,6 +25,14 @@ export default function Curriculum() {
         <h1 className="mt-2 font-display text-3xl font-extrabold text-navy">{user.path.title}</h1>
         <p className="mt-1 max-w-2xl text-slate-600">{user.path.tagline}</p>
       </header>
+      {data.billing && !data.billing.open_all && !data.billing.fully_paid && (
+        <div className="card flex flex-col gap-3 border-l-8 p-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderLeftColor: "#F5D90A" }}>
+          <p className="font-semibold text-navy">
+            {data.billing.unlocked_weeks} of {data.billing.total_weeks} weeks unlocked. Balance {kes(data.billing.balance)}.
+          </p>
+          <Link to="/app/billing" className="btn-primary btn-sm">Unlock more with M-Pesa</Link>
+        </div>
+      )}
       {Object.values(weeks).map((w) => {
         const done = w.lessons.filter((l) => l.completed).length;
         return (
@@ -36,13 +47,14 @@ export default function Curriculum() {
               {w.lessons.map((l) => (
                 <li key={l.number}>
                   <Link to={`/app/learn/${l.number}`} className="flex items-center gap-4 px-5 py-4 hover:bg-panel md:px-6">
-                    {l.completed ? <FiCheckCircle className="h-6 w-6 shrink-0 text-path-beginner" aria-label="Completed" /> : <FiCircle className="h-6 w-6 shrink-0 text-slate-300" aria-label="Not completed" />}
+                    {l.completed ? <FiCheckCircle className="h-6 w-6 shrink-0 text-path-beginner" aria-label="Completed" /> : l.locked ? <FiLock className="h-6 w-6 shrink-0 text-slate-400" aria-label="Locked" /> : <FiCircle className="h-6 w-6 shrink-0 text-slate-300" aria-label="Not completed" />}
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-bold text-slate-400">Day {l.number}</p>
                       <p className="truncate font-semibold text-navy">{l.title}</p>
                     </div>
                     {l.quiz_total ? <span className="chip bg-brand/30 text-navy">{l.quiz_score}/{l.quiz_total}</span> : null}
-                    {l.number === next && <span className="chip bg-navy text-white">Up next</span>}
+                    {l.locked && <span className="chip bg-slate-200 text-slate-600">Locked</span>}
+                    {l.number === next && !l.locked && <span className="chip bg-navy text-white">Up next</span>}
                     <FiChevronRight className="shrink-0 text-slate-400" aria-hidden="true" />
                   </Link>
                 </li>

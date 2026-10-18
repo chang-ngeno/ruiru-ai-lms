@@ -1,15 +1,26 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaFire, FaWhatsapp } from "react-icons/fa";
 import { FiArrowRight, FiCheckCircle, FiClock, FiMapPin, FiPhone, FiWifi } from "react-icons/fi";
 import { Footer, PublicNav } from "../components/Layout";
 import { Icon, PathCard, ProgressRing } from "../components/ui";
+import { api } from "../lib/api";
 import { audiences, learnItems, perks, site, steps } from "../siteConfig";
 
 // Static copy of the three paths (from the poster) so the landing page works even before the API is up.
 const PATHS = [
-  { slug: "beginner", level: "Beginner", icon: "bulb", color: "#1B8A3A", title: "AI Foundations & Everyday Productivity", blurb: "AI basics, tools, and everyday productivity.", outcomes: ["Write clear prompts with the R-T-C-F recipe", "Use AI for writing, research, study and spreadsheets", "Spot scams and protect your private data"] },
-  { slug: "intermediate", level: "Intermediate", icon: "gear", color: "#2F6FDE", title: "AI Projects, Content & Automation", blurb: "Practical projects, content creation, automation and business use.", outcomes: ["Run a content engine for a brand", "Build no-code automations with AI steps", "Package and price AI services for clients"] },
-  { slug: "advanced", level: "Advanced", icon: "code", color: "#7B3FC4", title: "Building Custom AI Solutions", blurb: "Custom AI solutions, automation, APIs, and real-world applications.", outcomes: ["Call model APIs from Python with validation", "Build document Q&A (RAG) and agents with tools", "Deploy, secure and monitor a real application"] },
+  { slug: "beginner", level: "Beginner", icon: "bulb", color: "#1B8A3A", price_kes: 8000, title: "AI Foundations & Everyday Productivity", blurb: "AI basics, tools, and everyday productivity.", outcomes: ["Write clear prompts with the R-T-C-F recipe", "Use AI for writing, research, study and spreadsheets", "Spot scams and protect your private data"] },
+  { slug: "intermediate", level: "Intermediate", icon: "gear", color: "#2F6FDE", price_kes: 15000, title: "AI Projects, Content & Automation", blurb: "Practical projects, content creation, automation and business use.", outcomes: ["Run a content engine for a brand", "Build no-code automations with AI steps", "Package and price AI services for clients"] },
+  { slug: "advanced", level: "Advanced", icon: "code", color: "#7B3FC4", price_kes: 25000, title: "Building Custom AI Solutions", blurb: "Custom AI solutions, automation, APIs, and real-world applications.", outcomes: ["Call model APIs from Python with validation", "Build document Q&A (RAG) and agents with tools", "Deploy, secure and monitor a real application"] },
+];
+
+const FAQ = [
+  ["Do I need any experience?", "No. The Beginner path starts from zero. If you can use a phone, you can start. The Intermediate path suits people who already use AI tools each week, and the Advanced path needs basic Python."],
+  ["Which path should I choose?", "Pick Beginner if AI is new to you, Intermediate if you want projects, content, automation or client work, and Advanced if you can code and want to build and deploy AI applications. Your trainer can help you decide."],
+  ["How do payments work?", "You pay by M-Pesa in the app, in any amounts you like. Day 1 is a free preview, and every quarter of the price you pay opens another week of lessons. Discount codes are applied before you pay."],
+  ["What is the workspace pass?", "All learners get unlimited access to the training space. Your digital pass switches on with your first payment and shows as a QR code in the app, which the front desk scans."],
+  ["Can I get a refund?", "You can request one in the app. If you have not started any paid lesson you can ask for a full refund; if you have started, a partial refund may be possible within the first few days. A trainer reviews every request, and a refund closes the weeks and workspace access it was paying for."],
+  ["Will I get a certificate?", "Yes. Finish all 20 lessons in your path and you can print your certificate from the app."],
 ];
 
 function Hero() {
@@ -87,9 +98,15 @@ function Hero() {
 }
 
 export default function Landing() {
+  const [paths, setPaths] = useState(PATHS);
+  useEffect(() => {
+    // Show the live prices the admin has set; the static ones above are only a fallback.
+    api.get("/paths").then((d) => setPaths(PATHS.map((p) => ({ ...p, price_kes: d.paths.find((x) => x.slug === p.slug)?.price_kes ?? p.price_kes })))).catch(() => {});
+  }, []);
   return (
     <div className="bg-panel">
       <PublicNav />
+      <main id="main">
       <Hero />
 
       <section className="bg-white py-6">
@@ -106,9 +123,10 @@ export default function Landing() {
           <p className="mt-4 text-lg text-slate-600">Build skills step by step, at your own pace.</p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {PATHS.map((p) => (<PathCard key={p.slug} path={p} footer={null} />))}
+          {paths.map((p) => (<PathCard key={p.slug} path={p} footer={null} />))}
         </div>
-        <p className="mt-8 text-center font-script text-3xl text-navy-700">From curiosity to confidence!</p>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-slate-600">Pay by <b>M-Pesa</b> in instalments: every quarter of the price opens another week of lessons, and Day 1 is a free preview. Discount codes are available for early bookings, groups and students.</p>
+        <p className="mt-4 text-center font-script text-3xl text-navy-700">From curiosity to confidence!</p>
         <div className="mt-4 text-center"><Link to="/signup" className="btn-navy">Pick your path <FiArrowRight /></Link></div>
       </section>
 
@@ -161,6 +179,7 @@ export default function Landing() {
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl font-extrabold uppercase md:text-4xl">Unlimited access to <span className="brush">workspace &amp; facility</span></h2>
             <p className="mt-5 text-lg text-white/80">All learners get unlimited access to our training space and workspace during the training month. Study, work on your projects, collaborate and grow, at your convenience.</p>
+            <p className="mt-3 text-white/70">Your digital workspace pass switches on with your first M-Pesa payment and shows as a QR code in the app.</p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {perks.map((p) => (
@@ -171,6 +190,18 @@ export default function Landing() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="faq" className="mx-auto max-w-3xl scroll-mt-20 px-4 pt-4 pb-10">
+        <h2 className="text-center font-display text-3xl font-extrabold uppercase text-navy md:text-4xl"><span className="brush">Questions</span></h2>
+        <div className="mt-8 space-y-3">
+          {FAQ.map(([q, a]) => (
+            <details key={q} className="card group p-5">
+              <summary className="cursor-pointer list-none font-display font-bold text-navy marker:content-none">{q}</summary>
+              <p className="mt-3 text-slate-600">{a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
@@ -189,6 +220,7 @@ export default function Landing() {
           </div>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

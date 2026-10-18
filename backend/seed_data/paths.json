@@ -8,11 +8,11 @@
   "color": "#1B8A3A",
   "icon": "bulb",
   "sort_order": 0,
-  "audience": "Students, job seekers, professionals, business owners, entrepreneurs, parents and seniors. Learners need only a smartphone or laptop, an email address and basic ability to type and browse. Day 1 includes a setup clinic for anyone who needs help creating accounts. Reading level: simple English with Swahili support; trainers should switch freely.",
+  "audience": "Students, job seekers, professionals, business owners, entrepreneurs, parents and seniors. Learners need only a smartphone or laptop, an email address and basic ability to type and browse. Day 1 includes a setup clinic for anyone who needs help creating accounts. Reading level: simple, plain English; trainers explain in whichever language the room is most comfortable with.",
   "outcomes": [
    "Explain in plain language what AI is, what it can and cannot do, and why it sometimes gets things wrong",
    "Write clear prompts using the R-T-C-F framework (Role, Task, Context, Format) and improve weak answers by iterating",
-   "Use AI for writing, research, translation (English/Swahili), planning, studying and spreadsheets",
+   "Use AI for writing, research, voice and photos, planning, studying and spreadsheets",
    "Create posters, social posts, CVs and simple business materials with AI and Canva",
    "Spot scams, deepfakes and misinformation, and protect personal and customer data",
    "Build a personal custom AI assistant and present a finished mini project"
@@ -31,8 +31,8 @@
     "Posters, social media graphics, CVs, presentations"
    ],
    [
-    "Google Translate / AI translation",
-    "Swahili-English translation and checking"
+    "Phone voice typing and camera",
+    "Dictation, read-aloud and photo questions to AI"
    ],
    [
     "NotebookLM or similar",
@@ -86,7 +86,8 @@
     "goal": "Customize an AI assistant, complete a real project and present with confidence.",
     "deliver": "Custom AI assistant, mini project, portfolio and demo day presentation"
    }
-  ]
+  ],
+  "price_kes": 8000
  },
  {
   "slug": "intermediate",
@@ -179,7 +180,8 @@
     "goal": "Deliver a complete, professional AI solution for a real or simulated client.",
     "deliver": "Capstone solution, documentation, demo and portfolio"
    }
-  ]
+  ],
+  "price_kes": 15000
  },
  {
   "slug": "advanced",
@@ -280,6 +282,7 @@
     "goal": "Ship a secure, monitored AI application and present it professionally.",
     "deliver": "Deployed capstone, repo, technical report and demo"
    }
-  ]
+  ],
+  "price_kes": 25000
  }
 ]

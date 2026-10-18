@@ -3,6 +3,7 @@ from datetime import timedelta
 
 from flask import current_app
 
+from . import billing
 from .extensions import db
 from .models import Lesson, Progress, utcnow
 
@@ -46,6 +47,8 @@ def compute_summary(user):
             w["done"] += 1
 
     next_lesson = next((l for l in lessons if l.number not in done_numbers), None)
+    bstate = billing.billing_state(user)
+    next_locked = bool(next_lesson and not billing.lesson_is_open(next_lesson, bstate))
     quiz_rows = [r for r in rows.values() if r.quiz_total]
     quiz_avg = (
         round(sum(r.quiz_score / r.quiz_total for r in quiz_rows) / len(quiz_rows) * 100)
@@ -76,7 +79,9 @@ def compute_summary(user):
         "weeks": week_list,
         "next_lesson": next_lesson.number if next_lesson else None,
         "next_title": next_lesson.title if next_lesson else None,
-        "next_homework": (next_lesson.content or {}).get("homework") if next_lesson else None,
+        "next_homework": (next_lesson.content or {}).get("homework") if next_lesson and not next_locked else None,
+        "next_locked": next_locked,
+        "billing": {k: bstate[k] for k in ("price", "discount", "net", "paid", "balance", "unlocked_weeks", "total_weeks", "fully_paid", "open_all")},
         "achievements": achievements,
         "finished": total > 0 and len(done) == total,
         "last_completed_at": last_completed.isoformat() if last_completed else None,

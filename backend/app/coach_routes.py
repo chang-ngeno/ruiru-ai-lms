@@ -2,6 +2,7 @@
 import requests
 from flask import Blueprint, current_app, g, jsonify, request
 
+from . import billing
 from .models import Lesson
 from .security import RateLimiter, path_required
 
@@ -44,6 +45,8 @@ def coach():
     lesson = Lesson.query.filter_by(path_id=g.user.path_id, number=body.get("lesson_number")).first()
     if lesson is None:
         return jsonify(error="Lesson not found."), 404
+    if not billing.lesson_is_open(lesson, billing.billing_state(g.user)):
+        return jsonify(error="Unlock this week to chat about it.", code="payment_required"), 402
 
     history = []
     for m in (body.get("history") or [])[-10:]:
