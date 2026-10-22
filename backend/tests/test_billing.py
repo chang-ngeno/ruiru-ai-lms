@@ -93,6 +93,17 @@ def test_csv_cells_cannot_run_as_formulas():
     assert rules.csv_safe("Amina") == "Amina" and rules.csv_safe(None) == "" and rules.csv_safe(8000) == "8000"
 
 
+def test_transaction_type_spellings_and_hints():
+    assert mpesa.normalize_transaction_type("CustomerBuyGoodsOnline") == "CustomerBuyGoodsOnline"
+    assert mpesa.normalize_transaction_type("customerbuygoodsonline") == "CustomerBuyGoodsOnline"  # case typo
+    assert mpesa.normalize_transaction_type("Buy Goods") == mpesa.normalize_transaction_type("till") == "CustomerBuyGoodsOnline"
+    assert mpesa.normalize_transaction_type("CustomerPayBillOnline") == mpesa.normalize_transaction_type("") == "CustomerPayBillOnline"
+    assert mpesa.normalize_transaction_type("nonsense") is None
+    assert "CustomerBuyGoodsOnline" in mpesa.explain_rejection("400.002.02", "Bad Request - Invalid TransactionType")
+    assert "MPESA_ENV" in mpesa.explain_rejection("404.001.03", "Invalid Access Token")
+    assert "Till number" in mpesa.explain_rejection("500.001.1001", "Merchant does not exist")
+
+
 # ------------------------------------------------------------------ API with the paywall on
 @pytest.fixture()
 def client():
@@ -391,3 +402,56 @@ def test_learner_can_export_and_delete_their_data(client):
 def test_admins_cannot_delete_their_own_account(client):
     login(client, "boss@example.com")
     assert client.post("/api/me/delete", json={"confirm": "DELETE"}, headers=HDR).status_code == 403
+
+
+# ------------------------------------------------------------------ Buy Goods (Till) and Safaricom errors
+@pytest.fixture()
+def till_client():
+    app = create_app({
+        "TESTING": True, "DEV_AUTH": True, "SQLALCHEMY_DATABASE_URI": "sqlite:///:memory:", "ADMIN_EMAILS": {"boss@example.com"},
+        "PAYWALL_ENABLED": True, "MPESA_SIMULATE": False, "MPESA_ENV": "production",
+        "MPESA_CONSUMER_KEY": "k", "MPESA_CONSUMER_SECRET": "s", "MPESA_SHORTCODE": "123456", "MPESA_PASSKEY": "pk",
+        "MPESA_TRANSACTION_TYPE": "CustomerBuyGoodsOnline", "MPESA_PARTY_B": "",  # till number deliberately missing
+        "MPESA_CALLBACK_BASE": "https://learn.example.com", "MPESA_CALLBACK_SECRET": SECRET,
+    })
+    with app.app_context():
+        db.create_all()
+        seed_all(app.config["SEED_DIR"])
+    with app.test_client() as c:
+        c.app = app
+        yield c
+
+
+def test_buy_goods_without_till_number_is_explained_to_admins_only(till_client, monkeypatch):
+    c = till_client
+    monkeypatch.setattr(mpesa, "_access_token", lambda: "tok")
+    login(c, "amina@example.com")
+    r = c.post("/api/billing/pay", json={"phone": "0712345678", "amount": 2000}, headers=HDR)
+    assert r.status_code == 502 and "detail" not in r.get_json()  # learners get a friendly message only
+    c.post("/api/auth/logout", headers=HDR)
+    login(c, "boss@example.com")
+    status = c.get("/api/admin/mpesa/status").get_json()["settings"]
+    assert status["product"] == "Till (Buy Goods)" and any("MPESA_PARTY_B" in w for w in status["warnings"])
+    out = c.post("/api/admin/mpesa/test", json={"phone": "0712345678"}, headers=HDR).get_json()
+    step = out["steps"][-1]
+    assert step["ok"] is False and "MPESA_PARTY_B" in step["detail"]
+
+
+def test_safaricom_rejection_text_is_kept_for_the_admin(till_client, monkeypatch):
+    c = till_client
+    c.app.config["MPESA_PARTY_B"] = "654321"
+    sent = {}
+
+    def fake_post(path, payload):
+        sent.update(payload)
+        return {"http": 400, "errorCode": "400.002.02", "errorMessage": "Bad Request - Invalid TransactionType"}
+
+    monkeypatch.setattr(mpesa, "_access_token", lambda: "tok")
+    monkeypatch.setattr(mpesa, "_post", fake_post)
+    login(c, "amina@example.com")
+    assert c.post("/api/billing/pay", json={"phone": "0712345678", "amount": 2000}, headers=HDR).status_code == 502
+    assert sent["TransactionType"] == "CustomerBuyGoodsOnline" and sent["PartyB"] == "654321" and sent["BusinessShortCode"] == "123456"
+    c.post("/api/auth/logout", headers=HDR)
+    login(c, "boss@example.com")
+    failed = c.get("/api/admin/payments?status=failed").get_json()["payments"][0]
+    assert "Invalid TransactionType" in failed["result_desc"] and "Hint" in failed["result_desc"]

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { ErrorBox, Spinner } from "../components/ui";
 import { api } from "../lib/api";
 import { fmtDate, fmtDateTime, kes } from "../lib/format";
@@ -412,6 +412,73 @@ export function ActivityTab() {
           </table>
         </div>
       )}
+    </div>
+  );
+}
+
+
+/** Check the M-Pesa setup and see exactly what Safaricom answers. */
+export function MpesaTab() {
+  const { data, error, loading, reload } = useFetch(() => api.get("/admin/mpesa/status"));
+  const [phone, setPhone] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [result, setResult] = useState(null);
+  const [err, setErr] = useState("");
+
+  const run = async (withPhone) => {
+    setBusy(true);
+    setErr("");
+    setResult(null);
+    try {
+      setResult(await api.post("/admin/mpesa/test", withPhone ? { phone } : {}));
+    } catch (e) {
+      setErr(e.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  if (loading) return <Spinner />;
+  if (error) return <ErrorBox message={error} onRetry={reload} />;
+  const s = (result && result.settings) || data.settings;
+  const rows = [["Product", s.product], ["Environment", s.env + (s.simulate ? " (simulation on)" : "")], ["Transaction type", s.transaction_type], ["Shortcode (BusinessShortCode)", s.shortcode || "-"], ["Party B (receiving party)", s.party_b || "-"], ["Safaricom address", s.base_url], ["Callback URL", s.callback_url]];
+
+  return (
+    <div className="space-y-6">
+      <div className="card p-5">
+        <h2 className="font-display text-lg font-bold text-navy">M-Pesa settings (secrets hidden)</h2>
+        <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[220px_1fr]">
+          {rows.map(([k, v]) => (<Fragment key={k}><dt className="text-slate-500">{k}</dt><dd className="break-all font-mono text-navy">{v}</dd></Fragment>))}
+        </dl>
+        {s.warnings.length ? (
+          <ul className="mt-4 space-y-1 rounded-xl bg-amber-50 p-4 text-sm font-semibold text-amber-900">{s.warnings.map((w) => <li key={w}>&bull; {w}</li>)}</ul>
+        ) : (
+          <p className="mt-4 rounded-xl bg-green-50 p-3 text-sm font-semibold text-green-800">The settings look complete.</p>
+        )}
+        {s.product.startsWith("Till") && (
+          <p className="mt-3 text-xs text-slate-500">Till (Buy Goods): the shortcode is your store / head-office number, party B is the Till number, and the passkey is the one Safaricom issued for that shortcode. STK Push for Buy Goods only works in production.</p>
+        )}
+      </div>
+      <div className="card p-5">
+        <h2 className="font-display text-lg font-bold text-navy">Test it</h2>
+        <p className="mt-1 text-sm text-slate-600">Step 1 checks your keys. Step 2 sends a KES 1 prompt to a phone so you can see Safaricom's real answer. The test is not credited to any learner.</p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <button className="btn-outline btn-sm" disabled={busy} onClick={() => run(false)}>Test connection only</button>
+          <input className="field max-w-[220px] !py-2" placeholder="0712 345 678" value={phone} onChange={(e) => setPhone(e.target.value)} aria-label="Phone for the test prompt" />
+          <button className="btn-navy btn-sm" disabled={busy || !phone.trim()} onClick={() => run(true)}>{busy ? "Testing..." : "Send KES 1 test prompt"}</button>
+        </div>
+        {err && <p className="mt-3 text-sm font-semibold text-red-700" role="alert">{err}</p>}
+        {result && (
+          <ol className="mt-4 space-y-2">
+            {result.steps.map((st) => (
+              <li key={st.name} className={`rounded-xl p-3 text-sm ${st.ok ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
+                <p className="font-bold">{st.ok ? "OK" : "FAILED"}: {st.name}</p>
+                {st.detail && <p className="mt-1 break-words">{st.detail}</p>}
+              </li>
+            ))}
+          </ol>
+        )}
+      </div>
     </div>
   );
 }

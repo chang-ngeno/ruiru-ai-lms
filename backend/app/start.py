@@ -41,8 +41,14 @@ def main() -> None:
         ),
         flush=True,
     )
-    if cfg["PAYWALL_ENABLED"] and not cfg["MPESA_SIMULATE"] and not cfg["MPESA_CALLBACK_BASE"].startswith("https://"):
-        print("WARNING: MPESA_CALLBACK_BASE is not an https address, so Safaricom cannot confirm payments.", flush=True)
+    from . import mpesa
+
+    if cfg["PAYWALL_ENABLED"] and not cfg["MPESA_SIMULATE"]:
+        with app.app_context():
+            report = mpesa.settings_report()
+        print(f"M-Pesa: {report['product']} | env={report['env']} | shortcode={report['shortcode'] or '-'} | party B={report['party_b'] or '-'}", flush=True)
+        for warning in report["warnings"]:
+            print(f"WARNING: {warning}", flush=True)
 
     port = os.environ.get("PORT", "5000")
     workers = os.environ.get("WEB_CONCURRENCY", "2")

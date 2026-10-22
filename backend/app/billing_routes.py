@@ -49,7 +49,8 @@ def pay():
     try:
         payment = billing.create_payment(g.user, body.get("phone"), body.get("amount"))
     except billing.PaymentError as exc:
-        return jsonify(error=str(exc)), exc.status
+        extra = {"detail": exc.detail} if exc.detail and g.user.role == "admin" else {}
+        return jsonify(error=str(exc), **extra), exc.status
     return jsonify(payment=payment.to_dict(), message="Check your phone and enter your M-Pesa PIN.")
 
 

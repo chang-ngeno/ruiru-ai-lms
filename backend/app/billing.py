@@ -134,9 +134,10 @@ def apply_discount_code(user, raw_code: str):
 
 # ----------------------------------------------------------------------------- payments
 class PaymentError(Exception):
-    def __init__(self, message, status=400):
+    def __init__(self, message, status=400, detail=None):
         super().__init__(message)
         self.status = status
+        self.detail = detail
 
 
 def create_payment(user, phone_raw, amount_raw) -> Payment:
@@ -176,9 +177,9 @@ def create_payment(user, phone_raw, amount_raw) -> Payment:
     try:
         res = mpesa.stk_push(phone, amount, f"AIT{user.id}", "AI Training")
     except mpesa.MpesaError as exc:
-        payment.status, payment.result_desc, payment.completed_at = "failed", str(exc)[:300], utcnow()
+        payment.status, payment.result_desc, payment.completed_at = "failed", (exc.detail or str(exc))[:300], utcnow()
         db.session.commit()
-        raise PaymentError(str(exc), 502)
+        raise PaymentError(str(exc), 502, detail=exc.detail)
     payment.merchant_request_id = res["merchant_request_id"]
     payment.checkout_request_id = res["checkout_request_id"]
     payment.status = "pending"

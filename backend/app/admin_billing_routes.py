@@ -5,11 +5,11 @@ from datetime import datetime, timezone
 
 from flask import Blueprint, g, jsonify, make_response, request
 
-from . import billing, billing_rules as rules
+from . import billing, billing_rules as rules, mpesa
 from .extensions import db
 from .models import AuditLog, DiscountCode, Enrollment, Path, Payment, Refund, User
 from .audit import audit
-from .security import admin_required
+from .security import RateLimiter, admin_required
 
 bp = Blueprint("admin_billing", __name__, url_prefix="/api/admin")
 CODE_RE = re.compile(r"^[A-Z0-9_-]{3,32}$")
@@ -293,3 +293,29 @@ def reconcile_now():
     result = billing.reconcile_pending()
     audit(g.user, "payments.reconcile", "", str(result))
     return jsonify(**result)
+
+
+mpesa_test_limiter = RateLimiter(limit=5, window_seconds=60)
+
+
+@bp.get("/mpesa/status")
+@admin_required
+def mpesa_status():
+    return jsonify(settings=mpesa.settings_report())
+
+
+@bp.post("/mpesa/test")
+@admin_required
+def mpesa_test():
+    """Check the M-Pesa setup. With a phone number it sends a KES 1 prompt that is NOT credited to anyone."""
+    if not mpesa_test_limiter.allow(str(g.user.id)):
+        return jsonify(error="Please wait a minute between tests."), 429
+    body = request.get_json(silent=True) or {}
+    phone = None
+    if body.get("phone"):
+        phone = rules.normalize_phone(body["phone"])
+        if phone is None:
+            return jsonify(error="Enter a valid Safaricom number, for example 0712 345 678."), 400
+    result = mpesa.diagnose(phone, 1)
+    audit(g.user, "mpesa.test", "", "; ".join(f"{s['name']}: {'ok' if s['ok'] else 'FAILED'}" for s in result["steps"]))
+    return jsonify(settings=mpesa.settings_report(), **result)

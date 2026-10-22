@@ -37,8 +37,10 @@ services:
         sync: false
       - key: MPESA_PASSKEY
         sync: false
-      - key: MPESA_TRANSACTION_TYPE
-        value: CustomerPayBillOnline
+      - key: MPESA_TRANSACTION_TYPE  # CustomerPayBillOnline (Paybill) or CustomerBuyGoodsOnline (Till)
+        sync: false
+      - key: MPESA_PARTY_B           # your Till number (Buy Goods only)
+        sync: false
       - key: MPESA_CALLBACK_BASE # the public https address of the SITE, e.g. https://learn.example.com
         sync: false
       - key: MPESA_CALLBACK_SECRET

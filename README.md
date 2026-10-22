@@ -115,7 +115,24 @@ Learners pay by M-Pesa (Daraja STK Push). **Access follows the money**: the pric
 1. **Sandbox first.** Create an account at developer.safaricom.co.ke, create an app with the *M-Pesa Express* product, and copy the consumer key and secret. Use the sandbox shortcode (174379) and the passkey shown in the portal's simulator.
 2. Set the `MPESA_*` variables (see `.env.example` / `render.yaml`). `MPESA_CALLBACK_BASE` must be the **public https address of your site** (for example `https://learn.imperialenterprise.co.ke`); Safaricom posts results to `<base>/api/mpesa/callback/<MPESA_CALLBACK_SECRET>`, which the site's nginx forwards to Flask. It will not work on `localhost` unless you use a tunnel such as ngrok.
 3. Pay a small amount from the sandbox, check the *Payments* tab, and confirm the lessons unlock.
-4. **Go live:** apply to Safaricom for production (Go-Live) for your Paybill or Till, then switch `MPESA_ENV=production`, and set the production shortcode, passkey, consumer key/secret. This project is set up for a **Paybill** (`MPESA_TRANSACTION_TYPE=CustomerPayBillOnline`, the default; `MPESA_SHORTCODE` is your Paybill number and `MPESA_PARTY_B` stays empty). Learners see `AIT<their id>` as the account reference on the M-Pesa prompt. (A Till would need `CustomerBuyGoodsOnline` and `MPESA_PARTY_B`.) Check Safaricom's current Daraja documentation for exact requirements.
+4. **Go live:** apply to Safaricom for production (Go-Live) for your Paybill or Till, then switch `MPESA_ENV=production`, and set the production shortcode, passkey, consumer key/secret. **Paybill or Till?** Both work; the settings differ:
+
+| Setting | Paybill | Till (Buy Goods) |
+|---|---|---|
+| `MPESA_TRANSACTION_TYPE` | `CustomerPayBillOnline` | `CustomerBuyGoodsOnline` |
+| `MPESA_SHORTCODE` | your Paybill number | the store / head-office number Safaricom gave for the Till's STK Push |
+| `MPESA_PARTY_B` | leave empty | **your Till number** |
+| `MPESA_PASSKEY` | the passkey for that shortcode | the passkey for that shortcode |
+| Sandbox testing | works with the test shortcode 174379 | **not available**: test in production with a live Till |
+
+If you use a Till and leave the transaction type at the default, Safaricom rejects the request ("Invalid TransactionType"). In the trainer dashboard, open the **M-Pesa** tab: it shows these settings, warns about anything missing, and has a **Send KES 1 test prompt** button that shows Safaricom's exact answer (the test is not credited to anyone). Check Safaricom's current Daraja documentation for exact requirements.
+
+| Safaricom message | Usual cause |
+|---|---|
+| `Invalid TransactionType` | Till used without `MPESA_TRANSACTION_TYPE=CustomerBuyGoodsOnline` (or a typo in it) |
+| `Invalid Access Token` / 401 | Consumer key and secret do not match `MPESA_ENV` (sandbox keys with production, or the reverse) |
+| `Merchant does not exist` / wrong credentials | Shortcode, party B (Till number) and passkey do not belong together |
+| `Invalid CallBackURL` | `MPESA_CALLBACK_BASE` is not a public https address |
 
 No Safaricom account yet? Set `MPESA_SIMULATE=true` (with `DEV_AUTH=true`) to try the whole flow locally; the Payments page shows "Simulate success / cancel" buttons.
 

@@ -180,7 +180,7 @@ export default function Billing() {
       const r = await api.post("/billing/pay", { phone, amount: Number(amount) });
       setActive(r.payment);
     } catch (ex) {
-      setFormErr(ex.message);
+      setFormErr(ex.message + (ex.data?.detail ? ` [Admin detail: ${ex.data.detail}]` : ""));
     } finally {
       setBusy(false);
     }

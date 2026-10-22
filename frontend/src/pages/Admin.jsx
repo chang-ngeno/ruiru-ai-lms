@@ -3,9 +3,9 @@ import { Bar, ErrorBox, Spinner } from "../components/ui";
 import { api } from "../lib/api";
 import { fmtDate, kes } from "../lib/format";
 import { useFetch } from "../lib/hooks";
-import { ActivityTab, DeskTab, DiscountsTab, LearnerBillingPanel, PaymentsTab, PricingTab, RefundsTab } from "./AdminBilling";
+import { ActivityTab, DeskTab, DiscountsTab, LearnerBillingPanel, MpesaTab, PaymentsTab, PricingTab, RefundsTab } from "./AdminBilling";
 
-const TABS = [["learners", "Learners"], ["payments", "Payments"], ["refunds", "Refunds"], ["desk", "Front desk"], ["discounts", "Discounts"], ["pricing", "Pricing"], ["activity", "Activity"]];
+const TABS = [["learners", "Learners"], ["payments", "Payments"], ["refunds", "Refunds"], ["desk", "Front desk"], ["discounts", "Discounts"], ["pricing", "Pricing"], ["mpesa", "M-Pesa"], ["activity", "Activity"]];
 const urlCode = () => (typeof window !== "undefined" && window.location ? new URLSearchParams(window.location.search).get("code") || "" : "");
 
 export default function Admin() {
@@ -58,6 +58,7 @@ export default function Admin() {
       {tab === "refunds" && <RefundsTab onChanged={refresh} />}
       {tab === "desk" && <DeskTab initialCode={scanCode} />}
       {tab === "discounts" && <DiscountsTab paths={o.paths} />}
+      {tab === "mpesa" && <MpesaTab />}
       {tab === "activity" && <ActivityTab />}
       {tab === "pricing" && <PricingTab paths={o.paths} reload={overview.reload} />}
 
