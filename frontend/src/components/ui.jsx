@@ -5,7 +5,7 @@ import { kes } from "../lib/format";
 
 export function Logo({ dark = false, to = "/" }) {
   return (
-    <Link to={to} className="flex items-center gap-3" aria-label="AI Training for Everyone home">
+    <Link to={to} className="flex items-center gap-3" aria-label="Sequa Launchpad home">
       <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand text-navy shadow-glow">
         <svg viewBox="0 0 64 64" className="h-6 w-6" aria-hidden="true">
           <path d="M12 46 L32 12 L52 46" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
@@ -13,8 +13,8 @@ export function Logo({ dark = false, to = "/" }) {
         </svg>
       </span>
       <span className="leading-none">
-        <span className={`block font-display text-sm font-extrabold tracking-wide ${dark ? "text-navy" : "text-white"}`}>AI TRAINING</span>
-        <span className={`block font-script text-xl ${dark ? "text-navy-700" : "text-brand"}`}>for Everyone</span>
+        <span className={`block font-display text-sm font-extrabold tracking-wide ${dark ? "text-navy" : "text-white"}`}>SEQUA</span>
+        <span className={`block font-script text-xl ${dark ? "text-navy-700" : "text-brand"}`}>Launchpad</span>
       </span>
     </Link>
   );

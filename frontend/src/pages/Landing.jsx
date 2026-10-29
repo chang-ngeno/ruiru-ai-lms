@@ -29,16 +29,16 @@ function Hero() {
       <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-24">
         <div>
-          <p className="font-script text-3xl text-brand md:text-4xl">Your Future with AI Starts Here!</p>
+          <p className="font-script text-3xl text-brand md:text-4xl">Practical AI, step by step</p>
           <h1 className="mt-3 font-display text-4xl font-extrabold uppercase leading-[1.05] sm:text-5xl lg:text-6xl">
-            AI Training <br />
-            <span className="brush">for Everyone</span>
+            Online AI <br />
+            <span className="brush">Classes</span>
           </h1>
           <p className="mt-4 inline-block rounded-lg bg-white/10 px-4 py-2 font-display text-lg font-bold">
             From <span className="text-brand">Beginners</span> to <span className="text-brand">Advanced</span>
           </p>
           <p className="mt-5 max-w-xl text-lg text-white/85">
-            Gain practical AI skills, work on real projects and build a better future, all in a modern training facility in <span className="font-script text-2xl text-brand">Ruiru</span>.
+            Follow a guided learning path, practise useful AI skills and build real projects from wherever you are.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/signup" className="btn-primary text-lg">Choose your path <FiArrowRight /></Link>
@@ -97,7 +97,7 @@ function Hero() {
   );
 }
 
-export default function Landing() {
+export function OnlineClasses() {
   const [paths, setPaths] = useState(PATHS);
   useEffect(() => {
     // Show the live prices the admin has set; the static ones above are only a fallback.
@@ -122,8 +122,40 @@ export default function Landing() {
           <h2 className="font-display text-3xl font-extrabold uppercase text-navy md:text-4xl"><span className="brush">Course path</span></h2>
           <p className="mt-4 text-lg text-slate-600">Build skills step by step, at your own pace.</p>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <article className="card flex flex-col p-6">
+            <span className="chip w-fit bg-brand text-navy">Early booking open</span>
+            <h3 className="mt-4 font-display text-xl font-bold text-navy">AI Essentials</h3>
+            <p className="mt-1 text-slate-600">A beginner-friendly introduction to AI tools and how to use them thoughtfully.</p>
+            <div className="mt-auto pt-5">
+              <p className="font-display text-2xl font-extrabold text-navy">KES 1,000</p>
+              <a
+                className="btn-primary btn-sm mt-4 w-fit"
+                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.introClassMessage)}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book early <FaWhatsapp />
+              </a>
+            </div>
+          </article>
           {paths.map((p) => (<PathCard key={p.slug} path={p} footer={null} />))}
+          <article className="card flex flex-col p-6">
+            <span className="chip w-fit bg-navy text-white">For leaders and teams</span>
+            <h3 className="mt-4 font-display text-xl font-bold text-navy">Executive AI Training</h3>
+            <p className="mt-1 text-slate-600">Focused AI training for executives and organisations, shaped around your team’s priorities.</p>
+            <div className="mt-auto pt-5">
+              <p className="text-sm font-bold uppercase tracking-wide text-slate-500">Price by enquiry</p>
+              <a
+                className="btn-navy btn-sm mt-4 w-fit"
+                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.executiveTrainingMessage)}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Enquire <FaWhatsapp />
+              </a>
+            </div>
+          </article>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-slate-600">Pay by <b>M-Pesa</b> in instalments: every quarter of the price opens another week of lessons, and Day 1 is a free preview. Discount codes are available for early bookings, groups and students.</p>
         <p className="mt-4 text-center font-script text-3xl text-navy-700">From curiosity to confidence!</p>
@@ -220,6 +252,132 @@ export default function Landing() {
           </div>
         </div>
       </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function ClassVideo() {
+  if (site.introVideoUrl) {
+    return (
+      <video
+        className="aspect-video w-full rounded-2xl bg-navy object-cover"
+        controls
+        playsInline
+        preload="metadata"
+        poster="/sequa-launchpad-main.jpeg"
+      >
+        <source src={site.introVideoUrl} type="video/mp4" />
+        Your browser does not support embedded videos.
+      </video>
+    );
+  }
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl bg-navy">
+      <img
+        src="/sequa-launchpad-main.jpeg"
+        alt="Sequa Launchpad AI Masterclasses"
+        className="aspect-video w-full object-cover opacity-70"
+      />
+      <div className="absolute inset-0 grid place-items-center bg-navy/25 p-6 text-center text-white">
+        <div>
+          <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand text-navy" aria-hidden="true">
+            <span className="ml-1 text-2xl">▶</span>
+          </span>
+          <p className="mt-3 font-display text-lg font-bold">AI Introduction Class</p>
+          <p className="mt-1 text-sm text-white/85">Class video coming soon</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Landing() {
+  const introBookingUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.introClassMessage)}`;
+  const executiveEnquiryUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.executiveTrainingMessage)}`;
+
+  return (
+    <div className="bg-panel">
+      <PublicNav />
+      <main id="main">
+        <section className="overflow-hidden bg-gradient-to-br from-navy-950 via-navy to-navy-700 text-white">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 md:grid-cols-2 md:py-20">
+            <div>
+              <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-brand">Sequa Launchpad presents</p>
+              <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
+                AI skills, <span className="text-brand">step by step.</span>
+              </h1>
+              <p className="mt-5 max-w-xl text-lg text-white/85">
+                Start with a simple introduction to AI, then choose the masterclass that fits your goals.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#masterclasses" className="btn-primary text-lg">Explore masterclasses <FiArrowRight /></a>
+                <Link to="/online-classes" className="btn-ghost text-lg">Online classes</Link>
+              </div>
+            </div>
+            <img
+              src="/sequa-launchpad-main.jpeg"
+              alt="Sequa Launchpad AI Masterclasses — Spark, Build, Forge"
+              className="mx-auto w-full max-w-2xl rounded-3xl shadow-2xl ring-1 ring-white/15"
+            />
+          </div>
+        </section>
+
+        <section id="masterclasses" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-14 md:py-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-brand-700">Choose your starting point</p>
+            <h2 className="mt-2 font-display text-3xl font-extrabold text-navy md:text-4xl">AI masterclasses</h2>
+            <p className="mt-3 text-slate-600">Practical learning for individuals and teams, from a first introduction to executive-level training.</p>
+          </div>
+
+          <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-2">
+            <article className="card flex flex-col p-5 sm:p-7">
+              <ClassVideo />
+              <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <span className="chip bg-brand text-navy">Early booking open</span>
+                  <h3 className="mt-3 font-display text-2xl font-extrabold text-navy">AI Essentials</h3>
+                </div>
+                <p className="font-display text-2xl font-extrabold text-navy">KES 1,000</p>
+              </div>
+              <p className="mt-3 text-slate-600">
+                A simple, beginner-friendly introduction to what AI is, how to try useful tools, and how to use them thoughtfully.
+              </p>
+              <a className="btn-primary mt-6 w-fit" href={introBookingUrl} target="_blank" rel="noreferrer">
+                Book early <FaWhatsapp />
+              </a>
+            </article>
+
+            <article className="card flex flex-col justify-between p-6 sm:p-8">
+              <div>
+                <span className="chip bg-navy text-white">For leaders and teams</span>
+                <h3 className="mt-4 font-display text-2xl font-extrabold text-navy">Executive AI Training</h3>
+                <p className="mt-3 text-slate-600">
+                  Focused AI training for executives and organisations, shaped around your team’s priorities and work.
+                </p>
+              </div>
+              <div className="mt-10 border-t border-slate-200 pt-5">
+                <p className="text-sm font-bold uppercase tracking-wide text-slate-500">Pricing</p>
+                <p className="mt-1 font-display text-2xl font-extrabold text-navy">By enquiry</p>
+                <a className="btn-navy mt-5 w-fit" href={executiveEnquiryUrl} target="_blank" rel="noreferrer">
+                  Enquire about executive training <FaWhatsapp />
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className="bg-white py-10">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center sm:flex-row sm:text-left">
+            <div>
+              <h2 className="font-display text-xl font-extrabold text-navy">Ready to explore the full programme?</h2>
+              <p className="mt-1 text-slate-600">Explore AI Essentials, three guided learning paths, and executive training.</p>
+            </div>
+            <Link to="/online-classes" className="btn-navy shrink-0">Online classes <FiArrowRight /></Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

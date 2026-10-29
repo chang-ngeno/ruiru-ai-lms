@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import { site } from "../siteConfig";
 
 export function usePageTitle(title) {
   useEffect(() => {
     if (typeof document === "undefined") return;
-    document.title = title ? `${title} | AI Training for Everyone` : "AI Training for Everyone | Ruiru, Kenya";
+    document.title = title ? `${title} | ${site.name}` : `${site.name} | ${site.location}`;
   }, [title]);
 }

@@ -10,10 +10,10 @@ export function PublicNav() {
   const [open, setOpen] = useState(false);
   const { user } = useAuth();
   const links = [
-    ["Course paths", "/#paths"],
-    ["What you'll learn", "/#learn"],
-    ["How it works", "/#how"],
-    ["Workspace", "/#workspace"],
+    ["Online classes", "/online-classes"],
+    ["Course paths", "/online-classes#paths"],
+    ["What you'll learn", "/online-classes#learn"],
+    ["How it works", "/online-classes#how"],
   ];
   return (
     <>
@@ -23,7 +23,7 @@ export function PublicNav() {
         <Logo />
         <nav className="hidden items-center gap-7 md:flex" aria-label="Main">
           {links.map(([l, h]) => (
-            <a key={l} href={h} className="text-sm font-semibold text-white/80 hover:text-brand">{l}</a>
+            <Link key={l} to={h} className="text-sm font-semibold text-white/80 hover:text-brand">{l}</Link>
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
@@ -43,7 +43,7 @@ export function PublicNav() {
       {open && (
         <div className="border-t border-white/10 px-4 pb-4 md:hidden">
           {links.map(([l, h]) => (
-            <a key={l} href={h} onClick={() => setOpen(false)} className="block py-3 font-semibold text-white/90">{l}</a>
+            <Link key={l} to={h} onClick={() => setOpen(false)} className="block py-3 font-semibold text-white/90">{l}</Link>
           ))}
           <div className="mt-2 flex gap-3">
             <Link to="/login" className="btn-ghost btn-sm flex-1">Sign in</Link>
@@ -67,10 +67,11 @@ export function Footer() {
         <div>
           <h4 className="font-display font-bold text-white">Course paths</h4>
           <ul className="mt-3 space-y-2 text-sm">
-            <li>Beginner: AI Foundations</li>
-            <li>Intermediate: Projects &amp; Automation</li>
-            <li>Advanced: Custom AI Solutions</li>
+            <li><Link to="/online-classes#paths" className="hover:text-brand">Beginner: AI Foundations</Link></li>
+            <li><Link to="/online-classes#paths" className="hover:text-brand">Intermediate: Projects &amp; Automation</Link></li>
+            <li><Link to="/online-classes#paths" className="hover:text-brand">Advanced: Custom AI Solutions</Link></li>
           </ul>
+          <Link to="/online-classes" className="mt-3 inline-block text-sm font-bold text-brand hover:text-white">Explore online classes <span aria-hidden="true">→</span></Link>
         </div>
         <div>
           <h4 className="font-display font-bold text-white">Book your spot</h4>
@@ -146,4 +147,3 @@ export function AppShell() {
     </div>
   );
 }
-

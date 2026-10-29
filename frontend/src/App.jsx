@@ -7,7 +7,7 @@ import Workspace from "./pages/Workspace";
 import { ChoosePath, Login, Signup } from "./pages/Auth";
 import Curriculum from "./pages/Curriculum";
 import Dashboard from "./pages/Dashboard";
-import Landing from "./pages/Landing";
+import Landing, { OnlineClasses } from "./pages/Landing";
 import Lesson from "./pages/Lesson";
 import Receipt from "./pages/Receipt";
 import { Certificate, Glossary, Profile, Resources } from "./pages/More";
@@ -25,10 +25,16 @@ function NotFound() {
 }
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo?.(0, 0);
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo?.(0, 0);
+      return;
+    }
+
+    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    target?.scrollIntoView();
+  }, [pathname, hash]);
   return null;
 }
 
@@ -38,6 +44,7 @@ export default function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Landing />} />
+      <Route path="/online-classes" element={<OnlineClasses />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/choose-path" element={<ChoosePath />} />
