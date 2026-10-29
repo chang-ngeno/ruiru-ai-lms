@@ -247,7 +247,9 @@ export function OnlineClasses() {
             <a className="btn-ghost" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`} target="_blank" rel="noreferrer"><FaWhatsapp /> WhatsApp us</a>
           </div>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-white/80">
-            <span className="flex items-center gap-2"><FiPhone /> {site.phoneDisplay}</span>
+            {site.phoneNumbers.map((phone) => (
+              <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:text-brand"><FiPhone /> {phone}</a>
+            ))}
             <span className="flex items-center gap-2"><FiMapPin /> {site.location}</span>
           </div>
         </div>

@@ -76,7 +76,9 @@ export function Footer() {
         <div>
           <h4 className="font-display font-bold text-white">Book your spot</h4>
           <ul className="mt-3 space-y-2 text-sm">
-            <li className="flex items-center gap-2"><FiPhone /> {site.phoneDisplay}</li>
+            {site.phoneNumbers.map((phone) => (
+              <li key={phone} className="flex items-center gap-2"><FiPhone /> <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-brand">{phone}</a></li>
+            ))}
             <li className="flex items-center gap-2"><FiMapPin /> {site.location}</li>
           </ul>
           <a className="btn-primary btn-sm mt-4" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`} target="_blank" rel="noreferrer">

@@ -3,8 +3,8 @@ export const site = {
   name: "Sequa Launchpad",
   tagline: "Spark. Build. Forge.",
   location: "Ruiru, Kenya",
-  phoneDisplay: "+254 724 880775",
-  whatsapp: "254724880775", // digits only, used for wa.me links
+  phoneNumbers: ["+254 141 927798", "+254 141 927796"],
+  whatsapp: "254141927798", // digits only, used for wa.me links
   whatsappMessage: "Hello! I would like to book a spot in a Sequa Launchpad AI masterclass.",
   introVideoUrl: "/sequa-ai-introduction.mp4",
   introClassMessage: "Hello! I would like to book AI Essentials for KES 1,000. Please share the early booking details.",
